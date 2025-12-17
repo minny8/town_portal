@@ -14,6 +14,12 @@
 
         // 現在の年を表示
         updateCopyrightYear();
+
+        // スクロールアニメーションの初期化
+        initScrollAnimations();
+
+        // ボトムナビのアクティブ状態を設定
+        setActiveBottomNav();
     });
 
     /**
@@ -165,6 +171,83 @@
                 img.removeAttribute('data-src');
             });
         }
+    }
+
+    /**
+     * スクロールアニメーションの初期化
+     * Intersection Observerを使用して要素が画面内に入ったらアニメーション
+     */
+    function initScrollAnimations() {
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // 一度表示したら監視を解除
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            fadeElements.forEach(function(element) {
+                observer.observe(element);
+            });
+        } else {
+            // IntersectionObserverに対応していない場合は即座に表示
+            fadeElements.forEach(function(element) {
+                element.classList.add('visible');
+            });
+        }
+    }
+
+    /**
+     * ボトムナビのアクティブ状態を設定
+     */
+    function setActiveBottomNav() {
+        const currentPath = window.location.pathname;
+        const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
+
+        bottomNavItems.forEach(function(item) {
+            const href = item.getAttribute('href');
+
+            // 現在のパスとリンクのパスを比較
+            if (currentPath.includes(href) ||
+                (currentPath === '/' && href === 'index.html') ||
+                (currentPath.endsWith('/') && href === 'index.html')) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    /**
+     * タッチフィードバック効果
+     * モバイルでタップした時の視覚的フィードバック
+     */
+    function initTouchFeedback() {
+        const cards = document.querySelectorAll('.category-card-modern, .link-card, .listing-card');
+
+        cards.forEach(function(card) {
+            card.addEventListener('touchstart', function() {
+                this.style.opacity = '0.7';
+            });
+
+            card.addEventListener('touchend', function() {
+                this.style.opacity = '1';
+            });
+
+            card.addEventListener('touchcancel', function() {
+                this.style.opacity = '1';
+            });
+        });
     }
 
 })();
