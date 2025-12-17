@@ -64,11 +64,25 @@ a {
 }
 
 .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--primary-color);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-color);
     margin-bottom: 2rem;
     text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
 }
 
 .section-footer {
@@ -589,7 +603,7 @@ a {
    カテゴリーセクション（モバイルファースト）
    ======================================== */
 .category-section {
-    padding: 3rem 0 6rem;
+    padding: 2rem 0 6rem;
     background: var(--bg-color);
 }
 
@@ -598,87 +612,121 @@ a {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-top: 2rem;
+    padding: 0 1rem;
 }
 
 .category-card-modern {
     background: white;
-    border-radius: 1.5rem;
-    padding: 2rem 1.5rem;
+    border-radius: 1.75rem;
+    padding: 2rem 1rem;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--border-color);
+    border: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 180px;
+    min-height: 200px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.category-card-modern::before {
+/* 各カテゴリーの個性的なグラデーション */
+.category-card-modern:nth-child(1) {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    animation-delay: 0.1s;
+}
+
+.category-card-modern:nth-child(2) {
+    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+    animation-delay: 0.2s;
+}
+
+.category-card-modern:nth-child(3) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    animation-delay: 0.3s;
+}
+
+.category-card-modern:nth-child(4) {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    animation-delay: 0.4s;
+}
+
+.category-card-modern:nth-child(5) {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    animation-delay: 0.5s;
+}
+
+.category-card-modern:nth-child(6) {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    animation-delay: 0.6s;
+}
+
+.category-card-modern::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
 
 .category-card-modern:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
 }
 
 .category-card-modern.fade-in {
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.6s ease forwards;
+    transform: translateY(30px) scale(0.95);
+    animation: fadeInUpScale 0.6s ease forwards;
 }
 
-.category-card-modern:nth-child(1) { animation-delay: 0.1s; }
-.category-card-modern:nth-child(2) { animation-delay: 0.2s; }
-.category-card-modern:nth-child(3) { animation-delay: 0.3s; }
-.category-card-modern:nth-child(4) { animation-delay: 0.4s; }
-.category-card-modern:nth-child(5) { animation-delay: 0.5s; }
-.category-card-modern:nth-child(6) { animation-delay: 0.6s; }
-
-@keyframes fadeInUp {
+@keyframes fadeInUpScale {
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 }
 
 .category-icon-modern {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     position: relative;
     z-index: 1;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .category-card-modern h3 {
     font-size: 1.125rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: white;
     margin-bottom: 0.5rem;
     position: relative;
     z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .category-card-modern p {
     font-size: 0.875rem;
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 0.75rem;
     position: relative;
     z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .category-count {
     font-size: 0.75rem;
-    color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 600;
     position: relative;
     z-index: 1;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
 }
 
 /* タブレット以上 */
@@ -686,28 +734,36 @@ a {
     .category-grid-modern {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
+        padding: 0;
     }
 
     .category-card-modern {
-        padding: 2.5rem 2rem;
-        min-height: 220px;
+        padding: 3rem 2rem;
+        min-height: 240px;
     }
 
-    .category-card-modern:hover::before {
-        opacity: 0.05;
+    .category-card-modern:hover::after {
+        opacity: 1;
     }
 
     .category-card-modern:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-xl);
-        border-color: var(--primary-light);
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .category-card-modern:hover .category-icon-modern {
+        transform: scale(1.15) rotate(5deg);
+    }
+
+    .category-icon-modern {
+        font-size: 4.5rem;
     }
 }
 
 /* デスクトップ */
 @media (min-width: 1024px) {
     .category-section {
-        padding: 5rem 0 8rem;
+        padding: 4rem 0 8rem;
     }
 
     .category-grid-modern {
@@ -1093,8 +1149,8 @@ a {
    新着情報（コンパクト）
    ======================================== */
 .news-compact {
-    padding: 3rem 0 4rem;
-    background: var(--bg-light);
+    padding: 3rem 1rem 5rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .section-title-compact {
@@ -1108,72 +1164,83 @@ a {
 .news-compact-list {
     max-width: 700px;
     margin: 0 auto 2rem;
-    background: white;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .news-compact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    transition: background-color 0.2s ease;
-}
-
-.news-compact-item:last-child {
-    border-bottom: none;
+    background: white;
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid var(--primary-color);
 }
 
 .news-compact-item:active {
-    background-color: var(--bg-light);
+    transform: scale(0.98);
 }
 
 .news-compact-item time {
-    font-size: 0.875rem;
-    color: var(--text-light);
-    font-weight: 600;
-    min-width: 85px;
+    display: block;
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .news-compact-title {
-    flex: 1;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .news-more-link {
-    display: block;
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    background: white;
     color: var(--primary-color);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.95rem;
-    transition: color 0.3s ease;
+    border-radius: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .news-more-link:hover {
-    color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    color: var(--primary-dark);
+}
+
+.news-more-link:active {
+    transform: scale(0.96);
 }
 
 @media (min-width: 768px) {
-    .news-compact-item:hover {
-        background-color: var(--bg-light);
+    .news-compact {
+        padding: 4rem 0 6rem;
     }
-}
 
-@media (max-width: 768px) {
-    .news-compact-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        padding: 1rem;
+    .news-compact-item:hover {
+        transform: translateX(8px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        border-left-width: 6px;
     }
 
     .news-compact-item time {
-        min-width: auto;
         font-size: 0.8rem;
+    }
+
+    .news-compact-title {
+        font-size: 1rem;
     }
 }
 
