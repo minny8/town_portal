@@ -109,15 +109,15 @@ a {
    ヘッダー
    ======================================== */
 .header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: white;
+    background: rgba(255, 255, 255, 0.98);
+    color: var(--text-color);
     padding: 1rem 0;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .header-content {
@@ -129,11 +129,16 @@ a {
     font-size: 1.75rem;
     font-weight: bold;
     margin-bottom: 0.25rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .site-subtitle {
     font-size: 0.95rem;
-    opacity: 0.9;
+    opacity: 0.7;
+    color: var(--text-light);
 }
 
 /* ナビゲーション */
@@ -169,16 +174,21 @@ a {
 }
 
 .nav-list a {
-    color: white;
-    font-weight: 500;
+    color: var(--text-color);
+    font-weight: 600;
     padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s ease;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
 }
 
-.nav-list a:hover,
+.nav-list a:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+}
+
 .nav-list a.active {
-    background-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+    color: white;
 }
 
 /* ========================================
@@ -418,8 +428,8 @@ a {
    フッター
    ======================================== */
 .footer {
-    background-color: var(--text-color);
-    color: white;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--text-color);
     padding: 3rem 0 1rem;
     margin-top: 4rem;
 }
@@ -454,20 +464,21 @@ a {
 }
 
 .footer-links a {
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    color: var(--text-color);
+    opacity: 0.8;
+    transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
     opacity: 1;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 1.5rem;
     text-align: center;
-    opacity: 0.8;
+    opacity: 0.7;
     font-size: 0.9rem;
 }
 
@@ -671,12 +682,22 @@ a {
 }
 
 .category-icon-modern {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 0.75rem;
     position: relative;
     z-index: 1;
-    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.3));
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .category-card-modern h3 {
@@ -737,11 +758,17 @@ a {
     }
 
     .category-card-modern:hover .category-icon-modern {
-        transform: scale(1.2) rotate(8deg);
+        transform: scale(1.15) rotate(5deg);
+        background: rgba(255, 255, 255, 0.35);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.5);
     }
 
     .category-icon-modern {
-        font-size: 5rem;
+        font-size: 3.5rem;
+        width: 96px;
+        height: 96px;
+        border-radius: 24px;
     }
 
     .category-card-modern h3 {
@@ -1093,11 +1120,20 @@ a {
 
 .bottom-nav-item.active .bottom-nav-icon {
     transform: scale(1.1);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-clip: padding-box;
+    box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
 }
 
 .bottom-nav-icon {
-    font-size: 1.5rem;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .bottom-nav-label {
