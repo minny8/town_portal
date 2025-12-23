@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="福岡県飯塚市の公式ポータルサイト。観光、イベント、ニュースなど飯塚市の情報を発信します。">
-    <title>飯塚市ポータルサイト | いいづか暮らし</title>
+    <meta name="description" content="福岡県飯塚市の公式ポータルサイト。暮らしも遊びも、ぜんぶここで見つかる。飯塚での毎日がもっと楽しくなる情報をお届けします。">
+    <title>いいづかと。| 飯塚市ポータルサイト</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/components.js"></script>
 </head>
@@ -13,89 +13,238 @@
     <div id="site-header"></div>
 
     <main>
-        <!-- ヒーローセクション -->
-        <section class="hero-modern">
-            <div class="hero-content-modern">
-                <h1 class="hero-title">飯塚、もっと楽しく。</h1>
-                <p class="hero-subtitle">暮らしも遊びも、ぜんぶここで見つかる</p>
-                <p class="hero-description">おうち探しから美味しいランチ、週末のイベントまで。飯塚での毎日がもっと楽しくなる情報をお届け</p>
+        <!-- ヒーローセクション - ストーリーテリング風 -->
+        <section class="hero-storytelling">
+            <!-- 装飾的な背景要素 -->
+            <div class="hero-decoration decoration-circle decoration-circle-1"></div>
+            <div class="hero-decoration decoration-circle decoration-circle-2"></div>
+            <div class="hero-decoration decoration-circle decoration-circle-3"></div>
+            <div class="hero-decoration decoration-circle decoration-circle-4"></div>
+
+            <div class="hero-content-storytelling">
+                <span class="hero-badge">福岡県 飯塚市</span>
+                <h1 class="hero-title-main">
+                    <span class="hero-title-accent">いいづか</span>と。
+                </h1>
+                <p class="hero-subtitle-main">暮らしも遊びも、ぜんぶここで見つかる</p>
+
+                <!-- SVGイラスト -->
+                <div class="hero-illustration">
+                    <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- 山のシルエット -->
+                        <path d="M0 200 L50 120 L100 160 L150 80 L200 130 L250 60 L300 110 L350 70 L400 120 L450 90 L500 150 L500 200 Z" fill="#7BA05B" opacity="0.3"/>
+                        <path d="M0 200 L80 140 L150 170 L220 100 L280 150 L350 110 L420 160 L500 130 L500 200 Z" fill="#7BA05B" opacity="0.5"/>
+
+                        <!-- 太陽 -->
+                        <circle cx="420" cy="50" r="35" fill="#F5C55C"/>
+
+                        <!-- 雲 -->
+                        <ellipse cx="100" cy="60" rx="40" ry="20" fill="white" opacity="0.8"/>
+                        <ellipse cx="130" cy="55" rx="30" ry="18" fill="white" opacity="0.8"/>
+                        <ellipse cx="70" cy="55" rx="25" ry="15" fill="white" opacity="0.8"/>
+
+                        <ellipse cx="300" cy="40" rx="35" ry="18" fill="white" opacity="0.6"/>
+                        <ellipse cx="325" cy="35" rx="25" ry="14" fill="white" opacity="0.6"/>
+
+                        <!-- 家 -->
+                        <rect x="180" y="150" width="40" height="35" fill="#E8A08C"/>
+                        <polygon points="180,150 200,125 220,150" fill="#C97B63"/>
+                        <rect x="195" y="165" width="12" height="20" fill="#5C8242"/>
+
+                        <!-- 木 -->
+                        <rect x="130" y="165" width="8" height="25" fill="#8B6914"/>
+                        <circle cx="134" cy="155" r="18" fill="#7BA05B"/>
+
+                        <rect x="260" y="160" width="10" height="30" fill="#8B6914"/>
+                        <circle cx="265" cy="145" r="22" fill="#9BC07B"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="hero-scroll-indicator">
+                <span class="scroll-text">スクロール</span>
+                <div class="scroll-arrow"></div>
             </div>
         </section>
 
-        <!-- 地域情報カテゴリー -->
-        <section class="category-section">
-            <div class="container">
-                <h2 class="section-title fade-in">飯塚でやりたいこと、見つけよう</h2>
-                <div class="category-grid-modern">
-                    <a href="pages/real-estate.html" class="category-card-modern fade-in" style="background-image: linear-gradient(135deg, rgba(255, 107, 107, 0.35) 0%, rgba(238, 90, 111, 0.35) 100%), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop');">
-                        <div class="category-icon-modern">🏠</div>
+        <!-- 波形セクション区切り -->
+        <div class="wave-divider wave-divider--cream">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,60 C200,120 400,0 600,60 C800,120 1000,0 1200,60 L1200,120 L0,120 Z"/>
+            </svg>
+        </div>
+
+        <!-- カテゴリーセクション -->
+        <section class="story-section">
+            <div class="story-container">
+                <div class="story-header">
+                    <span class="section-label scroll-reveal">カテゴリー</span>
+                    <h2 class="section-title-large scroll-reveal delay-1">飯塚でやりたいこと、<br>見つけよう</h2>
+                    <p class="section-description scroll-reveal delay-2">おうち探しから美味しいランチ、週末のイベントまで。<br>飯塚での毎日がもっと楽しくなる情報をお届け</p>
+                </div>
+
+                <div class="category-grid-pop">
+                    <a href="pages/real-estate.html" class="category-card-pop scroll-reveal delay-1">
+                        <div class="category-icon-pop">🏠</div>
                         <h3>おうち探し</h3>
                         <p>理想の住まいを見つけよう</p>
-                        <div class="category-count">200+ 物件</div>
+                        <span class="category-tag">200+ 物件</span>
                     </a>
 
-                    <a href="pages/restaurants.html" class="category-card-modern fade-in" style="background-image: linear-gradient(135deg, rgba(78, 205, 196, 0.35) 0%, rgba(68, 160, 141, 0.35) 100%), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop');">
-                        <div class="category-icon-modern">🍜</div>
+                    <a href="pages/restaurants.html" class="category-card-pop scroll-reveal delay-2">
+                        <div class="category-icon-pop">🍜</div>
                         <h3>美味しいお店</h3>
                         <p>今日のランチどこ行く？</p>
-                        <div class="category-count">150+ 店舗</div>
+                        <span class="category-tag">150+ 店舗</span>
                     </a>
 
-                    <a href="pages/lessons.html" class="category-card-modern fade-in" style="background-image: linear-gradient(135deg, rgba(102, 126, 234, 0.35) 0%, rgba(118, 75, 162, 0.35) 100%), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop');">
-                        <div class="category-icon-modern">📚</div>
+                    <a href="pages/lessons.html" class="category-card-pop scroll-reveal delay-3">
+                        <div class="category-icon-pop">📚</div>
                         <h3>習い事</h3>
                         <p>新しいこと始めてみる？</p>
-                        <div class="category-count">80+ 教室</div>
+                        <span class="category-tag">80+ 教室</span>
                     </a>
 
-                    <a href="pages/jobs.html" class="category-card-modern fade-in" style="background-image: linear-gradient(135deg, rgba(240, 147, 251, 0.35) 0%, rgba(245, 87, 108, 0.35) 100%), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&auto=format&fit=crop');">
-                        <div class="category-icon-modern">💼</div>
+                    <a href="pages/jobs.html" class="category-card-pop scroll-reveal delay-4">
+                        <div class="category-icon-pop">💼</div>
                         <h3>仕事探し</h3>
                         <p>あなたにぴったりの仕事</p>
-                        <div class="category-count">120+ 求人</div>
+                        <span class="category-tag">120+ 求人</span>
                     </a>
 
-                    <a href="pages/map.html" class="category-card-modern fade-in" style="background-image: linear-gradient(135deg, rgba(79, 172, 254, 0.35) 0%, rgba(0, 242, 254, 0.35) 100%), url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&auto=format&fit=crop');">
-                        <div class="category-icon-modern">🗺️</div>
+                    <a href="pages/map.html" class="category-card-pop scroll-reveal delay-5">
+                        <div class="category-icon-pop">🗺️</div>
                         <h3>街マップ</h3>
                         <p>便利な場所チェック</p>
-                        <div class="category-count">マップを見る</div>
+                        <span class="category-tag">マップを見る</span>
                     </a>
 
-                    <a href="pages/events.html" class="category-card-modern fade-in" style="background-image: linear-gradient(135deg, rgba(250, 112, 154, 0.35) 0%, rgba(254, 225, 64, 0.35) 100%), url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&auto=format&fit=crop');">
-                        <div class="category-icon-modern">🎉</div>
+                    <a href="pages/events.html" class="category-card-pop scroll-reveal delay-6">
+                        <div class="category-icon-pop">🎉</div>
                         <h3>イベント</h3>
                         <p>週末何して遊ぶ？</p>
-                        <div class="category-count">開催予定</div>
+                        <span class="category-tag">開催予定</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- 新着情報 -->
-        <section class="news-compact">
-            <div class="container">
-                <h2 class="section-title-compact">最近のニュース</h2>
-                <div class="news-compact-list">
-                    <a href="pages/news.html" class="news-compact-item">
-                        <time>12/15</time>
-                        <span class="news-compact-title">年末年始の市役所業務について</span>
+        <!-- 波形セクション区切り -->
+        <div class="wave-divider wave-divider--salmon" style="background: var(--cream);">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,40 C150,100 350,0 500,50 C650,100 850,20 1000,60 C1100,85 1150,70 1200,40 L1200,120 L0,120 Z"/>
+            </svg>
+        </div>
+
+        <!-- いいづか物語セクション -->
+        <section class="stories-section">
+            <div class="story-container">
+                <div class="story-header">
+                    <span class="section-label scroll-reveal">いいづか物語</span>
+                    <h2 class="section-title-large scroll-reveal delay-1">飯塚の魅力を<br>もっと深く知る</h2>
+                    <p class="section-description scroll-reveal delay-2">歴史ある炭鉱の町から、新しい文化が育つ街へ。<br>飯塚ならではの物語をお届けします。</p>
+                </div>
+
+                <div class="story-grid">
+                    <article class="story-card scroll-reveal delay-1">
+                        <div class="story-card-image" style="background-image: url('https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&auto=format&fit=crop');">
+                            <span class="story-card-number">01</span>
+                        </div>
+                        <div class="story-card-content">
+                            <span class="story-card-label">歴史と文化</span>
+                            <h3 class="story-card-title">旧伊藤伝右衛門邸の物語</h3>
+                            <p class="story-card-excerpt">筑豊の炭鉱王と呼ばれた伊藤伝右衛門。その邸宅には、歌人・柳原白蓮との切ない愛の物語が…</p>
+                            <a href="pages/tourism.html" class="story-card-link">続きを読む →</a>
+                        </div>
+                    </article>
+
+                    <article class="story-card scroll-reveal delay-2">
+                        <div class="story-card-image" style="background-image: url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&auto=format&fit=crop');">
+                            <span class="story-card-number">02</span>
+                        </div>
+                        <div class="story-card-content">
+                            <span class="story-card-label">伝統芸能</span>
+                            <h3 class="story-card-title">嘉穂劇場と大衆文化</h3>
+                            <p class="story-card-excerpt">大正時代から続く芝居小屋。全国でも珍しい廻り舞台で、今も多くの公演が行われています。</p>
+                            <a href="pages/tourism.html" class="story-card-link">続きを読む →</a>
+                        </div>
+                    </article>
+
+                    <article class="story-card scroll-reveal delay-3">
+                        <div class="story-card-image" style="background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&auto=format&fit=crop');">
+                            <span class="story-card-number">03</span>
+                        </div>
+                        <div class="story-card-content">
+                            <span class="story-card-label">グルメ</span>
+                            <h3 class="story-card-title">飯塚のソウルフード</h3>
+                            <p class="story-card-excerpt">ひよこ饅頭発祥の地として知られる飯塚。老舗の銘菓から地元で愛されるB級グルメまで。</p>
+                            <a href="pages/restaurants.html" class="story-card-link">続きを読む →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 波形セクション区切り -->
+        <div class="wave-divider wave-divider--cream" style="background: var(--salmon-light);">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,80 C200,20 400,100 600,50 C800,0 1000,80 1200,30 L1200,120 L0,120 Z"/>
+            </svg>
+        </div>
+
+        <!-- ニュースセクション - タイムライン風 -->
+        <section class="news-timeline-section">
+            <div class="story-container">
+                <div class="story-header">
+                    <span class="section-label scroll-reveal">お知らせ</span>
+                    <h2 class="section-title-large scroll-reveal delay-1">最新ニュース</h2>
+                </div>
+
+                <div class="news-timeline">
+                    <a href="pages/news.html" class="news-item-timeline scroll-reveal delay-1">
+                        <div class="news-item-dot">📢</div>
+                        <div class="news-item-content">
+                            <span class="news-item-date">2024年12月15日</span>
+                            <h3 class="news-item-title">年末年始の市役所業務について</h3>
+                            <p class="news-item-summary">12月29日〜1月3日は休業となります。緊急の場合は...</p>
+                        </div>
                     </a>
-                    <a href="pages/news.html" class="news-compact-item">
-                        <time>12/10</time>
-                        <span class="news-compact-title">冬のイベント開催します！</span>
+
+                    <a href="pages/news.html" class="news-item-timeline scroll-reveal delay-2">
+                        <div class="news-item-dot">🎄</div>
+                        <div class="news-item-content">
+                            <span class="news-item-date">2024年12月10日</span>
+                            <h3 class="news-item-title">冬のイベント開催します！</h3>
+                            <p class="news-item-summary">12月21日〜25日、商店街でウィンターフェスティバルを開催...</p>
+                        </div>
                     </a>
-                    <a href="pages/news.html" class="news-compact-item">
-                        <time>12/05</time>
-                        <span class="news-compact-title">伊藤伝右衛門邸を特別公開</span>
+
+                    <a href="pages/news.html" class="news-item-timeline scroll-reveal delay-3">
+                        <div class="news-item-dot">🏛️</div>
+                        <div class="news-item-content">
+                            <span class="news-item-date">2024年12月05日</span>
+                            <h3 class="news-item-title">伊藤伝右衛門邸を特別公開</h3>
+                            <p class="news-item-summary">国の重要文化財に指定されている旧伊藤伝右衛門邸の庭園を特別公開...</p>
+                        </div>
                     </a>
                 </div>
-                <div style="text-align: center;">
-                    <a href="pages/news.html" class="news-more-link">もっと見る →</a>
-                </div>
+
+                <a href="pages/news.html" class="news-more-button scroll-reveal">
+                    もっと見る
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
             </div>
         </section>
     </main>
+
+    <!-- 波形フッター区切り -->
+    <div class="wave-divider" style="background: var(--cream); height: 120px;">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="fill: #7BA05B;">
+            <path d="M0,60 C200,100 400,20 600,60 C800,100 1000,40 1200,80 L1200,120 L0,120 Z"/>
+        </svg>
+    </div>
 
     <!-- 共通ボトムナビ -->
     <div id="site-bottom-nav"></div>
