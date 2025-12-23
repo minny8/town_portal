@@ -6,30 +6,11 @@
     <meta name="description" content="福岡県飯塚市の公式ポータルサイト。観光、イベント、ニュースなど飯塚市の情報を発信します。">
     <title>飯塚市ポータルサイト | いいづか暮らし</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/components.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="site-title">飯塚市ポータルサイト</h1>
-                <p class="site-subtitle">いいづか暮らし</p>
-            </div>
-            <nav class="nav">
-                <button class="nav-toggle" aria-label="メニュー">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-list">
-                    <li><a href="index.html" class="active">ホーム</a></li>
-                    <li><a href="pages/news.html">ニュース</a></li>
-                    <li><a href="pages/tourism.html">観光</a></li>
-                    <li><a href="pages/events.html">イベント</a></li>
-                    <li><a href="pages/map.html">マップ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- 共通ヘッダー -->
+    <div id="site-header"></div>
 
     <main>
         <!-- ヒーローセクション -->
@@ -37,14 +18,14 @@
             <div class="hero-content-modern">
                 <h1 class="hero-title">飯塚、もっと楽しく。</h1>
                 <p class="hero-subtitle">暮らしも遊びも、ぜんぶここで見つかる</p>
-                <p class="hero-description">おうち探しから美味しいランチ、週末のイベントまで。飯塚での毎日がもっと楽しくなる情報をお届け✨</p>
+                <p class="hero-description">おうち探しから美味しいランチ、週末のイベントまで。飯塚での毎日がもっと楽しくなる情報をお届け</p>
             </div>
         </section>
 
         <!-- 地域情報カテゴリー -->
         <section class="category-section">
             <div class="container">
-                <h2 class="section-title fade-in">🌟 飯塚でやりたいこと、見つけよう</h2>
+                <h2 class="section-title fade-in">飯塚でやりたいこと、見つけよう</h2>
                 <div class="category-grid-modern">
                     <a href="pages/real-estate.html" class="category-card-modern fade-in" style="background-image: linear-gradient(135deg, rgba(255, 107, 107, 0.35) 0%, rgba(238, 90, 111, 0.35) 100%), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&auto=format&fit=crop');">
                         <div class="category-icon-modern">🏠</div>
@@ -94,7 +75,7 @@
         <!-- 新着情報 -->
         <section class="news-compact">
             <div class="container">
-                <h2 class="section-title-compact">📢 最近のニュース</h2>
+                <h2 class="section-title-compact">最近のニュース</h2>
                 <div class="news-compact-list">
                     <a href="pages/news.html" class="news-compact-item">
                         <time>12/15</time>
@@ -102,7 +83,7 @@
                     </a>
                     <a href="pages/news.html" class="news-compact-item">
                         <time>12/10</time>
-                        <span class="news-compact-title">🎄 冬のイベント開催します！</span>
+                        <span class="news-compact-title">冬のイベント開催します！</span>
                     </a>
                     <a href="pages/news.html" class="news-compact-item">
                         <time>12/05</time>
@@ -116,52 +97,11 @@
         </section>
     </main>
 
-    <!-- モバイルボトムナビゲーション -->
-    <nav class="bottom-nav">
-        <a href="index.html" class="bottom-nav-item active">
-            <span class="bottom-nav-icon">🏠</span>
-            <span class="bottom-nav-label">ホーム</span>
-        </a>
-        <a href="pages/real-estate.html" class="bottom-nav-item">
-            <span class="bottom-nav-icon">🏘️</span>
-            <span class="bottom-nav-label">不動産</span>
-        </a>
-        <a href="pages/restaurants.html" class="bottom-nav-item">
-            <span class="bottom-nav-icon">🍜</span>
-            <span class="bottom-nav-label">飲食店</span>
-        </a>
-        <a href="pages/jobs.html" class="bottom-nav-item">
-            <span class="bottom-nav-icon">💼</span>
-            <span class="bottom-nav-label">求人</span>
-        </a>
-        <a href="pages/map.html" class="bottom-nav-item">
-            <span class="bottom-nav-icon">🗺️</span>
-            <span class="bottom-nav-label">マップ</span>
-        </a>
-    </nav>
+    <!-- 共通ボトムナビ -->
+    <div id="site-bottom-nav"></div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>飯塚市ポータルサイト</h3>
-                    <p>〒820-8501<br>福岡県飯塚市新立岩5番5号</p>
-                </div>
-                <div class="footer-links">
-                    <h4>サイトマップ</h4>
-                    <ul>
-                        <li><a href="index.html">ホーム</a></li>
-                        <li><a href="pages/news.html">ニュース</a></li>
-                        <li><a href="pages/tourism.html">観光情報</a></li>
-                        <li><a href="pages/events.html">イベント</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 飯塚市ポータルサイト All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- 共通フッター -->
+    <div id="site-footer"></div>
 
     <script src="js/main.js"></script>
 </body>

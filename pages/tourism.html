@@ -6,189 +6,182 @@
     <meta name="description" content="飯塚市の観光スポット、見どころをご紹介">
     <title>観光情報 | 飯塚市ポータルサイト</title>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/components.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="site-title">飯塚市ポータルサイト</h1>
-                <p class="site-subtitle">いいづか暮らし</p>
-            </div>
-            <nav class="nav">
-                <button class="nav-toggle" aria-label="メニュー">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-list">
-                    <li><a href="../index.html">ホーム</a></li>
-                    <li><a href="news.html">ニュース</a></li>
-                    <li><a href="tourism.html" class="active">観光情報</a></li>
-                    <li><a href="events.html">イベント</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- 共通ヘッダー -->
+    <div id="site-header"></div>
 
-    <div class="page-header">
-        <div class="container">
-            <h1>観光情報</h1>
-            <p>歴史と文化が息づく飯塚市の魅力をご紹介</p>
+    <!-- ページヒーロー -->
+    <section class="page-hero page-hero--tourism">
+        <div class="page-hero-content">
+            <div class="page-hero-icon">🏛️</div>
+            <h1 class="page-hero-title">観光情報</h1>
+            <p class="page-hero-subtitle">歴史と文化が息づく飯塚市の魅力をご紹介</p>
         </div>
-    </div>
+    </section>
 
     <main class="page-content">
         <div class="container">
-            <section style="margin-bottom: 3rem;">
-                <h2 class="section-title">主要観光スポット</h2>
+            <!-- 主要観光スポット -->
+            <div class="section-card">
+                <h2 class="section-card-title">主要観光スポット</h2>
 
-                <div class="news-list">
-                    <article class="news-item">
-                        <h3>🏛️ 旧伊藤伝右衛門邸</h3>
-                        <p><strong>所在地：</strong>飯塚市幸袋300番地</p>
-                        <p><strong>開館時間：</strong>9:30～17:00（入館は16:30まで）</p>
-                        <p><strong>休館日：</strong>水曜日（祝日の場合は翌日）、年末年始</p>
-                        <p><strong>入館料：</strong>大人310円、小中学生100円</p>
-                        <p>
-                            筑豊の炭鉱王として知られる伊藤伝右衛門の本邸。明治時代の和風建築と大正時代の洋風建築が融合した貴重な建造物で、国の重要文化財に指定されています。
-                            広大な庭園も見どころで、四季折々の風景を楽しむことができます。伝右衛門の妻であった柳原白蓮（歌人・大正三美人の一人）ゆかりの品々も展示されています。
-                        </p>
+                <div class="spot-grid">
+                    <article class="spot-card">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%), url('https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">🏛️</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <h3 class="spot-card-title">旧伊藤伝右衛門邸</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>飯塚市幸袋300番地</p>
+                            <p class="spot-card-info"><strong>開館：</strong>9:30〜17:00（入館16:30まで）</p>
+                            <p class="spot-card-info"><strong>休館日：</strong>水曜日（祝日の場合は翌日）</p>
+                            <p class="spot-card-info"><strong>入館料：</strong>大人310円、小中学生100円</p>
+                            <p class="spot-card-description">
+                                筑豊の炭鉱王として知られる伊藤伝右衛門の本邸。明治時代の和風建築と大正時代の洋風建築が融合した貴重な建造物で、国の重要文化財に指定されています。
+                            </p>
+                        </div>
                     </article>
 
-                    <article class="news-item">
-                        <h3>🎭 嘉穂劇場</h3>
-                        <p><strong>所在地：</strong>飯塚市飯塚5-23</p>
-                        <p><strong>営業時間：</strong>公演により異なる</p>
-                        <p>
-                            大正時代に建設された木造の芝居小屋で、国の登録有形文化財。現在も現役の劇場として、歌舞伎や演劇、コンサートなどが開催されています。
-                            独特の雰囲気を持つ館内は見学も可能（要予約）。炭鉱全盛期の娯楽の場として栄えた歴史を今に伝える貴重な施設です。
-                        </p>
+                    <article class="spot-card">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(250, 112, 154, 0.3) 0%, rgba(254, 225, 64, 0.3) 100%), url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">🎭</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <h3 class="spot-card-title">嘉穂劇場</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>飯塚市飯塚5-23</p>
+                            <p class="spot-card-info"><strong>営業時間：</strong>公演により異なる</p>
+                            <p class="spot-card-description">
+                                大正時代に建設された木造の芝居小屋で、国の登録有形文化財。現在も現役の劇場として、歌舞伎や演劇、コンサートなどが開催されています。
+                            </p>
+                        </div>
                     </article>
 
-                    <article class="news-item">
-                        <h3>🏛️ 飯塚市歴史資料館</h3>
-                        <p><strong>所在地：</strong>飯塚市柏の森959-1</p>
-                        <p><strong>開館時間：</strong>9:30～17:00（入館は16:30まで）</p>
-                        <p><strong>休館日：</strong>月曜日（祝日の場合は翌日）、年末年始</p>
-                        <p><strong>入館料：</strong>無料</p>
-                        <p>
-                            飯塚市の歴史と文化を紹介する資料館。縄文時代から現代まで、飯塚の歩みを豊富な資料で展示しています。
-                            特に筑豊炭田に関する展示が充実しており、炭鉱の歴史や当時の人々の暮らしを学ぶことができます。企画展も定期的に開催されています。
-                        </p>
+                    <article class="spot-card">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(79, 172, 254, 0.3) 0%, rgba(0, 242, 254, 0.3) 100%), url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">🏛️</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <h3 class="spot-card-title">飯塚市歴史資料館</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>飯塚市柏の森959-1</p>
+                            <p class="spot-card-info"><strong>開館：</strong>9:30〜17:00（入館16:30まで）</p>
+                            <p class="spot-card-info"><strong>休館日：</strong>月曜日（祝日の場合は翌日）</p>
+                            <p class="spot-card-info"><strong>入館料：</strong>無料</p>
+                            <p class="spot-card-description">
+                                飯塚市の歴史と文化を紹介する資料館。特に筑豊炭田に関する展示が充実しており、炭鉱の歴史や当時の人々の暮らしを学ぶことができます。
+                            </p>
+                        </div>
                     </article>
 
-                    <article class="news-item">
-                        <h3>⛩️ 大分八幡宮</h3>
-                        <p><strong>所在地：</strong>飯塚市大分1272</p>
-                        <p>
-                            飯塚市の総鎮守として信仰を集める神社。毎年秋に行われる放生会は、飯塚の三大祭りの一つとして知られ、多くの参拝客で賑わいます。
-                            境内には樹齢数百年の巨木があり、静かで趣のある空間が広がっています。
-                        </p>
+                    <article class="spot-card">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(255, 107, 107, 0.3) 0%, rgba(238, 90, 111, 0.3) 100%), url('https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">⛩️</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <h3 class="spot-card-title">大分八幡宮</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>飯塚市大分1272</p>
+                            <p class="spot-card-description">
+                                飯塚市の総鎮守として信仰を集める神社。毎年秋に行われる放生会は、飯塚の三大祭りの一つとして知られ、多くの参拝客で賑わいます。
+                            </p>
+                        </div>
                     </article>
 
-                    <article class="news-item">
-                        <h3>🌸 勝盛公園</h3>
-                        <p><strong>所在地：</strong>飯塚市片島1丁目</p>
-                        <p>
-                            市民の憩いの場として親しまれている公園。春には約1,000本の桜が咲き誇り、花見の名所として知られています。
-                            園内には遊具や広場もあり、家族連れに人気のスポットです。夜桜のライトアップも行われ、幻想的な雰囲気を楽しめます。
-                        </p>
+                    <article class="spot-card">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(168, 237, 234, 0.3) 0%, rgba(254, 214, 227, 0.3) 100%), url('https://images.unsplash.com/photo-1522383225653-ed111181a951?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">🌸</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <h3 class="spot-card-title">勝盛公園</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>飯塚市片島1丁目</p>
+                            <p class="spot-card-description">
+                                市民の憩いの場として親しまれている公園。春には約1,000本の桜が咲き誇り、花見の名所として知られています。夜桜のライトアップも行われます。
+                            </p>
+                        </div>
                     </article>
 
-                    <article class="news-item">
-                        <h3>🏔️ 八木山</h3>
-                        <p><strong>所在地：</strong>飯塚市八木山</p>
-                        <p>
-                            標高745メートルの山で、ハイキングや登山に最適。山頂からは筑豊平野を一望でき、天気の良い日には福岡市街や玄界灘まで見渡せます。
-                            登山道は初心者から上級者まで楽しめるコースが整備されており、四季折々の自然を満喫できます。
-                        </p>
+                    <article class="spot-card">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(78, 205, 196, 0.3) 0%, rgba(68, 160, 141, 0.3) 100%), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">🏔️</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <h3 class="spot-card-title">八木山</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>飯塚市八木山</p>
+                            <p class="spot-card-description">
+                                標高745メートルの山で、ハイキングや登山に最適。山頂からは筑豊平野を一望でき、天気の良い日には福岡市街や玄界灘まで見渡せます。
+                            </p>
+                        </div>
                     </article>
                 </div>
-            </section>
+            </div>
 
-            <section style="margin-bottom: 3rem;">
-                <h2 class="section-title">飯塚グルメ</h2>
+            <!-- 飯塚グルメ -->
+            <div class="section-card">
+                <h2 class="section-card-title">飯塚グルメ</h2>
 
-                <div class="news-list">
-                    <article class="news-item">
-                        <h3>🍜 炭鉱ラーメン</h3>
-                        <p>
+                <div class="gourmet-grid">
+                    <div class="gourmet-card">
+                        <h3 class="gourmet-card-title">🍜 炭鉱ラーメン</h3>
+                        <p class="gourmet-card-body">
                             炭鉱で働く人々のために生まれた、ボリューム満点の醤油ラーメン。豚骨と鶏ガラをベースにしたスープに、たっぷりの野菜とチャーシューが特徴です。
                             市内の複数の店舗で味わうことができます。
                         </p>
-                    </article>
+                    </div>
 
-                    <article class="news-item">
-                        <h3>🍡 飯塚銘菓</h3>
-                        <p>
+                    <div class="gourmet-card">
+                        <h3 class="gourmet-card-title">🍡 飯塚銘菓</h3>
+                        <p class="gourmet-card-body">
                             千鳥饅頭で有名な千鳥屋をはじめ、老舗の和菓子店が多数あります。
                             伊藤伝右衛門邸や白蓮をモチーフにした創作和菓子も人気です。
                         </p>
-                    </article>
+                    </div>
                 </div>
-            </section>
+            </div>
 
-            <section>
-                <h2 class="section-title">アクセス情報</h2>
+            <!-- アクセス情報 -->
+            <div class="section-card">
+                <h2 class="section-card-title">アクセス情報</h2>
 
-                <div class="news-list">
-                    <article class="news-item">
-                        <h3>🚄 電車でお越しの方</h3>
-                        <p>
-                            <strong>JR九州 筑豊本線・後藤寺線</strong><br>
-                            新飯塚駅、飯塚駅が最寄り駅です。<br>
-                            ・博多駅から新飯塚駅まで：約40分（快速利用）<br>
-                            ・小倉駅から新飯塚駅まで：約1時間30分
-                        </p>
-                    </article>
+                <div class="access-grid">
+                    <div class="access-card">
+                        <h3 class="access-card-title">🚄 電車でお越しの方</h3>
+                        <div class="access-card-body">
+                            <p><strong>JR九州 筑豊本線・後藤寺線</strong></p>
+                            <p>新飯塚駅、飯塚駅が最寄り駅です。</p>
+                            <p>・博多駅から新飯塚駅まで：約40分（快速利用）</p>
+                            <p>・小倉駅から新飯塚駅まで：約1時間30分</p>
+                        </div>
+                    </div>
 
-                    <article class="news-item">
-                        <h3>🚌 バスでお越しの方</h3>
-                        <p>
-                            <strong>西鉄バス</strong><br>
-                            福岡（天神）から飯塚まで高速バスが運行しています。<br>
-                            ・所要時間：約50分<br>
-                            ・運行本数：1時間に1～2本程度
-                        </p>
-                    </article>
+                    <div class="access-card">
+                        <h3 class="access-card-title">🚌 バスでお越しの方</h3>
+                        <div class="access-card-body">
+                            <p><strong>西鉄バス</strong></p>
+                            <p>福岡（天神）から飯塚まで高速バスが運行しています。</p>
+                            <p>・所要時間：約50分</p>
+                            <p>・運行本数：1時間に1〜2本程度</p>
+                        </div>
+                    </div>
 
-                    <article class="news-item">
-                        <h3>🚗 お車でお越しの方</h3>
-                        <p>
-                            <strong>九州自動車道</strong><br>
-                            ・福岡方面から：「福岡IC」→国道201号経由で約40分<br>
-                            ・北九州方面から：「八幡IC」→国道200号経由で約40分<br>
-                            <br>
-                            主要観光施設には駐車場が完備されています。
-                        </p>
-                    </article>
+                    <div class="access-card">
+                        <h3 class="access-card-title">🚗 お車でお越しの方</h3>
+                        <div class="access-card-body">
+                            <p><strong>九州自動車道</strong></p>
+                            <p>・福岡方面から：「福岡IC」→国道201号経由で約40分</p>
+                            <p>・北九州方面から：「八幡IC」→国道200号経由で約40分</p>
+                            <p>主要観光施設には駐車場が完備されています。</p>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>飯塚市ポータルサイト</h3>
-                    <p>〒820-8501<br>福岡県飯塚市新立岩5番5号</p>
-                </div>
-                <div class="footer-links">
-                    <h4>サイトマップ</h4>
-                    <ul>
-                        <li><a href="../index.html">ホーム</a></li>
-                        <li><a href="news.html">ニュース</a></li>
-                        <li><a href="tourism.html">観光情報</a></li>
-                        <li><a href="events.html">イベント</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 飯塚市ポータルサイト All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- 共通ボトムナビ -->
+    <div id="site-bottom-nav"></div>
+
+    <!-- 共通フッター -->
+    <div id="site-footer"></div>
 
     <script src="../js/main.js"></script>
 </body>
