@@ -483,8 +483,481 @@ a {
 }
 
 /* ========================================
-   ページ共通スタイル
+   ページ共通スタイル（モダン）
    ======================================== */
+
+/* サイトタイトルリンク */
+.site-title-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-title-link:hover .site-title {
+    opacity: 0.8;
+}
+
+/* ページヒーロー（モダン版） */
+.page-hero {
+    position: relative;
+    padding: 6rem 1rem 4rem;
+    text-align: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
+    opacity: 0.3;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-hero-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: fadeInUp 0.6s ease;
+}
+
+.page-hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+    animation: fadeInUp 0.6s ease 0.1s backwards;
+    color: #1a202c;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+.page-hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    opacity: 0.85;
+    animation: fadeInUp 0.6s ease 0.2s backwards;
+    color: #2d3748;
+}
+
+/* ページごとのグラデーション */
+.page-hero--news {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.page-hero--events {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.page-hero--tourism {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.page-hero--map {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 4rem 1rem 3rem;
+    }
+
+    .page-hero-icon {
+        font-size: 3rem;
+    }
+
+    .page-hero-title {
+        font-size: 1.75rem;
+    }
+
+    .page-hero-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* ページコンテンツ */
+.page-content {
+    padding: 3rem 0 6rem;
+    min-height: 60vh;
+    background: var(--bg-light);
+}
+
+/* セクションカード */
+.section-card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.section-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-card-title::before {
+    content: '';
+    width: 4px;
+    height: 1.5rem;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+/* コンテンツカード（モダン版） */
+.content-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 4px solid var(--primary-light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.content-card:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-left-width: 6px;
+}
+
+.content-card-date {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.content-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.content-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.content-card-meta strong {
+    color: var(--text-color);
+}
+
+.content-card-body {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.content-card-body p {
+    margin-bottom: 0.5rem;
+}
+
+.content-card-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* スポットカード（観光ページ用） */
+.spot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+}
+
+.spot-card {
+    background: white;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.spot-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.spot-card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.spot-card-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 100%);
+}
+
+.spot-card-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.spot-card-content {
+    padding: 1.5rem;
+}
+
+.spot-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.spot-card-info {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.spot-card-info strong {
+    color: var(--text-color);
+    min-width: 70px;
+}
+
+.spot-card-description {
+    margin-top: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* イベントカード */
+.event-card {
+    background: white;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.event-card-header {
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+    color: white;
+}
+
+.event-card-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-bottom: 0.25rem;
+}
+
+.event-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.event-card-body {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.event-card-info {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.event-card-info strong {
+    color: var(--text-color);
+}
+
+.event-card-description {
+    margin-top: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* イベントグリッド */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+}
+
+/* 季節カード */
+.season-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.season-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.season-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.season-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.season-card-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-light);
+}
+
+.season-card-list li:last-child {
+    border-bottom: none;
+}
+
+/* 季節グリッド */
+.season-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+/* アクセス情報カード */
+.access-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    border-top: 4px solid var(--primary-light);
+}
+
+.access-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.access-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.access-card-body {
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.access-card-body strong {
+    color: var(--text-color);
+}
+
+/* アクセスグリッド */
+.access-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* グルメセクション */
+.gourmet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.gourmet-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.gourmet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.gourmet-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.gourmet-card-body {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .spot-grid,
+    .event-grid,
+    .season-grid,
+    .access-grid,
+    .gourmet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .content-card {
+        padding: 1.25rem;
+    }
+
+    .content-card:hover {
+        transform: translateX(4px);
+    }
+}
+
+/* 旧page-header（後方互換性） */
 .page-header {
     background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a5f 100%);
     color: white;
@@ -501,11 +974,6 @@ a {
 .page-header p {
     font-size: 1.1rem;
     opacity: 0.95;
-}
-
-.page-content {
-    padding: 2rem 0 4rem;
-    min-height: 60vh;
 }
 
 /* ========================================
@@ -1049,6 +1517,17 @@ a {
     from {
         opacity: 0;
         transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
