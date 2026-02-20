@@ -126,10 +126,17 @@
             <span class="bottom-nav-icon">📰</span>
             <span class="bottom-nav-label">ニュース</span>
         </a>
-        <a href="${basePath}pages/tourism.html" class="bottom-nav-item ${currentPage === 'tourism' ? 'active' : ''}">
-            <span class="bottom-nav-icon">🏛️</span>
-            <span class="bottom-nav-label">観光</span>
-        </a>
+        <button type="button" class="bottom-nav-item bottom-nav-menu-btn" id="bottomNavMenuBtn">
+            <span class="bottom-nav-icon">
+                <svg class="bottom-nav-menu-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+                    <rect x="11" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+                    <rect x="2" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+                    <rect x="11" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+            </span>
+            <span class="bottom-nav-label">メニュー</span>
+        </button>
         <a href="${basePath}pages/events.html" class="bottom-nav-item ${currentPage === 'events' ? 'active' : ''}">
             <span class="bottom-nav-icon">🎉</span>
             <span class="bottom-nav-label">イベント</span>
@@ -139,6 +146,81 @@
             <span class="bottom-nav-label">マップ</span>
         </a>
     </nav>`;
+    }
+
+    // メニューモーダルHTMLを生成
+    function createMenuModal() {
+        const basePath = getBasePath();
+        const currentPage = getCurrentPage();
+
+        var items = [
+            { icon: '🏠', label: 'ホーム', href: basePath + 'index.html', page: 'home' },
+            { icon: '📰', label: 'ニュース', href: basePath + 'pages/news.html', page: 'news' },
+            { icon: '🏛️', label: '観光', href: basePath + 'pages/tourism.html', page: 'tourism' },
+            { icon: '🎉', label: 'イベント', href: basePath + 'pages/events.html', page: 'events' },
+            { icon: '🗺️', label: 'マップ', href: basePath + 'pages/map.html', page: 'map' },
+            { icon: '🏠', label: 'おうち探し', href: basePath + 'pages/real-estate.html', page: 'real-estate' },
+            { icon: '🍜', label: '美味しいお店', href: basePath + 'pages/restaurants.html', page: 'restaurants' },
+            { icon: '📚', label: '習い事', href: basePath + 'pages/lessons.html', page: 'lessons' },
+            { icon: '💼', label: '仕事探し', href: basePath + 'pages/jobs.html', page: 'jobs' }
+        ];
+
+        var gridItems = '';
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            var activeClass = item.page === currentPage ? ' menu-modal-item--active' : '';
+            gridItems += '<a href="' + item.href + '" class="menu-modal-item' + activeClass + '">' +
+                '<span class="menu-modal-item-icon">' + item.icon + '</span>' +
+                '<span class="menu-modal-item-label">' + item.label + '</span>' +
+                '</a>';
+        }
+
+        return '<div class="menu-modal-overlay" id="menuModalOverlay">' +
+            '<div class="menu-modal" id="menuModal">' +
+                '<div class="menu-modal-header">' +
+                    '<h3 class="menu-modal-title">メニュー</h3>' +
+                    '<button type="button" class="menu-modal-close" id="menuModalClose" aria-label="閉じる">' +
+                        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">' +
+                            '<line x1="18" y1="6" x2="6" y2="18"/>' +
+                            '<line x1="6" y1="6" x2="18" y2="18"/>' +
+                        '</svg>' +
+                    '</button>' +
+                '</div>' +
+                '<div class="menu-modal-grid">' +
+                    gridItems +
+                '</div>' +
+            '</div>' +
+        '</div>';
+    }
+
+    // メニューモーダルの開閉ロジック
+    function initMenuModal() {
+        var menuBtn = document.getElementById('bottomNavMenuBtn');
+        var overlay = document.getElementById('menuModalOverlay');
+        var modal = document.getElementById('menuModal');
+        var closeBtn = document.getElementById('menuModalClose');
+
+        if (!menuBtn || !overlay) return;
+
+        function openModal() {
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+
+        // オーバーレイ（モーダル外）をタップで閉じる
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                closeModal();
+            }
+        });
     }
 
     // コンポーネントを挿入
@@ -160,6 +242,14 @@
         if (bottomNavPlaceholder) {
             bottomNavPlaceholder.outerHTML = createBottomNav();
         }
+
+        // メニューモーダルをbodyに挿入
+        var modalDiv = document.createElement('div');
+        modalDiv.innerHTML = createMenuModal();
+        document.body.appendChild(modalDiv.firstChild);
+
+        // メニューモーダルの初期化
+        initMenuModal();
 
         // 著作権の年を更新
         updateCopyrightYear();
