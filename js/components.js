@@ -1,4 +1,5 @@
-// 飯塚市ポータルサイト - 共通コンポーネント
+// いいづかと。ポータルサイト - 共通コンポーネント
+// 「みさとと。」風ナチュラル・ポップデザイン対応
 // ヘッダー、フッター、ボトムナビを動的に挿入
 
 (function() {
@@ -27,20 +28,31 @@
         return 'home';
     }
 
-    // ヘッダーHTMLを生成
+    // ヘッダーHTMLを生成（ナチュラルデザイン）
     function createHeader() {
         const basePath = getBasePath();
         const currentPage = getCurrentPage();
 
         return `
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="${basePath}index.html" class="site-title-link">
-                    <h1 class="site-title">飯塚市ポータルサイト</h1>
-                    <p class="site-subtitle">いいづか暮らし</p>
-                </a>
-            </div>
+        <div class="header-content">
+            <a href="${basePath}index.html" class="site-title-link">
+                <div class="site-logo">
+                    <!-- ロゴアイコン（SVG） -->
+                    <svg class="logo-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="24" cy="24" r="22" fill="#E8A838"/>
+                        <circle cx="24" cy="24" r="18" fill="#FFF8F0"/>
+                        <path d="M14 28 Q24 12 34 28" stroke="#7BA05B" stroke-width="3" fill="none"/>
+                        <circle cx="18" cy="22" r="2" fill="#F4A896"/>
+                        <circle cx="30" cy="22" r="2" fill="#F4A896"/>
+                        <path d="M20 32 Q24 36 28 32" stroke="#3D3D3D" stroke-width="2" fill="none"/>
+                    </svg>
+                    <div>
+                        <h1 class="site-title">いいづかと。</h1>
+                        <p class="site-subtitle">飯塚市ポータルサイト</p>
+                    </div>
+                </div>
+            </a>
             <nav class="nav">
                 <button class="nav-toggle" aria-label="メニュー">
                     <span></span>
@@ -59,36 +71,47 @@
     </header>`;
     }
 
-    // フッターHTMLを生成
+    // フッターHTMLを生成（ナチュラルデザイン）
     function createFooter() {
         const basePath = getBasePath();
 
         return `
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>飯塚市ポータルサイト</h3>
-                    <p>〒820-8501<br>福岡県飯塚市新立岩5番5号</p>
-                </div>
-                <div class="footer-links">
-                    <h4>サイトマップ</h4>
-                    <ul>
-                        <li><a href="${basePath}index.html">ホーム</a></li>
-                        <li><a href="${basePath}pages/news.html">ニュース</a></li>
-                        <li><a href="${basePath}pages/tourism.html">観光情報</a></li>
-                        <li><a href="${basePath}pages/events.html">イベント</a></li>
-                    </ul>
-                </div>
+    <footer class="footer-natural">
+        <div class="footer-content-natural">
+            <div class="footer-brand">
+                <h3>いいづかと。</h3>
+                <p>福岡県飯塚市の公式ポータルサイト<br>
+                暮らしも遊びも、ぜんぶここで見つかる</p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                    〒820-8501<br>福岡県飯塚市新立岩5番5号
+                </p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span class="copyright-year">2025</span> 飯塚市ポータルサイト All rights reserved.</p>
+            <div class="footer-links-natural">
+                <h4>カテゴリー</h4>
+                <ul>
+                    <li><a href="${basePath}pages/real-estate.html">おうち探し</a></li>
+                    <li><a href="${basePath}pages/restaurants.html">美味しいお店</a></li>
+                    <li><a href="${basePath}pages/lessons.html">習い事</a></li>
+                    <li><a href="${basePath}pages/jobs.html">仕事探し</a></li>
+                </ul>
             </div>
+            <div class="footer-links-natural">
+                <h4>情報</h4>
+                <ul>
+                    <li><a href="${basePath}pages/news.html">ニュース</a></li>
+                    <li><a href="${basePath}pages/tourism.html">観光情報</a></li>
+                    <li><a href="${basePath}pages/events.html">イベント</a></li>
+                    <li><a href="${basePath}pages/map.html">街マップ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom-natural">
+            <p>&copy; <span class="copyright-year">2025</span> いいづかと。 All rights reserved.</p>
         </div>
     </footer>`;
     }
 
-    // ボトムナビHTMLを生成
+    // ボトムナビHTMLを生成（ナチュラルデザイン）
     function createBottomNav() {
         const basePath = getBasePath();
         const currentPage = getCurrentPage();

@@ -1,4 +1,5 @@
-// 飯塚市ポータルサイト - メインJavaScript
+// いいづかと。ポータルサイト - メインJavaScript
+// 「みさとと。」風スクロールアニメーション対応
 
 (function() {
     'use strict';
@@ -15,11 +16,20 @@
         // 現在の年を表示
         updateCopyrightYear();
 
-        // スクロールアニメーションの初期化
-        initScrollAnimations();
+        // スクロールアニメーションの初期化（新デザイン対応）
+        initScrollReveal();
+
+        // ヘッダースクロール効果
+        initHeaderScroll();
+
+        // パララックス効果
+        initParallax();
 
         // ボトムナビのアクティブ状態を設定
         setActiveBottomNav();
+
+        // タッチフィードバック
+        initTouchFeedback();
     });
 
     /**
@@ -86,7 +96,8 @@
                 if (target) {
                     event.preventDefault();
 
-                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const header = document.querySelector('.header');
+                    const headerHeight = header ? header.offsetHeight : 0;
                     const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
                     window.scrollTo({
@@ -102,109 +113,129 @@
      * 著作権表示の年を更新
      */
     function updateCopyrightYear() {
-        const footerBottom = document.querySelector('.footer-bottom p');
-
-        if (footerBottom) {
-            const currentYear = new Date().getFullYear();
-            const text = footerBottom.textContent;
-
-            // 年号が含まれている場合は更新
-            if (text.includes('2025')) {
-                footerBottom.textContent = text.replace('2025', currentYear);
-            }
+        const yearSpan = document.querySelector('.copyright-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
         }
     }
 
     /**
-     * ページトップへ戻るボタン（オプション機能）
-     * 将来的な拡張用
+     * スクロールリビールアニメーション（新デザイン対応）
+     * scroll-reveal, scroll-reveal-left, scroll-reveal-right, scroll-reveal-scale クラス対応
      */
-    function initScrollToTop() {
-        const scrollButton = document.getElementById('scroll-to-top');
-
-        if (!scrollButton) return;
-
-        // スクロール位置に応じてボタンの表示/非表示
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollButton.classList.add('visible');
-            } else {
-                scrollButton.classList.remove('visible');
-            }
-        });
-
-        // クリックでページトップへ
-        scrollButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-
-    /**
-     * 画像の遅延読み込み（オプション機能）
-     * 将来的な拡張用
-     */
-    function initLazyLoading() {
-        const images = document.querySelectorAll('img[data-src]');
-
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-
-            images.forEach(function(img) {
-                imageObserver.observe(img);
-            });
-        } else {
-            // IntersectionObserverに対応していない場合は即座に読み込み
-            images.forEach(function(img) {
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-            });
-        }
-    }
-
-    /**
-     * スクロールアニメーションの初期化
-     * Intersection Observerを使用して要素が画面内に入ったらアニメーション
-     */
-    function initScrollAnimations() {
-        const fadeElements = document.querySelectorAll('.fade-in');
+    function initScrollReveal() {
+        const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale, .fade-in');
 
         if ('IntersectionObserver' in window) {
             const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
+                threshold: 0.15,
+                rootMargin: '0px 0px -80px 0px'
             };
 
             const observer = new IntersectionObserver(function(entries) {
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+                        // スタガードアニメーション用のディレイ
+                        const delay = entry.target.dataset.delay || 0;
+
+                        setTimeout(function() {
+                            entry.target.classList.add('revealed');
+                            entry.target.classList.add('visible'); // 後方互換性
+                        }, delay * 100);
+
                         // 一度表示したら監視を解除
                         observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            fadeElements.forEach(function(element) {
+            revealElements.forEach(function(element, index) {
+                // ディレイクラスからデータ属性を設定
+                if (element.classList.contains('delay-1')) element.dataset.delay = 1;
+                else if (element.classList.contains('delay-2')) element.dataset.delay = 2;
+                else if (element.classList.contains('delay-3')) element.dataset.delay = 3;
+                else if (element.classList.contains('delay-4')) element.dataset.delay = 4;
+                else if (element.classList.contains('delay-5')) element.dataset.delay = 5;
+                else if (element.classList.contains('delay-6')) element.dataset.delay = 6;
+
                 observer.observe(element);
             });
         } else {
             // IntersectionObserverに対応していない場合は即座に表示
-            fadeElements.forEach(function(element) {
+            revealElements.forEach(function(element) {
+                element.classList.add('revealed');
                 element.classList.add('visible');
             });
         }
+    }
+
+    /**
+     * ヘッダースクロール効果
+     * スクロール時にヘッダーにシャドウを追加
+     */
+    function initHeaderScroll() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+
+        let lastScrollY = 0;
+        let ticking = false;
+
+        function updateHeader() {
+            const scrollY = window.scrollY;
+
+            if (scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScrollY = scrollY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        });
+
+        // 初期状態をチェック
+        updateHeader();
+    }
+
+    /**
+     * パララックス効果
+     * 装飾要素に軽いパララックスを適用
+     */
+    function initParallax() {
+        const parallaxElements = document.querySelectorAll('.hero-decoration, .parallax-bg');
+
+        if (parallaxElements.length === 0) return;
+
+        // モバイルではパララックスを無効化
+        if (window.innerWidth < 768) return;
+
+        let ticking = false;
+
+        function updateParallax() {
+            const scrollY = window.scrollY;
+
+            parallaxElements.forEach(function(element, index) {
+                const speed = 0.1 + (index * 0.05);
+                const yPos = -(scrollY * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
     }
 
     /**
@@ -233,21 +264,39 @@
      * モバイルでタップした時の視覚的フィードバック
      */
     function initTouchFeedback() {
-        const cards = document.querySelectorAll('.category-card-modern, .link-card, .listing-card');
+        const interactiveElements = document.querySelectorAll(
+            '.category-card-pop, .story-card, .news-item-timeline, .category-card-modern, .link-card, .listing-card'
+        );
 
-        cards.forEach(function(card) {
-            card.addEventListener('touchstart', function() {
-                this.style.opacity = '0.7';
-            });
+        interactiveElements.forEach(function(element) {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            }, { passive: true });
 
-            card.addEventListener('touchend', function() {
-                this.style.opacity = '1';
-            });
+            element.addEventListener('touchend', function() {
+                this.style.transform = '';
+            }, { passive: true });
 
-            card.addEventListener('touchcancel', function() {
-                this.style.opacity = '1';
-            });
+            element.addEventListener('touchcancel', function() {
+                this.style.transform = '';
+            }, { passive: true });
         });
     }
+
+    /**
+     * スクロールインジケーターのクリックで下へスクロール
+     */
+    document.addEventListener('click', function(event) {
+        if (event.target.closest('.hero-scroll-indicator')) {
+            const hero = document.querySelector('.hero-storytelling');
+            if (hero) {
+                const heroBottom = hero.offsetTop + hero.offsetHeight;
+                window.scrollTo({
+                    top: heroBottom - 100,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
 
 })();
