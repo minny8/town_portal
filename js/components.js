@@ -162,7 +162,10 @@
             { icon: '🏠', label: 'おうち探し', href: basePath + 'pages/real-estate.html', page: 'real-estate' },
             { icon: '🍜', label: '美味しいお店', href: basePath + 'pages/restaurants.html', page: 'restaurants' },
             { icon: '📚', label: '習い事', href: basePath + 'pages/lessons.html', page: 'lessons' },
-            { icon: '💼', label: '仕事探し', href: basePath + 'pages/jobs.html', page: 'jobs' }
+            { icon: '💼', label: '仕事探し', href: basePath + 'pages/jobs.html', page: 'jobs' },
+            { icon: '🏡', label: '暮らし', href: basePath + 'pages/living.html', page: 'living' },
+            { icon: '🏛️', label: '行政', href: basePath + 'pages/government.html', page: 'government' },
+            { icon: '❓', label: 'FAQ', href: basePath + 'pages/faq.html', page: 'faq' }
         ];
 
         var gridItems = '';
