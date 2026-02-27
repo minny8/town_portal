@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="飯塚市の美味しいお店をカテゴリ別にご紹介。ラーメン、カフェ、居酒屋、うどん、パン屋など">
+    <title>美味しいお店 | 飯塚市ポータルサイト</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/components.js"></script>
+</head>
+<body>
+    <!-- 共通ヘッダー -->
+    <div id="site-header"></div>
+
+    <!-- ページヒーロー -->
+    <section class="page-hero page-hero--restaurants">
+        <div class="page-hero-content">
+            <div class="page-hero-icon">🍜</div>
+            <h1 class="page-hero-title">美味しいお店</h1>
+            <p class="page-hero-subtitle">飯塚市で愛される名店をご紹介</p>
+        </div>
+    </section>
+
+    <main class="page-content">
+        <div class="container">
+
+            <!-- 検索バー -->
+            <div class="restaurant-search">
+                <span class="restaurant-search-icon">🔍</span>
+                <input type="text" id="restaurant-search-input" class="restaurant-search-input" placeholder="お店やメニューを検索...">
+            </div>
+
+            <!-- カテゴリフィルター -->
+            <div class="restaurant-filter">
+                <button class="filter-btn active" data-category="all">すべて</button>
+                <button class="filter-btn" data-category="ramen">🍜 ラーメン</button>
+                <button class="filter-btn" data-category="cafe">☕ カフェ</button>
+                <button class="filter-btn" data-category="izakaya">🏮 居酒屋・バー</button>
+                <button class="filter-btn" data-category="washoku">🥢 うどん・和食</button>
+                <button class="filter-btn" data-category="bakery">🥐 パン・スイーツ</button>
+            </div>
+
+            <!-- 絞り込み条件パネル -->
+            <div class="filter-panel-toggle">
+                <button id="filter-panel-btn" class="filter-panel-btn">
+                    <span>🎛️ 絞り込み条件</span>
+                    <span class="filter-panel-arrow">▼</span>
+                </button>
+                <button id="filter-clear-btn" class="filter-clear-btn" style="display: none;">✕ 条件クリア</button>
+            </div>
+
+            <div id="filter-panel" class="filter-panel" style="display: none;">
+                <!-- 予算 -->
+                <div class="filter-group">
+                    <h4 class="filter-group-label">💰 予算</h4>
+                    <div class="filter-group-options">
+                        <button class="filter-option active" data-filter="budget" data-value="all">すべて</button>
+                        <button class="filter-option" data-filter="budget" data-value="1000">〜1,000円</button>
+                        <button class="filter-option" data-filter="budget" data-value="3000">〜3,000円</button>
+                        <button class="filter-option" data-filter="budget" data-value="3001">3,000円〜</button>
+                    </div>
+                </div>
+
+                <!-- 時間帯 -->
+                <div class="filter-group">
+                    <h4 class="filter-group-label">🕐 時間帯</h4>
+                    <div class="filter-group-options">
+                        <button class="filter-option active" data-filter="time" data-value="all">すべて</button>
+                        <button class="filter-option" data-filter="time" data-value="morning">モーニング（〜10時開店）</button>
+                        <button class="filter-option" data-filter="time" data-value="lunch">ランチ（11〜14時）</button>
+                        <button class="filter-option" data-filter="time" data-value="dinner">ディナー（17時以降）</button>
+                    </div>
+                </div>
+
+                <!-- 曜日 -->
+                <div class="filter-group">
+                    <h4 class="filter-group-label">📅 この曜日に営業中のお店</h4>
+                    <div class="filter-group-options">
+                        <button class="filter-option active" data-filter="day" data-value="all">指定なし</button>
+                        <button class="filter-option" data-filter="day" data-value="mon">月</button>
+                        <button class="filter-option" data-filter="day" data-value="tue">火</button>
+                        <button class="filter-option" data-filter="day" data-value="wed">水</button>
+                        <button class="filter-option" data-filter="day" data-value="thu">木</button>
+                        <button class="filter-option" data-filter="day" data-value="fri">金</button>
+                        <button class="filter-option" data-filter="day" data-value="sat">土</button>
+                        <button class="filter-option" data-filter="day" data-value="sun">日</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 件数表示 -->
+            <div class="restaurant-results-count">
+                <span id="results-count">18</span>件のお店が見つかりました
+            </div>
+
+            <!-- 店舗一覧 -->
+            <div class="restaurant-grid">
+
+                <!-- ========== ラーメン ========== -->
+
+                <article class="restaurant-card" data-category="ramen"
+                    data-budget="1000" data-open="10" data-close="14" data-holiday="irregular"
+                    data-keywords="中華そば 醤油 平打ち麺 焼豚 行列">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(244, 168, 150, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--ramen">ラーメン</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">武志（たけし）</h3>
+                        <p class="restaurant-card-description">
+                            行列・完売があたりまえの中華そばの名店。上品な透き通った醤油ベースのスープに、モチモチの平打ち麺と大きな焼豚が特徴のシンプルで味わい深い一杯。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市下三緒</p>
+                            <p><span class="info-icon">🕐</span>10:00〜13:30（売切次第終了）</p>
+                            <p><span class="info-icon">💰</span>〜1,000円</p>
+                            <p><span class="info-icon">🚫</span>不定休（Instagram要確認）</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="ramen"
+                    data-budget="1000" data-open="4" data-close="8" data-holiday="mon,tue,wed,thu,fri"
+                    data-keywords="豚骨 百名店 伝説 土日限定 早朝">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(244, 168, 150, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--ramen">ラーメン</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">来来（らいらい）</h3>
+                        <p class="restaurant-card-description">
+                            九州ラーメン百名店に選出された伝説的な一杯。営業は土日の週2回のみ、朝4時オープンで20杯ほどで売り切れという全国屈指のハードルの高さ。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市</p>
+                            <p><span class="info-icon">🕐</span>4:00〜売切次第終了（土日のみ）</p>
+                            <p><span class="info-icon">💰</span>〜1,000円</p>
+                            <p><span class="info-icon">⭐</span>九州ラーメン百名店選出</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="ramen"
+                    data-budget="1000" data-open="11" data-close="21" data-holiday=""
+                    data-keywords="醤油 塩 味噌 こだわり 筑豊随一">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(244, 168, 150, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--ramen">ラーメン</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">麺屋 ゆぶき</h3>
+                        <p class="restaurant-card-description">
+                            醤油・塩・味噌のすべてにこだわり抜いた筑豊随一と評されるラーメン店。それぞれのスープに合わせた麺選びにも妥協がなく、何度通っても新しい発見がある。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市</p>
+                            <p><span class="info-icon">🕐</span>11:00〜15:00 / 17:30〜21:00</p>
+                            <p><span class="info-icon">💰</span>〜1,000円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="ramen"
+                    data-budget="1000" data-open="11" data-close="15" data-holiday="thu"
+                    data-keywords="味噌 白味噌 札幌 みそラーメン">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(244, 168, 150, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1614563637806-1d0e645e0940?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--ramen">ラーメン</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">サッポロラーメン 一光</h3>
+                        <p class="restaurant-card-description">
+                            地元で長年愛される味噌ラーメンの名店。白味噌ベースのコクのあるスープに、柔らかくツルツルとした麺が絶妙にマッチ。寒い日に食べたくなる一杯。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市椿</p>
+                            <p><span class="info-icon">🕐</span>11:00〜売切次第終了</p>
+                            <p><span class="info-icon">💰</span>〜1,000円</p>
+                            <p><span class="info-icon">🚫</span>木曜定休</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="ramen"
+                    data-budget="1200" data-open="11" data-close="22" data-holiday=""
+                    data-keywords="担々麺 黒胡麻 竹炭 黒炭々麺 辛い">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(244, 168, 150, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1552611052-33e04de1b100?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--ramen">ラーメン</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">烏龍（ウーロン）飯塚店</h3>
+                        <p class="restaurant-card-description">
+                            黒胡麻と食用の竹炭を使用した真っ黒な「黒炭々麺」が看板メニュー。見た目のインパクトだけでなく、深いコクと程よい辛さが癖になる。平日昼でもほぼ満席の人気店。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市</p>
+                            <p><span class="info-icon">🕐</span>11:00〜22:00</p>
+                            <p><span class="info-icon">💰</span>〜1,200円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== カフェ ========== -->
+
+                <article class="restaurant-card" data-category="cafe"
+                    data-budget="1500" data-open="11" data-close="17" data-holiday=""
+                    data-keywords="古民家 隠れ家 和定食 スイーツ 八木山">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(200, 168, 216, 0.4) 0%, rgba(135, 206, 235, 0.4) 100%), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--cafe">カフェ</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">楠カフェ（くすカフェ）</h3>
+                        <p class="restaurant-card-description">
+                            八木山峠の入り口にある古民家リノベーションの隠れ家カフェ。ゆったりとした和の空間で、手作りの和定食やスイーツが楽しめる。非日常的な時間を過ごせる特別な場所。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市（八木山峠入口付近）</p>
+                            <p><span class="info-icon">🕐</span>11:00〜17:00</p>
+                            <p><span class="info-icon">💰</span>1,000〜1,500円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="cafe"
+                    data-budget="1500" data-open="10" data-close="18" data-holiday=""
+                    data-keywords="パフェ 文具 文房具 おしゃれ">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(200, 168, 216, 0.4) 0%, rgba(135, 206, 235, 0.4) 100%), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--cafe">カフェ</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">Cafe CuLuRe（カフェ クルール）</h3>
+                        <p class="restaurant-card-description">
+                            飯塚駅から徒歩10分。コーヒーカラーのインテリアが可愛い文具屋さん併設のカフェ。パフェの種類は15種類もあり、パフェセットが大人気。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市（飯塚駅徒歩10分）</p>
+                            <p><span class="info-icon">🕐</span>10:00〜18:00</p>
+                            <p><span class="info-icon">💰</span>800〜1,500円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="cafe"
+                    data-budget="1200" data-open="9" data-close="18" data-holiday=""
+                    data-keywords="老舗 喫茶 レトロ フルーツサンド コーヒー アンティーク">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(200, 168, 216, 0.4) 0%, rgba(135, 206, 235, 0.4) 100%), url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--cafe">カフェ</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">覇薇可否道（はらコーヒーどう）</h3>
+                        <p class="restaurant-card-description">
+                            1974年オープン、50年以上の歴史を持つ老舗喫茶。アンティーク家具やステンドグラスが彩るレトロな店内で、華やかなフルーツサンドとこだわりのコーヒーを。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市秋松</p>
+                            <p><span class="info-icon">🕐</span>9:00〜18:00</p>
+                            <p><span class="info-icon">💰</span>600〜1,200円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="cafe"
+                    data-budget="1000" data-open="10" data-close="17" data-holiday=""
+                    data-keywords="商店街 コーヒー 憩い">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(200, 168, 216, 0.4) 0%, rgba(135, 206, 235, 0.4) 100%), url('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--cafe">カフェ</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">街家cafe つむぎ</h3>
+                        <p class="restaurant-card-description">
+                            飯塚市本町の商店街にあるおしゃれカフェ。こだわりのコーヒーと落ち着いた雰囲気で、地元の人々の憩いの場として親しまれている。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市本町（商店街内）</p>
+                            <p><span class="info-icon">🕐</span>10:00〜17:00</p>
+                            <p><span class="info-icon">💰</span>500〜1,000円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="cafe"
+                    data-budget="1200" data-open="10" data-close="18" data-holiday=""
+                    data-keywords="セレクトショップ 雑貨 おしゃれ ドリンク">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(200, 168, 216, 0.4) 0%, rgba(135, 206, 235, 0.4) 100%), url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--cafe">カフェ</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">アルク カフェ</h3>
+                        <p class="restaurant-card-description">
+                            セレクトショップ「ある暮らし」が併設されたカフェ。大きな窓から光が差し込む開放的な店内で、こだわりのドリンクと雑貨選びを同時に楽しめる。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市川津</p>
+                            <p><span class="info-icon">🕐</span>10:00〜18:00</p>
+                            <p><span class="info-icon">💰</span>500〜1,200円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== 居酒屋・バー ========== -->
+
+                <article class="restaurant-card" data-category="izakaya"
+                    data-budget="4000" data-open="17" data-close="23" data-holiday=""
+                    data-keywords="炭火焼き 焼鳥 鳥皮 サラダ 宴会">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.4) 0%, rgba(201, 123, 99, 0.4) 100%), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--izakaya">居酒屋</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">炭焼酒処 幸炭（こうたん）</h3>
+                        <p class="restaurant-card-description">
+                            炭火焼きにこだわる居酒屋。カリカリに焼かれた鳥皮に甘辛いタレが絶品。人気No.1の「幸炭サラダ」はオリジナルドレッシングが癖になる。宴会コースは8品2,000円〜とリーズナブル。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市秋松</p>
+                            <p><span class="info-icon">🕐</span>17:00〜23:00</p>
+                            <p><span class="info-icon">💰</span>2,000〜4,000円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="izakaya"
+                    data-budget="5000" data-open="17" data-close="23" data-holiday=""
+                    data-keywords="魚介 刺身 イカ 鮪 ウニ 海鮮 老舗">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.4) 0%, rgba(201, 123, 99, 0.4) 100%), url('https://images.unsplash.com/photo-1553621042-f6e147245754?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--izakaya">居酒屋</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">むつごろう</h3>
+                        <p class="restaurant-card-description">
+                            昭和43年に柳川出身の方が有明海の美味しい魚介類を筑豊に届けようと創業した老舗。活きイカ造りや本鮪、極上ウニなど魚介メニューが圧巻の品揃え。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市（新飯塚駅徒歩5分）</p>
+                            <p><span class="info-icon">🕐</span>17:00〜23:00</p>
+                            <p><span class="info-icon">💰</span>3,000〜5,000円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="izakaya"
+                    data-budget="3000" data-open="17" data-close="23" data-holiday=""
+                    data-keywords="鍋 唐揚げ エビフライ 太巻き コスパ ボリューム">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.4) 0%, rgba(201, 123, 99, 0.4) 100%), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--izakaya">居酒屋</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">山賊鍋 飯塚店</h3>
+                        <p class="restaurant-card-description">
+                            ボリューム満点の鍋料理が名物。山賊唐揚げ、エビフライ、山賊太巻きなどマストメニューが目白押し。4人で8,000円以下という驚きのコスパも魅力。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市鯰田</p>
+                            <p><span class="info-icon">🕐</span>17:00〜23:00</p>
+                            <p><span class="info-icon">💰</span>2,000〜3,000円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="izakaya"
+                    data-budget="5000" data-open="17" data-close="23" data-holiday=""
+                    data-keywords="焼鳥 焼き鳥 串 こだわり">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.4) 0%, rgba(201, 123, 99, 0.4) 100%), url('https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--izakaya">居酒屋</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">焼鳥 Arata</h3>
+                        <p class="restaurant-card-description">
+                            こだわりの焼鳥が楽しめる人気店。一本一本丁寧に焼き上げる串は、素材の味を最大限に引き出す。食べログでも高評価を獲得している実力派。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市</p>
+                            <p><span class="info-icon">🕐</span>17:30〜23:00</p>
+                            <p><span class="info-icon">💰</span>3,000〜5,000円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== うどん・和食 ========== -->
+
+                <article class="restaurant-card" data-category="washoku"
+                    data-budget="1000" data-open="11" data-close="15" data-holiday=""
+                    data-keywords="うどん 豊前裏打会 ごぼう天 海老天 鳥ざんまい">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(123, 160, 91, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1618841557871-b4664fbf0cb3?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--washoku">うどん</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">麺や 長政</h3>
+                        <p class="restaurant-card-description">
+                            豊前裏打会系のうどん店。すべすべとしたのど越しの良い麺が特徴で、具沢山うどんにはごぼう天・海老天・わかめ・卵・きつねが入る。鳥ざんまいセットも人気。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市立岩（スパイシーモール内）</p>
+                            <p><span class="info-icon">🕐</span>11:00〜15:00</p>
+                            <p><span class="info-icon">💰</span>500〜1,000円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="washoku"
+                    data-budget="1000" data-open="11" data-close="21" data-holiday=""
+                    data-keywords="うどん 牛丼 牛肉 八木山 ボリューム">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(123, 160, 91, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--washoku">うどん</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">牛牛うどん</h3>
+                        <p class="restaurant-card-description">
+                            八木山峠の麓にあるうどん屋。牛丼も名物で、ご飯が見えないほど大量の牛肉が盛られる。甘辛く煮た肉のエキスがスープに染み込んだうどんも絶品。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市（八木山バイパス穂波東IC付近）</p>
+                            <p><span class="info-icon">🕐</span>11:00〜15:00 / 17:00〜20:30</p>
+                            <p><span class="info-icon">💰</span>500〜1,000円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="washoku"
+                    data-budget="1500" data-open="11" data-close="21" data-holiday=""
+                    data-keywords="蕎麦 そば うどん 讃岐 出汁 二八蕎麦">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(123, 160, 91, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1553621042-f6e147245754?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--washoku">和食</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">やま志</h3>
+                        <p class="restaurant-card-description">
+                            産地直送の信州石臼引きそば粉を使った二八蕎麦と、コシとツヤにこだわった讃岐うどんの両方が楽しめる。鰹節と昆布を独自配合した出汁が決め手。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市</p>
+                            <p><span class="info-icon">🕐</span>11:00〜14:30 / 17:00〜20:30</p>
+                            <p><span class="info-icon">💰</span>800〜1,500円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="washoku"
+                    data-budget="1500" data-open="11" data-close="21" data-holiday=""
+                    data-keywords="天ぷら てんぷら 定食 エビ 穴子 華味鳥 揚げたて サクサク">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(123, 160, 91, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--washoku">和食</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">てんぷら藤</h3>
+                        <p class="restaurant-card-description">
+                            常に満席になるほどの人気天ぷら店。スペシャル定食（1,300円）はエビ2尾・穴子・華味鳥・豚ヒレ・魚類・野菜4品と圧巻のボリューム。揚げたてサクサクの天ぷらは格別。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市勢田</p>
+                            <p><span class="info-icon">🕐</span>11:00〜14:00 / 17:00〜21:00</p>
+                            <p><span class="info-icon">💰</span>1,000〜1,500円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== パン・スイーツ ========== -->
+
+                <article class="restaurant-card" data-category="bakery"
+                    data-budget="800" data-open="10" data-close="18" data-holiday="mon,tue"
+                    data-keywords="パン クロワッサン ラスク ガレット フランボワーズ 世界大会">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(245, 197, 92, 0.4) 0%, rgba(244, 168, 150, 0.4) 100%), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--bakery">パン</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">ベーカリー ラブレド</h3>
+                        <p class="restaurant-card-description">
+                            世界最高レベルのパンコンクール「モンディアル・デュ・パン」日本代表に選ばれたオーナーシェフの店。手作りラスク、ガレット、フランボワーズクリームクロワッサンなど芸術的なパンが並ぶ。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市柳橋271-1</p>
+                            <p><span class="info-icon">🕐</span>10:00〜18:00</p>
+                            <p><span class="info-icon">💰</span>300〜800円</p>
+                            <p><span class="info-icon">🚫</span>月・火曜定休</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="bakery"
+                    data-budget="600" data-open="10" data-close="17" data-holiday="sun,mon"
+                    data-keywords="パン バゲット クロワッサン 低温熟成 行列">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(245, 197, 92, 0.4) 0%, rgba(244, 168, 150, 0.4) 100%), url('https://images.unsplash.com/photo-1555507036-ab1f4038024a?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--bakery">パン</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">フィーユ ド ブレ</h3>
+                        <p class="restaurant-card-description">
+                            2021年オープンの行列必至ベーカリー。白と木目を基調にしたおしゃれな店内に、素材にこだわったパンが常時30種類以上。クロワッサンと低温熟成バゲットが特に人気。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市上三緒445-4</p>
+                            <p><span class="info-icon">🕐</span>10:00〜17:00（売切次第終了）</p>
+                            <p><span class="info-icon">💰</span>200〜600円</p>
+                            <p><span class="info-icon">🚫</span>日・月曜定休</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="bakery"
+                    data-budget="500" data-open="9" data-close="18" data-holiday=""
+                    data-keywords="パン メロンパン 倉庫 リノベーション 石窯">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(245, 197, 92, 0.4) 0%, rgba(244, 168, 150, 0.4) 100%), url('https://images.unsplash.com/photo-1608198093002-ad4e005571be?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--bakery">パン</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">ベーカリー倉庫サフラン 福岡飯塚店</h3>
+                        <p class="restaurant-card-description">
+                            千葉発の人気ベーカリーの九州唯一の店舗。空き倉庫をリノベーションした個性的な店舗で、人気No.1は「黄金のメロンパン」（194円）。遠方から訪れるファンも多い。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市</p>
+                            <p><span class="info-icon">🕐</span>9:00〜18:00</p>
+                            <p><span class="info-icon">💰</span>150〜500円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="restaurant-card" data-category="bakery"
+                    data-budget="300" data-open="7" data-close="18" data-holiday=""
+                    data-keywords="パン 100円 惣菜パン スイーツパン お手頃">
+                    <div class="restaurant-card-image" style="background-image: linear-gradient(135deg, rgba(245, 197, 92, 0.4) 0%, rgba(244, 168, 150, 0.4) 100%), url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800&auto=format&fit=crop');">
+                        <span class="restaurant-card-badge restaurant-card-badge--bakery">パン</span>
+                    </div>
+                    <div class="restaurant-card-content">
+                        <h3 class="restaurant-card-title">伊三郎製ぱん</h3>
+                        <p class="restaurant-card-description">
+                            「感動の100円ぱん」がコンセプト。惣菜パンからスイーツパンまで豊富なラインナップがすべて100円。飯塚市内に秋松と新飯塚の2店舗を展開。お財布に優しい毎日のパン屋さん。
+                        </p>
+                        <div class="restaurant-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市秋松 / 飯塚市新飯塚</p>
+                            <p><span class="info-icon">🕐</span>7:00〜18:00</p>
+                            <p><span class="info-icon">💰</span>100〜300円</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- フィルター結果なしメッセージ -->
+            <div class="restaurant-no-results" style="display: none;">
+                <p>該当するお店が見つかりませんでした。</p>
+                <p class="restaurant-no-results-hint">条件を変えて再度お試しください。</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 共通ボトムナビ -->
+    <div id="site-bottom-nav"></div>
+
+    <!-- 共通フッター -->
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js"></script>
+
+    <!-- 検索・フィルター機能 -->
+    <script>
+    (function() {
+        // --- 要素取得 ---
+        var searchInput = document.getElementById('restaurant-search-input');
+        var categoryBtns = document.querySelectorAll('.filter-btn');
+        var filterPanelBtn = document.getElementById('filter-panel-btn');
+        var filterPanel = document.getElementById('filter-panel');
+        var filterClearBtn = document.getElementById('filter-clear-btn');
+        var filterOptions = document.querySelectorAll('.filter-option');
+        var cards = document.querySelectorAll('.restaurant-card');
+        var noResults = document.querySelector('.restaurant-no-results');
+        var resultsCount = document.getElementById('results-count');
+
+        // --- 現在のフィルター状態 ---
+        var state = {
+            search: '',
+            category: 'all',
+            budget: 'all',
+            time: 'all',
+            day: 'all'
+        };
+
+        // --- パネル開閉 ---
+        filterPanelBtn.addEventListener('click', function() {
+            var isOpen = filterPanel.style.display !== 'none';
+            filterPanel.style.display = isOpen ? 'none' : 'block';
+            filterPanelBtn.querySelector('.filter-panel-arrow').textContent = isOpen ? '▼' : '▲';
+        });
+
+        // --- 検索バー ---
+        var searchTimer = null;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(function() {
+                state.search = searchInput.value.trim().toLowerCase();
+                applyFilters();
+            }, 200);
+        });
+
+        // --- カテゴリタブ ---
+        categoryBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                categoryBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                state.category = btn.getAttribute('data-category');
+                applyFilters();
+            });
+        });
+
+        // --- 条件フィルター（予算・時間帯・曜日） ---
+        filterOptions.forEach(function(opt) {
+            opt.addEventListener('click', function() {
+                var filterType = opt.getAttribute('data-filter');
+                // 同グループ内のアクティブを切り替え
+                var siblings = document.querySelectorAll('.filter-option[data-filter="' + filterType + '"]');
+                siblings.forEach(function(s) { s.classList.remove('active'); });
+                opt.classList.add('active');
+                state[filterType] = opt.getAttribute('data-value');
+                applyFilters();
+                updateClearBtn();
+            });
+        });
+
+        // --- 条件クリア ---
+        filterClearBtn.addEventListener('click', function() {
+            state.budget = 'all';
+            state.time = 'all';
+            state.day = 'all';
+            filterOptions.forEach(function(opt) {
+                opt.classList.remove('active');
+                if (opt.getAttribute('data-value') === 'all') {
+                    opt.classList.add('active');
+                }
+            });
+            applyFilters();
+            updateClearBtn();
+        });
+
+        function updateClearBtn() {
+            var hasCondition = state.budget !== 'all' || state.time !== 'all' || state.day !== 'all';
+            filterClearBtn.style.display = hasCondition ? 'inline-flex' : 'none';
+        }
+
+        // --- メインフィルターロジック ---
+        function applyFilters() {
+            var visibleCount = 0;
+
+            cards.forEach(function(card) {
+                var visible = true;
+
+                // 1. テキスト検索（店名・説明・キーワード）
+                if (state.search) {
+                    var title = card.querySelector('.restaurant-card-title').textContent.toLowerCase();
+                    var desc = card.querySelector('.restaurant-card-description').textContent.toLowerCase();
+                    var keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+                    var infoText = card.querySelector('.restaurant-card-info').textContent.toLowerCase();
+                    if (title.indexOf(state.search) === -1 &&
+                        desc.indexOf(state.search) === -1 &&
+                        keywords.indexOf(state.search) === -1 &&
+                        infoText.indexOf(state.search) === -1) {
+                        visible = false;
+                    }
+                }
+
+                // 2. カテゴリ
+                if (visible && state.category !== 'all') {
+                    if (card.getAttribute('data-category') !== state.category) {
+                        visible = false;
+                    }
+                }
+
+                // 3. 予算
+                if (visible && state.budget !== 'all') {
+                    var cardBudget = parseInt(card.getAttribute('data-budget'), 10);
+                    var budgetVal = parseInt(state.budget, 10);
+                    if (budgetVal <= 3000) {
+                        // 〜X円: カードの予算がX以下
+                        if (cardBudget > budgetVal) visible = false;
+                    } else {
+                        // 3,000円〜: カードの予算が3000超
+                        if (cardBudget <= 3000) visible = false;
+                    }
+                }
+
+                // 4. 時間帯
+                if (visible && state.time !== 'all') {
+                    var open = parseInt(card.getAttribute('data-open'), 10);
+                    var close = parseInt(card.getAttribute('data-close'), 10);
+                    if (state.time === 'morning') {
+                        // 10時以前に開店
+                        if (open > 10) visible = false;
+                    } else if (state.time === 'lunch') {
+                        // 11〜14時に営業中（openが14以前 かつ closeが11以降）
+                        if (open > 14 || close < 11) visible = false;
+                    } else if (state.time === 'dinner') {
+                        // 17時以降も営業（closeが17以降）
+                        if (close < 17) visible = false;
+                    }
+                }
+
+                // 5. 曜日（指定曜日が定休日でない）
+                if (visible && state.day !== 'all') {
+                    var holiday = card.getAttribute('data-holiday') || '';
+                    if (holiday === 'irregular') {
+                        // 不定休は判定不能、表示する
+                    } else if (holiday) {
+                        var holidays = holiday.split(',');
+                        if (holidays.indexOf(state.day) !== -1) {
+                            visible = false;
+                        }
+                    }
+                }
+
+                card.style.display = visible ? '' : 'none';
+                if (visible) visibleCount++;
+            });
+
+            // 件数更新
+            resultsCount.textContent = visibleCount;
+
+            // 結果なしメッセージ
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+    })();
+    </script>
+</body>
+</html>
