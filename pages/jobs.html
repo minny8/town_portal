@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="飯塚市の求人・仕事探し情報。主要企業、ハローワーク、就職支援サービスのご案内">
+    <title>仕事探し | 飯塚市ポータルサイト</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/components.js"></script>
+</head>
+<body>
+    <!-- 共通ヘッダー -->
+    <div id="site-header"></div>
+
+    <!-- ページヒーロー -->
+    <section class="page-hero page-hero--jobs">
+        <div class="page-hero-content">
+            <div class="page-hero-icon">💼</div>
+            <h1 class="page-hero-title">仕事探し</h1>
+            <p class="page-hero-subtitle">飯塚市であなたにぴったりの仕事を見つけよう</p>
+        </div>
+    </section>
+
+    <main class="page-content">
+        <div class="container">
+
+            <!-- 給与相場 -->
+            <div class="section-card">
+                <h2 class="section-card-title">飯塚市の給与相場</h2>
+
+                <div class="living-highlight-grid">
+                    <div class="living-highlight-card">
+                        <div class="living-highlight-icon">💰</div>
+                        <div class="living-highlight-label">正社員 平均年収</div>
+                        <div class="living-highlight-value">約327万円</div>
+                    </div>
+                    <div class="living-highlight-card">
+                        <div class="living-highlight-icon">📊</div>
+                        <div class="living-highlight-label">正社員 平均月給</div>
+                        <div class="living-highlight-value">約27万円</div>
+                    </div>
+                    <div class="living-highlight-card">
+                        <div class="living-highlight-icon">⏰</div>
+                        <div class="living-highlight-label">アルバイト平均時給</div>
+                        <div class="living-highlight-value">約1,057円〜</div>
+                    </div>
+                    <div class="living-highlight-card">
+                        <div class="living-highlight-icon">🏭</div>
+                        <div class="living-highlight-label">派遣 平均時給</div>
+                        <div class="living-highlight-value">約1,328円</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- カテゴリフィルター -->
+            <div class="restaurant-filter">
+                <button class="filter-btn active" data-category="all">すべて</button>
+                <button class="filter-btn" data-category="medical">🏥 医療・介護</button>
+                <button class="filter-btn" data-category="it">💻 IT・技術</button>
+                <button class="filter-btn" data-category="manufacturing">🏭 製造</button>
+                <button class="filter-btn" data-category="service">🛒 販売・サービス</button>
+                <button class="filter-btn" data-category="office">📝 事務</button>
+            </div>
+
+            <!-- 件数表示 -->
+            <div class="restaurant-results-count">
+                <span id="results-count">12</span>件の求人が見つかりました
+            </div>
+
+            <!-- 求人一覧 -->
+            <div class="job-grid">
+
+                <!-- ========== 医療・介護 ========== -->
+
+                <article class="job-card" data-category="medical">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">看護師（病棟勤務）</h3>
+                            <p class="job-card-company">麻生 飯塚病院</p>
+                        </div>
+                        <span class="job-card-salary">月給 23万〜30万円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            筑豊地域唯一の救命救急センターを持つ1,000床超の総合病院。42診療科を有し、最先端の医療に携われます。充実した研修制度と福利厚生。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">正社員</span>
+                            <span class="job-tag job-tag--feature">賞与あり</span>
+                            <span class="job-tag job-tag--feature">社宅あり</span>
+                            <span class="job-tag">夜勤あり</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市芳雄町3-83</p>
+                            <p><span class="info-icon">🚉</span>新飯塚駅 徒歩10分</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="job-card" data-category="medical">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">介護職員</h3>
+                            <p class="job-card-company">飯塚市内 介護施設</p>
+                        </div>
+                        <span class="job-card-salary">月給 18万〜25万円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            利用者さまの日常生活のサポート業務。食事・入浴・排泄介助、レクリエーション企画など。資格取得支援制度あり、未経験者歓迎。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">正社員</span>
+                            <span class="job-tag job-tag--feature">未経験OK</span>
+                            <span class="job-tag job-tag--feature">資格支援</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市内</p>
+                            <p><span class="info-icon">🕐</span>シフト制（日勤・夜勤あり）</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== IT・技術 ========== -->
+
+                <article class="job-card" data-category="it">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">ソフトウェアエンジニア</h3>
+                            <p class="job-card-company">株式会社レイドリクス</p>
+                        </div>
+                        <span class="job-card-salary">月給 25万〜40万円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            次世代デジタル無線通信システムの設計開発。飯塚アジアIT特区の中核企業。最先端のワイヤレス技術に挑戦できる環境です。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">正社員</span>
+                            <span class="job-tag job-tag--feature">土日祝休み</span>
+                            <span class="job-tag">C/C++</span>
+                            <span class="job-tag">組込み系</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市内</p>
+                            <p><span class="info-icon">🕐</span>9:00〜18:00</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="job-card" data-category="it">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">システムエンジニア</h3>
+                            <p class="job-card-company">エースコンピューターサービス</p>
+                        </div>
+                        <span class="job-card-salary">月給 22万〜35万円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            経営情報システムの設計・開発・保守。地域企業のDX推進をサポート。九州工業大学との産学連携プロジェクトにも参加できます。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">正社員</span>
+                            <span class="job-tag job-tag--feature">リモート可</span>
+                            <span class="job-tag job-tag--feature">産学連携</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市内</p>
+                            <p><span class="info-icon">🕐</span>9:00〜17:30</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== 製造 ========== -->
+
+                <article class="job-card" data-category="manufacturing">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">製造技術者（ソレノイド製造）</h3>
+                            <p class="job-card-company">タカハ機工株式会社</p>
+                        </div>
+                        <span class="job-card-salary">月給 20万〜30万円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            DCソレノイドのリーディングカンパニー。「新・ダイバーシティ経営企業100選」受賞の優良企業。毎年「ソレコン」コンテストを主催するユニークな社風。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">正社員</span>
+                            <span class="job-tag job-tag--feature">賞与年2回</span>
+                            <span class="job-tag job-tag--feature">社保完備</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市内</p>
+                            <p><span class="info-icon">🕐</span>8:30〜17:30</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="job-card" data-category="manufacturing">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">製薬工場スタッフ</h3>
+                            <p class="job-card-company">沢井製薬 飯塚工場</p>
+                        </div>
+                        <span class="job-card-salary">年収 400万〜750万円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            ジェネリック医薬品の製造。クリーンルームでの品質管理・製造管理業務。医薬品業界未経験でも丁寧な研修あり。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">正社員</span>
+                            <span class="job-tag job-tag--feature">土日祝休み</span>
+                            <span class="job-tag job-tag--feature">年休120日+</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市内</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="job-card" data-category="manufacturing">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">洋菓子製造スタッフ</h3>
+                            <p class="job-card-company">さかえ屋</p>
+                        </div>
+                        <span class="job-card-salary">月給 18万〜24万円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            「なんばん往来」「すくのかめ」など九州の人気銘菓を製造。製菓のプロフェッショナルとしてスキルを磨ける環境。社員割引あり。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">正社員</span>
+                            <span class="job-tag job-tag--feature">社割あり</span>
+                            <span class="job-tag">製菓経験者優遇</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市平恒（本部工場）</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== 販売・サービス ========== -->
+
+                <article class="job-card" data-category="service">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">販売スタッフ</h3>
+                            <p class="job-card-company">ゆめタウン飯塚 各テナント</p>
+                        </div>
+                        <span class="job-card-salary">時給 1,057円〜1,200円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            2023年7月開業の大型ショッピングセンター。約100のテナントで多数の求人あり。IMAX映画館も併設で活気ある職場環境。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">パート・アルバイト</span>
+                            <span class="job-tag job-tag--feature">未経験OK</span>
+                            <span class="job-tag job-tag--feature">シフト自由</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市菰田西3-6-1</p>
+                            <p><span class="info-icon">🚉</span>飯塚駅 徒歩10分</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="job-card" data-category="service">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">店舗スタッフ</h3>
+                            <p class="job-card-company">スーパーセンタートライアル 飯塚店</p>
+                        </div>
+                        <span class="job-card-salary">時給 1,057円〜1,300円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            24時間営業のディスカウントスーパー。レジ・品出し・惣菜製造など。深夜帯は時給アップ。未経験者・主婦（夫）大歓迎。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">パート・アルバイト</span>
+                            <span class="job-tag job-tag--feature">深夜手当</span>
+                            <span class="job-tag job-tag--feature">主婦歓迎</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市徳前40-1</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== 事務 ========== -->
+
+                <article class="job-card" data-category="office">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">一般事務</h3>
+                            <p class="job-card-company">飯塚市内 一般企業</p>
+                        </div>
+                        <span class="job-card-salary">月給 16万〜22万円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            データ入力、書類作成、電話応対、来客対応など。基本的なPC操作（Word・Excel）ができる方。残業少なめでプライベートも充実。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">正社員</span>
+                            <span class="job-tag job-tag--feature">土日祝休み</span>
+                            <span class="job-tag job-tag--feature">残業少なめ</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市新飯塚エリア</p>
+                            <p><span class="info-icon">🕐</span>8:30〜17:30</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="job-card" data-category="office">
+                    <div class="job-card-header">
+                        <div>
+                            <h3 class="job-card-title">大学事務職員</h3>
+                            <p class="job-card-company">近畿大学 産業理工学部</p>
+                        </div>
+                        <span class="job-card-salary">月給 20万〜28万円</span>
+                    </div>
+                    <div class="job-card-body">
+                        <p class="job-card-description">
+                            学生支援、教務関連業務、研究支援など。大学のアカデミックな環境で安定的に働けます。長期休暇もしっかり取れる働きやすい職場。
+                        </p>
+                        <div class="job-card-tags">
+                            <span class="job-tag job-tag--type">契約社員</span>
+                            <span class="job-tag job-tag--feature">長期休暇</span>
+                            <span class="job-tag job-tag--feature">福利厚生充実</span>
+                        </div>
+                        <div class="job-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市柏の森11-6</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- 就職支援サービス -->
+            <div class="section-card" style="margin-top: 2rem;">
+                <h2 class="section-card-title">就職支援サービス</h2>
+
+                <div class="gov-service-grid">
+                    <div class="gov-service-card" style="border-left-color: var(--mustard);">
+                        <h3>🏢 ハローワーク飯塚</h3>
+                        <p>職業相談・職業紹介・雇用保険の手続きなど。飯塚市・嘉麻市・桂川町を管轄。</p>
+                        <p class="service-detail"><span class="info-icon">📍</span>飯塚市芳雄町12-1</p>
+                        <p class="service-detail"><span class="info-icon">📞</span>0948-24-8609</p>
+                        <p class="service-detail"><span class="info-icon">🕐</span>8:30〜17:15（土日祝休み）</p>
+                        <p class="service-detail"><span class="info-icon">🚉</span>新飯塚駅 徒歩約9分</p>
+                    </div>
+
+                    <div class="gov-service-card" style="border-left-color: var(--mustard);">
+                        <h3>👩‍💼 ワンストップサービスセンター e-ZUKA</h3>
+                        <p>若者向け就職支援。適性確認・職業相談・セミナーなど無料で利用できます。</p>
+                        <p class="service-detail"><span class="info-icon">📍</span>飯塚市吉原町6-1 あいタウン2F</p>
+                        <p class="service-detail"><span class="info-icon">📞</span>0948-23-1143</p>
+                    </div>
+
+                    <div class="gov-service-card" style="border-left-color: var(--mustard);">
+                        <h3>🔧 ポリテクセンター飯塚</h3>
+                        <p>離職者向け職業訓練。CAD/CAM、溶接、ビル管理、建設機械などの専門スキルを無料で習得。託児サービス付き訓練もあり。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 共通ボトムナビ -->
+    <div id="site-bottom-nav"></div>
+
+    <!-- 共通フッター -->
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js"></script>
+
+    <!-- フィルター機能 -->
+    <script>
+    (function() {
+        var categoryBtns = document.querySelectorAll('.filter-btn');
+        var cards = document.querySelectorAll('.job-card');
+        var resultsCount = document.getElementById('results-count');
+
+        categoryBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                categoryBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                var category = btn.getAttribute('data-category');
+                var count = 0;
+
+                cards.forEach(function(card) {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = '';
+                        count++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                resultsCount.textContent = count;
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

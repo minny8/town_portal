@@ -25,6 +25,9 @@
         if (path.includes('restaurants.html')) return 'restaurants';
         if (path.includes('jobs.html')) return 'jobs';
         if (path.includes('lessons.html')) return 'lessons';
+        if (path.includes('living.html')) return 'living';
+        if (path.includes('government.html')) return 'government';
+        if (path.includes('faq.html')) return 'faq';
         return 'home';
     }
 

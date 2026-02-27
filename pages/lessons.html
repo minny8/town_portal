@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="飯塚市の習い事・教室情報。ピアノ、スイミング、英会話、プログラミング、ダンスなど">
+    <title>習い事 | 飯塚市ポータルサイト</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/components.js"></script>
+</head>
+<body>
+    <!-- 共通ヘッダー -->
+    <div id="site-header"></div>
+
+    <!-- ページヒーロー -->
+    <section class="page-hero page-hero--lessons">
+        <div class="page-hero-content">
+            <div class="page-hero-icon">📚</div>
+            <h1 class="page-hero-title">習い事</h1>
+            <p class="page-hero-subtitle">新しいこと、始めてみませんか？</p>
+        </div>
+    </section>
+
+    <main class="page-content">
+        <div class="container">
+
+            <!-- カテゴリフィルター -->
+            <div class="restaurant-filter">
+                <button class="filter-btn active" data-category="all">すべて</button>
+                <button class="filter-btn" data-category="music">🎵 音楽</button>
+                <button class="filter-btn" data-category="sports">🏊 スポーツ</button>
+                <button class="filter-btn" data-category="language">🌍 語学</button>
+                <button class="filter-btn" data-category="culture">🖌️ 文化・芸術</button>
+                <button class="filter-btn" data-category="programming">💻 プログラミング</button>
+                <button class="filter-btn" data-category="dance">💃 ダンス</button>
+            </div>
+
+            <!-- 件数表示 -->
+            <div class="restaurant-results-count">
+                <span id="results-count">18</span>件の教室が見つかりました
+            </div>
+
+            <!-- 教室一覧 -->
+            <div class="lesson-grid">
+
+                <!-- ========== 音楽 ========== -->
+
+                <article class="lesson-card" data-category="music">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(200, 168, 216, 0.4) 0%, rgba(244, 168, 150, 0.4) 100%), url('https://images.unsplash.com/photo-1552422535-c45813c61732?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--music">音楽</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">ヤマハ音楽教室 はたや音楽センター</h3>
+                        <p class="lesson-card-description">
+                            はたや楽器店が運営するヤマハ音楽教室。ピアノ、エレクトーン、ドラムなど多彩なコース。市内に明星保育園教室、目尾教室など複数拠点を展開。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市本町13-8</p>
+                            <p><span class="info-icon">👤</span>幼児〜大人</p>
+                            <p><span class="info-icon">💰</span>月謝 7,150円〜</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="music">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(200, 168, 216, 0.4) 0%, rgba(244, 168, 150, 0.4) 100%), url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--music">音楽</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">ピアノ教室チッペンデール</h3>
+                        <p class="lesson-card-description">
+                            クラシックからポピュラーまで対応。リトミックも取り入れた楽しいレッスン。体験レッスンも随時受付中。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市楽市347-4</p>
+                            <p><span class="info-icon">👤</span>幼児〜大人</p>
+                            <p><span class="info-icon">💰</span>月謝 7,500円（30分・月3〜4回）</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="music">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(200, 168, 216, 0.4) 0%, rgba(244, 168, 150, 0.4) 100%), url('https://images.unsplash.com/photo-1514119412350-e174d90d585e?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--music">音楽</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">カワイ音楽教室 相田教室</h3>
+                        <p class="lesson-card-description">
+                            ピアノ（初心者・60歳から・ジャズ）、バイオリン、フルート、ギター、ウクレレなど多彩な楽器コース。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市大字相田100-3</p>
+                            <p><span class="info-icon">👤</span>子ども〜シニア</p>
+                            <p><span class="info-icon">💰</span>月謝 7,150円〜</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== スポーツ ========== -->
+
+                <article class="lesson-card" data-category="sports">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.4) 0%, rgba(123, 160, 91, 0.4) 100%), url('https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--sports">スポーツ</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">飯塚スイミングスクール</h3>
+                        <p class="lesson-card-description">
+                            ベビー（生後6ヶ月〜）から成人まで。温水プール完備で年中快適。泳力別クラスで段階的にスキルアップ。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市堀池3（飯塚駅 徒歩7分）</p>
+                            <p><span class="info-icon">👤</span>生後6ヶ月〜大人</p>
+                            <p><span class="info-icon">💰</span>月謝 6,710円〜 / 入会金 5,000円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="sports">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.4) 0%, rgba(123, 160, 91, 0.4) 100%), url('https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--sports">スポーツ</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">福岡カホスイミングスクール</h3>
+                        <p class="lesson-card-description">
+                            開校40年以上の老舗。福岡県唯一のFFCセラミックス導入で肌に優しい水質。トレーニングルーム・鍼灸整骨院も併設。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市有安</p>
+                            <p><span class="info-icon">👤</span>ベビー〜成人</p>
+                            <p><span class="info-icon">💰</span>要問合せ</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="sports">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.4) 0%, rgba(123, 160, 91, 0.4) 100%), url('https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--sports">スポーツ</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">新極真会 飯塚道場</h3>
+                        <p class="lesson-card-description">
+                            全世界空手道選手権王者・緑健児の支部道場。幼年から壮年まで幅広く受入れ。礼儀礼節を重視した指導方針。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市内</p>
+                            <p><span class="info-icon">👤</span>幼年〜壮年</p>
+                            <p><span class="info-icon">💰</span>月謝 5,500円〜</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="sports">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.4) 0%, rgba(123, 160, 91, 0.4) 100%), url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--sports">スポーツ</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">リベルタサッカースクール 飯塚東</h3>
+                        <p class="lesson-card-description">
+                            「ココロに体力を。」がモットー。保護者の当番や送迎負担がないのが特徴。技術だけでなく人間性も育む。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市内</p>
+                            <p><span class="info-icon">👤</span>3歳〜12歳</p>
+                            <p><span class="info-icon">💰</span>月謝 約8,000円 / 入会金 8,300円</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== 語学 ========== -->
+
+                <article class="lesson-card" data-category="language">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.4) 0%, rgba(135, 206, 235, 0.4) 100%), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--language">語学</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">駅前留学NOVA 飯塚イオン校</h3>
+                        <p class="lesson-card-description">
+                            外国人講師によるレッスン。英語を含む7言語に対応。月謝制でわかりやすい料金体系。イオン穂波2Fで駐車場完備。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>イオン穂波2F（飯塚市枝国長浦666-48）</p>
+                            <p><span class="info-icon">👤</span>子ども〜大人</p>
+                            <p><span class="info-icon">💰</span>月謝 10,000円〜</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="language">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.4) 0%, rgba(135, 206, 235, 0.4) 100%), url('https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--language">語学</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">ペッピーキッズクラブ 飯塚教室</h3>
+                        <p class="lesson-card-description">
+                            全国13万名在籍の子ども英会話スクール。日本人講師と外国人講師のダブル体制で、楽しみながら自然に英語が身につく。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市片島3-1-5</p>
+                            <p><span class="info-icon">👤</span>1歳〜高校生</p>
+                            <p><span class="info-icon">💰</span>月謝 約7,700円〜</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="language">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.4) 0%, rgba(135, 206, 235, 0.4) 100%), url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--language">語学</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">フレックス・イングリッシュコミュニティー</h3>
+                        <p class="lesson-card-description">
+                            0歳から大人まで。TOEIC900・英検1級レベルにも対応。リモート・通学の選択制。初心者グループは月謝2,980円からと手頃。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市内</p>
+                            <p><span class="info-icon">👤</span>0歳〜大人</p>
+                            <p><span class="info-icon">💰</span>月謝 2,980円〜</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== 文化・芸術 ========== -->
+
+                <article class="lesson-card" data-category="culture">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(123, 160, 91, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--culture">文化</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">洗心書道</h3>
+                        <p class="lesson-card-description">
+                            飯塚市内に6教室を展開する書道教室。西徳前・幸袋・吉原・伊川・川津・頴田の各教室で通いやすい場所を選べます。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市内（6教室展開）</p>
+                            <p><span class="info-icon">👤</span>子ども〜大人</p>
+                            <p><span class="info-icon">💰</span>要問合せ</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="culture">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(123, 160, 91, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1596450514735-111a2e6e3dfe?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--culture">文化</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">ふたばのまど書道教室</h3>
+                        <p class="lesson-card-description">
+                            書道家・武田双雲先生所属のふたば書道会支部。少人数制で丁寧な指導。高校生以上を対象に大筆・小筆を学べます。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市新飯塚エリア</p>
+                            <p><span class="info-icon">👤</span>高校生以上</p>
+                            <p><span class="info-icon">💰</span>月謝 6,000円（大筆）</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="culture">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(123, 160, 91, 0.4) 0%, rgba(232, 168, 56, 0.4) 100%), url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--culture">文化</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">ショールームここち 飯塚料理教室</h3>
+                        <p class="lesson-card-description">
+                            入会料無料の1DAY制料理教室。日本料理・韓国・中華・イタリアン・スイーツなど多彩なメニュー。親子・夫婦での参加もOK。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市目尾398 Q-SANビル1F</p>
+                            <p><span class="info-icon">👤</span>どなたでも</p>
+                            <p><span class="info-icon">💰</span>1回ごとの受講料制</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== プログラミング ========== -->
+
+                <article class="lesson-card" data-category="programming">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(244, 168, 150, 0.4) 0%, rgba(200, 168, 216, 0.4) 100%), url('https://images.unsplash.com/photo-1515879218367-8466d910auj7?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--programming">プログラミング</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">トライ式プログラミング教室 新飯塚校</h3>
+                        <p class="lesson-card-description">
+                            ロボット制作とプログラミングを楽しく学ぶ。KOOV（コーブ）を使った実践的カリキュラム。発表会もあり達成感を味わえます。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市新立岩4-4 5F</p>
+                            <p><span class="info-icon">👤</span>小学1年生〜中学生</p>
+                            <p><span class="info-icon">💰</span>月謝 9,900円〜</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="programming">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(244, 168, 150, 0.4) 0%, rgba(200, 168, 216, 0.4) 100%), url('https://images.unsplash.com/photo-1550439062-609e1531270e?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--programming">プログラミング</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">全教研 プログラミング道場</h3>
+                        <p class="lesson-card-description">
+                            小学生を対象に、プログラミングの基本的な考え方と構文を学ぶ。飯塚はIT特区でもあり、子どもの頃からのIT教育に注目が集まっています。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市新飯塚16-18 花宅ビル</p>
+                            <p><span class="info-icon">👤</span>小学生</p>
+                            <p><span class="info-icon">💰</span>要問合せ</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== ダンス ========== -->
+
+                <article class="lesson-card" data-category="dance">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(201, 123, 99, 0.4) 0%, rgba(244, 168, 150, 0.4) 100%), url('https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--dance">ダンス</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">I WALKERS ダンススタジオ</h3>
+                        <p class="lesson-card-description">
+                            2007年開業。HIPHOP、ジャズ、K-POP、キッズクラスなど多彩なジャンル。初心者から経験者まで楽しめるレベル別レッスン。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市潤野994-3</p>
+                            <p><span class="info-icon">👤</span>キッズ〜大人</p>
+                            <p><span class="info-icon">💰</span>要問合せ</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="dance">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(201, 123, 99, 0.4) 0%, rgba(244, 168, 150, 0.4) 100%), url('https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--dance">ダンス</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">ダンススタジオ CORAZON</h3>
+                        <p class="lesson-card-description">
+                            バレエ・ジャズ・HIPHOPなど幅広いジャンルに対応。バレエの基礎を大切にした指導で正しい身体の使い方が身につきます。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市弁分170-1</p>
+                            <p><span class="info-icon">👤</span>子ども〜大人</p>
+                            <p><span class="info-icon">💰</span>月謝 8,800円〜</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="lesson-card" data-category="dance">
+                    <div class="lesson-card-image" style="background-image: linear-gradient(135deg, rgba(201, 123, 99, 0.4) 0%, rgba(244, 168, 150, 0.4) 100%), url('https://images.unsplash.com/photo-1547153760-18fc86c30af1?w=800&auto=format&fit=crop');">
+                        <span class="lesson-card-badge lesson-card-badge--dance">ダンス</span>
+                    </div>
+                    <div class="lesson-card-content">
+                        <h3 class="lesson-card-title">エイベックス・ダンスマスター（ゴールドジム飯塚）</h3>
+                        <p class="lesson-card-description">
+                            avexプロダンサーが直接指導。半年ごとのスキルテストで成長を実感。ゴールドジム飯塚福岡内で施設も充実。
+                        </p>
+                        <div class="lesson-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市柏の森56-10</p>
+                            <p><span class="info-icon">👤</span>キッズ〜大人</p>
+                            <p><span class="info-icon">💰</span>要問合せ / TEL: 0948-21-3222</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 共通ボトムナビ -->
+    <div id="site-bottom-nav"></div>
+
+    <!-- 共通フッター -->
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js"></script>
+
+    <!-- フィルター機能 -->
+    <script>
+    (function() {
+        var categoryBtns = document.querySelectorAll('.filter-btn');
+        var cards = document.querySelectorAll('.lesson-card');
+        var resultsCount = document.getElementById('results-count');
+
+        categoryBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                categoryBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                var category = btn.getAttribute('data-category');
+                var count = 0;
+
+                cards.forEach(function(card) {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = '';
+                        count++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                resultsCount.textContent = count;
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
