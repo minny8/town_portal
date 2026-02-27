@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="飯塚市の行政情報。市役所案内、住民手続き、税金、保険、福祉サービスなど">
-    <title>行政 | 飯塚市ポータルサイト</title>
+    <meta name="description" content="嘉穂地域（飯塚市・嘉麻市・桂川町）の行政情報。市役所・役場案内、住民手続き、税金、保険、福祉サービスなど">
+    <title>行政 | かほっと。嘉穂地域ポータルサイト</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/components.js"></script>
 </head>
@@ -17,76 +17,265 @@
         <div class="page-hero-content">
             <div class="page-hero-icon">🏛️</div>
             <h1 class="page-hero-title">行政</h1>
-            <p class="page-hero-subtitle">飯塚市の行政サービス・手続き情報</p>
+            <p class="page-hero-subtitle">飯塚市・嘉麻市・桂川町の行政サービス・手続き情報</p>
         </div>
     </section>
 
     <main class="page-content">
         <div class="container">
 
-            <!-- 市役所案内 -->
-            <div class="gov-contact-card">
-                <h3>飯塚市役所</h3>
-                <p style="color: var(--text-medium);">〒820-8501 福岡県飯塚市新立岩5番5号</p>
-                <div class="gov-contact-info">
-                    <div class="gov-contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div class="contact-label">代表電話</div>
-                        <div class="contact-value">0948-22-5500</div>
+            <!-- 自治体タブ -->
+            <div class="municipality-tabs" id="govTabs">
+                <button class="municipality-tab active" data-municipality="iizuka" onclick="switchGovTab('iizuka')">
+                    <span class="municipality-tab-icon">🏙️</span>
+                    飯塚市
+                </button>
+                <button class="municipality-tab" data-municipality="kama" onclick="switchGovTab('kama')">
+                    <span class="municipality-tab-icon">🌿</span>
+                    嘉麻市
+                </button>
+                <button class="municipality-tab" data-municipality="keisen" onclick="switchGovTab('keisen')">
+                    <span class="municipality-tab-icon">🏺</span>
+                    桂川町
+                </button>
+            </div>
+
+            <!-- ===== 飯塚市 ===== -->
+            <div class="municipality-content active" id="gov-iizuka">
+                <div class="gov-contact-card">
+                    <h3>飯塚市役所</h3>
+                    <p style="color: var(--text-medium);">〒820-8501 福岡県飯塚市新立岩5番5号</p>
+                    <div class="gov-contact-info">
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-label">代表電話</div>
+                            <div class="contact-value">0948-22-5500</div>
+                        </div>
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div class="contact-label">開庁時間</div>
+                            <div class="contact-value">8:30〜17:15</div>
+                        </div>
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">📅</div>
+                            <div class="contact-label">閉庁日</div>
+                            <div class="contact-value">土日祝・年末年始</div>
+                        </div>
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">🌙</div>
+                            <div class="contact-label">延長窓口</div>
+                            <div class="contact-value">毎週木曜 19時まで</div>
+                        </div>
                     </div>
-                    <div class="gov-contact-item">
-                        <div class="contact-icon">🕐</div>
-                        <div class="contact-label">開庁時間</div>
-                        <div class="contact-value">8:30〜17:15</div>
+                </div>
+
+                <!-- 支所情報 -->
+                <div class="section-card" style="margin-top: 2rem;">
+                    <h2 class="section-card-title">支所のご案内</h2>
+                    <div class="map-area-grid">
+                        <div class="map-area-card" style="border-top-color: var(--mustard);">
+                            <h3>📍 穂波支所</h3>
+                            <p>飯塚市忠隈523番地</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-22-0380</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">木曜は19時まで延長</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--mustard);">
+                            <h3>📍 筑穂支所</h3>
+                            <p>飯塚市長尾1242番地1</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-72-1100</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--mustard);">
+                            <h3>📍 庄内支所</h3>
+                            <p>飯塚市綱分802番地7</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-82-1200</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--mustard);">
+                            <h3>📍 頴田支所</h3>
+                            <p>飯塚市鹿毛馬2333番地4</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-92-2211</p>
+                        </div>
                     </div>
-                    <div class="gov-contact-item">
-                        <div class="contact-icon">📅</div>
-                        <div class="contact-label">閉庁日</div>
-                        <div class="contact-value">土日祝・年末年始</div>
-                    </div>
-                    <div class="gov-contact-item">
-                        <div class="contact-icon">🌙</div>
-                        <div class="contact-label">延長窓口</div>
-                        <div class="contact-value">毎週木曜 19時まで</div>
+                </div>
+
+                <!-- 飯塚市 緊急連絡先 -->
+                <div class="section-card">
+                    <h2 class="section-card-title">緊急連絡先</h2>
+                    <div class="map-area-grid">
+                        <div class="map-area-card" style="border-top-color: var(--salmon);">
+                            <h3>🚒 飯塚地区消防本部</h3>
+                            <p>飯塚市菰田52番地1</p>
+                            <p>TEL: 0948-22-7600</p>
+                            <p style="font-weight: 700; color: var(--salmon-dark); margin-top: 0.5rem;">緊急通報: 119番</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--sky);">
+                            <h3>👮 飯塚警察署</h3>
+                            <p>飯塚市柏の森159番地26</p>
+                            <p>TEL: 0948-21-0110</p>
+                            <p style="font-weight: 700; color: var(--sky); margin-top: 0.5rem;">緊急通報: 110番</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--mustard);">
+                            <h3>🏥 救急医療情報</h3>
+                            <p>福岡県救急医療情報センター</p>
+                            <p>TEL: 092-471-0099（24時間）</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">小児救急: #8000</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 支所情報 -->
-            <div class="section-card" style="margin-top: 2rem;">
-                <h2 class="section-card-title">支所のご案内</h2>
-                <div class="map-area-grid">
-                    <div class="map-area-card" style="border-top-color: var(--sky);">
-                        <h3>📍 穂波支所</h3>
-                        <p>飯塚市忠隈523番地</p>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-22-0380</p>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">木曜は19時まで延長</p>
-                    </div>
-                    <div class="map-area-card" style="border-top-color: var(--sky);">
-                        <h3>📍 筑穂支所</h3>
-                        <p>飯塚市長尾1242番地1</p>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-72-1100</p>
-                    </div>
-                    <div class="map-area-card" style="border-top-color: var(--sky);">
-                        <h3>📍 庄内支所</h3>
-                        <p>飯塚市綱分802番地7</p>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-82-1200</p>
-                    </div>
-                    <div class="map-area-card" style="border-top-color: var(--sky);">
-                        <h3>📍 頴田支所</h3>
-                        <p>飯塚市鹿毛馬2333番地4</p>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-92-2211</p>
+            <!-- ===== 嘉麻市 ===== -->
+            <div class="municipality-content" id="gov-kama">
+                <div class="gov-contact-card" style="background: linear-gradient(135deg, var(--moss-light) 0%, var(--cream) 100%);">
+                    <h3>嘉麻市役所</h3>
+                    <p style="color: var(--text-medium);">〒820-0502 福岡県嘉麻市上臼井446番地1</p>
+                    <div class="gov-contact-info">
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-label">代表電話</div>
+                            <div class="contact-value">0948-62-5660</div>
+                        </div>
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div class="contact-label">開庁時間</div>
+                            <div class="contact-value">8:30〜17:00</div>
+                        </div>
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">📅</div>
+                            <div class="contact-label">閉庁日</div>
+                            <div class="contact-value">土日祝・年末年始</div>
+                        </div>
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">🏛️</div>
+                            <div class="contact-label">旧庁舎</div>
+                            <div class="contact-value">山田・碓井・稲築庁舎</div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- 嘉麻市 支所・庁舎情報 -->
+                <div class="section-card" style="margin-top: 2rem;">
+                    <h2 class="section-card-title">庁舎のご案内</h2>
+                    <div class="map-area-grid">
+                        <div class="map-area-card" style="border-top-color: var(--moss);">
+                            <h3>📍 山田庁舎</h3>
+                            <p>嘉麻市上山田502番地3</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-52-1211</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">市民課窓口あり</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--moss);">
+                            <h3>📍 碓井庁舎</h3>
+                            <p>嘉麻市上臼井446番地1</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-62-2211</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">本庁機能</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--moss);">
+                            <h3>📍 稲築庁舎</h3>
+                            <p>嘉麻市岩崎1143番地3</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-42-0721</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">市民課窓口あり</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--moss);">
+                            <h3>📍 嘉穂庁舎</h3>
+                            <p>嘉麻市大隈町1278番地1</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-57-0011</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">市民課窓口あり</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 嘉麻市 緊急連絡先 -->
+                <div class="section-card">
+                    <h2 class="section-card-title">緊急連絡先</h2>
+                    <div class="map-area-grid">
+                        <div class="map-area-card" style="border-top-color: var(--salmon);">
+                            <h3>🚒 飯塚地区消防本部</h3>
+                            <p>嘉麻市も管轄</p>
+                            <p>TEL: 0948-22-7600</p>
+                            <p style="font-weight: 700; color: var(--salmon-dark); margin-top: 0.5rem;">緊急通報: 119番</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--sky);">
+                            <h3>👮 飯塚警察署</h3>
+                            <p>嘉麻市も管轄</p>
+                            <p>TEL: 0948-21-0110</p>
+                            <p style="font-weight: 700; color: var(--sky); margin-top: 0.5rem;">緊急通報: 110番</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--moss);">
+                            <h3>🏥 救急医療情報</h3>
+                            <p>福岡県救急医療情報センター</p>
+                            <p>TEL: 092-471-0099（24時間）</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">小児救急: #8000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 桂川町 ===== -->
+            <div class="municipality-content" id="gov-keisen">
+                <div class="gov-contact-card" style="background: linear-gradient(135deg, var(--sky-light) 0%, var(--cream) 100%);">
+                    <h3>桂川町役場</h3>
+                    <p style="color: var(--text-medium);">〒820-0696 福岡県嘉穂郡桂川町大字土居424番地1</p>
+                    <div class="gov-contact-info">
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-label">代表電話</div>
+                            <div class="contact-value">0948-65-1100</div>
+                        </div>
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div class="contact-label">開庁時間</div>
+                            <div class="contact-value">8:30〜17:00</div>
+                        </div>
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">📅</div>
+                            <div class="contact-label">閉庁日</div>
+                            <div class="contact-value">土日祝・年末年始</div>
+                        </div>
+                        <div class="gov-contact-item">
+                            <div class="contact-icon">🚃</div>
+                            <div class="contact-label">最寄り駅</div>
+                            <div class="contact-value">JR桂川駅 徒歩5分</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 桂川町 緊急連絡先 -->
+                <div class="section-card" style="margin-top: 2rem;">
+                    <h2 class="section-card-title">緊急連絡先</h2>
+                    <div class="map-area-grid">
+                        <div class="map-area-card" style="border-top-color: var(--salmon);">
+                            <h3>🚒 飯塚地区消防本部</h3>
+                            <p>桂川町も管轄</p>
+                            <p>TEL: 0948-22-7600</p>
+                            <p style="font-weight: 700; color: var(--salmon-dark); margin-top: 0.5rem;">緊急通報: 119番</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--sky);">
+                            <h3>👮 飯塚警察署</h3>
+                            <p>桂川町も管轄</p>
+                            <p>TEL: 0948-21-0110</p>
+                            <p style="font-weight: 700; color: var(--sky); margin-top: 0.5rem;">緊急通報: 110番</p>
+                        </div>
+                        <div class="map-area-card" style="border-top-color: var(--sky);">
+                            <h3>🏥 救急医療情報</h3>
+                            <p>福岡県救急医療情報センター</p>
+                            <p>TEL: 092-471-0099（24時間）</p>
+                            <p style="font-size: 0.85rem; color: var(--text-light);">小児救急: #8000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 以下は全自治体共通 ===== -->
+            <div style="margin-top: 2rem; padding-top: 1rem; border-top: 3px dashed var(--cream-dark);">
+                <p style="text-align: center; font-size: 0.9rem; color: var(--text-light); margin-bottom: 2rem;">以下は3市町共通の制度・サービスです</p>
             </div>
 
             <!-- 市民窓口サービス -->
             <div class="section-card">
-                <h2 class="section-card-title">市民窓口サービス</h2>
+                <h2 class="section-card-title">市民窓口サービス（共通手続き）</h2>
                 <div class="gov-service-grid">
                     <div class="gov-service-card">
                         <h3>📋 届出・届け</h3>
-                        <p>転入届・転出届・転居届は本庁市民窓口課または各支所で受付。転入は引越し後14日以内に届出が必要です。</p>
+                        <p>転入届・転出届・転居届は各市町の本庁舎窓口または支所で受付。転入は引越し後14日以内に届出が必要です。</p>
                         <p class="service-detail"><span class="info-icon">📌</span>本人確認書類・転出証明書が必要</p>
                     </div>
                     <div class="gov-service-card">
@@ -112,20 +301,21 @@
                 <h2 class="section-card-title">税金</h2>
                 <div class="gov-service-grid">
                     <div class="gov-service-card">
-                        <h3>💰 個人住民税（市民税）</h3>
-                        <p>所得割：市民税6% + 県民税4% = 合計10%</p>
-                        <p>均等割：年額4,500円（市3,000円 + 県1,500円）</p>
+                        <h3>💰 個人住民税（市町民税）</h3>
+                        <p>所得割：市町民税6% + 県民税4% = 合計10%</p>
+                        <p>均等割：年額4,500円（市町3,000円 + 県1,500円）</p>
                         <p>森林環境税：年額1,000円</p>
-                        <p class="service-detail"><span class="info-icon">📌</span>担当：税務課市民税係</p>
+                        <p class="service-detail"><span class="info-icon">📌</span>3市町とも同一税率です</p>
                     </div>
                     <div class="gov-service-card">
                         <h3>🏠 固定資産税</h3>
                         <p>税率1.4%（標準税率）。毎年1月1日時点の土地・家屋・償却資産が対象。納税通知書は5月上旬に送付。</p>
-                        <p class="service-detail"><span class="info-icon">📌</span>担当：税務課資産税係</p>
+                        <p class="service-detail"><span class="info-icon">📌</span>お住まいの市町の税務担当へ</p>
                     </div>
                     <div class="gov-service-card">
                         <h3>📱 便利な納付方法</h3>
-                        <p>PayPay・PayBでのスマホ収納（上限30万円）、地方税統一QRコード（eL-QR）によるキャッシュレス納付、コンビニ納付に対応。</p>
+                        <p>PayPay・PayBでのスマホ収納、地方税統一QRコード（eL-QR）によるキャッシュレス納付、コンビニ納付に対応。</p>
+                        <p class="service-detail"><span class="info-icon">📌</span>対応方法は市町により異なる場合があります</p>
                     </div>
                 </div>
             </div>
@@ -137,11 +327,11 @@
                     <div class="gov-service-card">
                         <h3>🏥 国民健康保険</h3>
                         <p>転入時や退職時に加入手続きが必要。所得に応じた保険税で、低所得世帯には7割・5割・2割の軽減制度あり。未就学児は均等割半額。</p>
-                        <p class="service-detail"><span class="info-icon">📌</span>担当：医療保険課</p>
+                        <p class="service-detail"><span class="info-icon">📌</span>お住まいの市町の保険担当課へ</p>
                     </div>
                     <div class="gov-service-card">
                         <h3>🪙 国民年金</h3>
-                        <p>加入届出・保険料免除申請は市役所医療保険年金課で受付。口座振替・クレジットカード・前納割引に対応。</p>
+                        <p>加入届出・保険料免除申請は各市町の担当課で受付。口座振替・クレジットカード・前納割引に対応。</p>
                         <p class="service-detail"><span class="info-icon">💳</span>VISA/Master/JCB/AMEX/Diners対応</p>
                     </div>
                 </div>
@@ -154,42 +344,17 @@
                     <div class="gov-service-card">
                         <h3>👴 高齢者福祉</h3>
                         <p>介護保険の申請・届出、要介護（支援）認定申請、介護サービス利用など。地域包括支援センターが窓口です。</p>
-                        <p class="service-detail"><span class="info-icon">📌</span>担当：高齢介護課</p>
+                        <p class="service-detail"><span class="info-icon">📌</span>各市町の高齢者福祉担当課へ</p>
                     </div>
                     <div class="gov-service-card">
                         <h3>♿ 障がい者福祉</h3>
-                        <p>手帳交付（身体・療育・精神）、特別障がい者手当、自立支援医療、補装具支給など。基幹相談支援センターでワンストップ相談。</p>
-                        <p class="service-detail"><span class="info-icon">📌</span>担当：社会・障がい者福祉課</p>
+                        <p>手帳交付（身体・療育・精神）、特別障がい者手当、自立支援医療、補装具支給など。</p>
+                        <p class="service-detail"><span class="info-icon">📌</span>各市町の福祉担当課へ</p>
                     </div>
                     <div class="gov-service-card">
                         <h3>👶 子育て支援</h3>
-                        <p>こども家庭センターで妊娠期から切れ目のない支援。出産・子育て応援ギフト、赤ちゃんすくすく元気訪問、病児保育も対応。</p>
-                        <p class="service-detail"><span class="info-icon">📌</span>担当：こども家庭課</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 緊急連絡先 -->
-            <div class="section-card">
-                <h2 class="section-card-title">緊急連絡先</h2>
-                <div class="map-area-grid">
-                    <div class="map-area-card" style="border-top-color: var(--salmon);">
-                        <h3>🚒 飯塚地区消防本部</h3>
-                        <p>飯塚市菰田52番地1</p>
-                        <p>TEL: 0948-22-7600</p>
-                        <p style="font-weight: 700; color: var(--salmon-dark); margin-top: 0.5rem;">緊急通報: 119番</p>
-                    </div>
-                    <div class="map-area-card" style="border-top-color: var(--sky);">
-                        <h3>👮 飯塚警察署</h3>
-                        <p>飯塚市柏の森159番地26</p>
-                        <p>TEL: 0948-21-0110</p>
-                        <p style="font-weight: 700; color: var(--sky); margin-top: 0.5rem;">緊急通報: 110番</p>
-                    </div>
-                    <div class="map-area-card" style="border-top-color: var(--mustard);">
-                        <h3>🏥 救急医療情報</h3>
-                        <p>福岡県救急医療情報センター</p>
-                        <p>TEL: 092-471-0099（24時間）</p>
-                        <p style="font-size: 0.85rem; color: var(--text-light);">小児救急: #8000</p>
+                        <p>妊娠期から切れ目のない支援。出産・子育て応援ギフト、各種子育て支援サービスが利用できます。</p>
+                        <p class="service-detail"><span class="info-icon">📌</span>各市町の子育て支援担当課へ</p>
                     </div>
                 </div>
             </div>
@@ -204,5 +369,30 @@
     <div id="site-footer"></div>
 
     <script src="../js/main.js"></script>
+
+    <!-- 自治体タブ切替 -->
+    <script>
+    function switchGovTab(municipality) {
+        // タブの切替
+        var tabs = document.querySelectorAll('.municipality-tab');
+        tabs.forEach(function(tab) {
+            tab.classList.remove('active');
+            if (tab.getAttribute('data-municipality') === municipality) {
+                tab.classList.add('active');
+            }
+        });
+
+        // コンテンツの切替
+        var contents = document.querySelectorAll('.municipality-content');
+        contents.forEach(function(content) {
+            content.classList.remove('active');
+        });
+
+        var target = document.getElementById('gov-' + municipality);
+        if (target) {
+            target.classList.add('active');
+        }
+    }
+    </script>
 </body>
 </html>

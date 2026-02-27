@@ -1,4 +1,5 @@
-// いいづかと。ポータルサイト - 共通コンポーネント
+// かほっと。ポータルサイト - 共通コンポーネント
+// 嘉穂地域（飯塚市・嘉麻市・桂川町）
 // 「みさとと。」風ナチュラル・ポップデザイン対応
 // ヘッダー、フッター、ボトムナビを動的に挿入
 
@@ -51,8 +52,8 @@
                         <path d="M20 32 Q24 36 28 32" stroke="#3D3D3D" stroke-width="2" fill="none"/>
                     </svg>
                     <div>
-                        <h1 class="site-title">いいづかと。</h1>
-                        <p class="site-subtitle">飯塚市ポータルサイト</p>
+                        <h1 class="site-title">かほっと。</h1>
+                        <p class="site-subtitle">嘉穂地域ポータルサイト</p>
                     </div>
                 </div>
             </a>
@@ -82,11 +83,11 @@
     <footer class="footer-natural">
         <div class="footer-content-natural">
             <div class="footer-brand">
-                <h3>いいづかと。</h3>
-                <p>福岡県飯塚市の公式ポータルサイト<br>
-                暮らしも遊びも、ぜんぶここで見つかる</p>
-                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
-                    〒820-8501<br>福岡県飯塚市新立岩5番5号
+                <h3>かほっと。</h3>
+                <p>福岡県 嘉穂地域の公式ポータルサイト<br>
+                飯塚市・嘉麻市・桂川町の暮らしと遊びをまるごと</p>
+                <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.8;">
+                    飯塚市・嘉麻市・桂川町（旧嘉飯山地区）
                 </p>
             </div>
             <div class="footer-links-natural">
@@ -109,7 +110,7 @@
             </div>
         </div>
         <div class="footer-bottom-natural">
-            <p>&copy; <span class="copyright-year">2025</span> いいづかと。 All rights reserved.</p>
+            <p>&copy; <span class="copyright-year">2025</span> かほっと。 All rights reserved.</p>
         </div>
     </footer>`;
     }
