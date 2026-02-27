@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="飯塚市の街マップ。主要施設、交通、観光スポットなどのエリア情報をご紹介">
+    <title>街マップ | 飯塚市ポータルサイト</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/components.js"></script>
+</head>
+<body>
+    <!-- 共通ヘッダー -->
+    <div id="site-header"></div>
+
+    <!-- ページヒーロー -->
+    <section class="page-hero page-hero--map">
+        <div class="page-hero-content">
+            <div class="page-hero-icon">🗺️</div>
+            <h1 class="page-hero-title">街マップ</h1>
+            <p class="page-hero-subtitle">飯塚市の便利な場所をチェック</p>
+        </div>
+    </section>
+
+    <main class="page-content">
+        <div class="container">
+
+            <!-- 地図埋め込み -->
+            <div class="map-container">
+                <iframe class="map-embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53094.87565791884!2d130.65!3d33.6461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354188f9a5a3e90f%3A0xd9e0fb7847d1cf95!2z6aO_5bKh55yM6aO75aGa5biC!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="飯塚市マップ">
+                </iframe>
+
+                <div class="map-legend">
+                    <div class="map-legend-item">
+                        <div class="map-legend-icon">🚉</div>
+                        <div class="map-legend-text">
+                            <h4>JR駅</h4>
+                            <p>新飯塚駅・飯塚駅・浦田駅 ほか</p>
+                        </div>
+                    </div>
+                    <div class="map-legend-item">
+                        <div class="map-legend-icon">🏥</div>
+                        <div class="map-legend-text">
+                            <h4>医療機関</h4>
+                            <p>飯塚病院・飯塚市立病院 ほか</p>
+                        </div>
+                    </div>
+                    <div class="map-legend-item">
+                        <div class="map-legend-icon">🏫</div>
+                        <div class="map-legend-text">
+                            <h4>学校・大学</h4>
+                            <p>近畿大学・九州工業大学 ほか</p>
+                        </div>
+                    </div>
+                    <div class="map-legend-item">
+                        <div class="map-legend-icon">🛒</div>
+                        <div class="map-legend-text">
+                            <h4>ショッピング</h4>
+                            <p>ゆめタウン飯塚・イオン穂波 ほか</p>
+                        </div>
+                    </div>
+                    <div class="map-legend-item">
+                        <div class="map-legend-icon">🏛️</div>
+                        <div class="map-legend-text">
+                            <h4>公共施設</h4>
+                            <p>市役所・図書館・体育館</p>
+                        </div>
+                    </div>
+                    <div class="map-legend-item">
+                        <div class="map-legend-icon">🌳</div>
+                        <div class="map-legend-text">
+                            <h4>公園・観光</h4>
+                            <p>勝盛公園・旧伊藤伝右衛門邸</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- エリアガイド -->
+            <div class="section-card">
+                <h2 class="section-card-title">エリアガイド</h2>
+
+                <div class="map-area-grid">
+                    <div class="map-area-card">
+                        <h3>🏙️ 新飯塚エリア</h3>
+                        <p>JR新飯塚駅周辺の市の中心部。市役所やバスターミナルがあり、行政・交通の拠点です。飲食店や商業施設も充実しています。</p>
+                        <div class="map-area-spots">
+                            <span class="map-area-spot-tag">新飯塚駅</span>
+                            <span class="map-area-spot-tag">飯塚市役所</span>
+                            <span class="map-area-spot-tag">飯塚バスターミナル</span>
+                            <span class="map-area-spot-tag">飯塚病院</span>
+                        </div>
+                    </div>
+
+                    <div class="map-area-card">
+                        <h3>🎭 飯塚駅・本町エリア</h3>
+                        <p>JR飯塚駅周辺。昔ながらの商店街が残る歴史あるエリア。嘉穂劇場や飯塚市歴史資料館など文化施設が集まっています。</p>
+                        <div class="map-area-spots">
+                            <span class="map-area-spot-tag">飯塚駅</span>
+                            <span class="map-area-spot-tag">嘉穂劇場</span>
+                            <span class="map-area-spot-tag">本町商店街</span>
+                            <span class="map-area-spot-tag">歴史資料館</span>
+                        </div>
+                    </div>
+
+                    <div class="map-area-card">
+                        <h3>🎓 立岩・柏の森エリア</h3>
+                        <p>近畿大学産業理工学部のキャンパスがあるエリア。学生向けのアパートや飲食店が多く、活気があります。</p>
+                        <div class="map-area-spots">
+                            <span class="map-area-spot-tag">近畿大学</span>
+                            <span class="map-area-spot-tag">スパイシーモール</span>
+                            <span class="map-area-spot-tag">勝盛公園</span>
+                        </div>
+                    </div>
+
+                    <div class="map-area-card">
+                        <h3>🛍️ 穂波エリア</h3>
+                        <p>国道200号線沿いの商業エリア。大型ショッピングセンターやホームセンターが立ち並び、買い物に便利です。</p>
+                        <div class="map-area-spots">
+                            <span class="map-area-spot-tag">イオン穂波</span>
+                            <span class="map-area-spot-tag">ゆめタウン飯塚</span>
+                            <span class="map-area-spot-tag">コスモスコモン</span>
+                        </div>
+                    </div>
+
+                    <div class="map-area-card">
+                        <h3>⛩️ 大分・幸袋エリア</h3>
+                        <p>旧伊藤伝右衛門邸や大分八幡宮がある歴史深いエリア。住宅地として静かな環境が魅力です。</p>
+                        <div class="map-area-spots">
+                            <span class="map-area-spot-tag">旧伊藤伝右衛門邸</span>
+                            <span class="map-area-spot-tag">大分八幡宮</span>
+                            <span class="map-area-spot-tag">幸袋本町</span>
+                        </div>
+                    </div>
+
+                    <div class="map-area-card">
+                        <h3>🌿 八木山・庄内エリア</h3>
+                        <p>八木山峠や筑豊緑地がある自然豊かなエリア。ドライブやアウトドアに最適。田川方面へのアクセスも便利です。</p>
+                        <div class="map-area-spots">
+                            <span class="map-area-spot-tag">八木山峠</span>
+                            <span class="map-area-spot-tag">筑豊緑地</span>
+                            <span class="map-area-spot-tag">庄内温泉</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- アクセス情報 -->
+            <div class="section-card">
+                <h2 class="section-card-title">アクセス情報</h2>
+
+                <div class="map-area-grid">
+                    <div class="map-area-card" style="border-top-color: var(--sky);">
+                        <h3>🚃 電車でのアクセス</h3>
+                        <p><strong>JR筑豊本線（福北ゆたか線）</strong></p>
+                        <p>博多駅 → 新飯塚駅（快速約45分）</p>
+                        <p>直方駅 → 新飯塚駅（約20分）</p>
+                        <p><strong>JR後藤寺線</strong></p>
+                        <p>新飯塚駅 → 田川後藤寺駅（約30分）</p>
+                    </div>
+
+                    <div class="map-area-card" style="border-top-color: var(--mustard);">
+                        <h3>🚌 バスでのアクセス</h3>
+                        <p><strong>西鉄バス筑豊</strong></p>
+                        <p>飯塚バスターミナルを拠点に市内各地へ運行</p>
+                        <p><strong>高速バス</strong></p>
+                        <p>天神・博多 → 飯塚（約1時間）</p>
+                        <p>飯塚 → 北九州（約1時間）</p>
+                    </div>
+
+                    <div class="map-area-card" style="border-top-color: var(--salmon);">
+                        <h3>🚗 車でのアクセス</h3>
+                        <p><strong>八木山バイパス</strong></p>
+                        <p>福岡市 → 飯塚市（約40分）</p>
+                        <p><strong>国道200号線</strong></p>
+                        <p>直方市 → 飯塚市（約20分）</p>
+                        <p><strong>国道201号線</strong></p>
+                        <p>田川市 → 飯塚市（約25分）</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 共通ボトムナビ -->
+    <div id="site-bottom-nav"></div>
+
+    <!-- 共通フッター -->
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

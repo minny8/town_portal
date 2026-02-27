@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="飯塚市の賃貸・売買物件情報。家賃相場やエリア情報も掲載">
+    <title>おうち探し | 飯塚市ポータルサイト</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/components.js"></script>
+</head>
+<body>
+    <!-- 共通ヘッダー -->
+    <div id="site-header"></div>
+
+    <!-- ページヒーロー -->
+    <section class="page-hero page-hero--real-estate">
+        <div class="page-hero-content">
+            <div class="page-hero-icon">🏠</div>
+            <h1 class="page-hero-title">おうち探し</h1>
+            <p class="page-hero-subtitle">飯塚市で理想の住まいを見つけよう</p>
+        </div>
+    </section>
+
+    <main class="page-content">
+        <div class="container">
+
+            <!-- 家賃相場 -->
+            <div class="section-card">
+                <h2 class="section-card-title">飯塚市の家賃相場</h2>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    福岡市に比べてぐっとお手頃。「本当に住みやすい街大賞2023 in 福岡」第3位に新飯塚が選ばれました。
+                </p>
+
+                <div class="living-highlight-grid">
+                    <div class="living-highlight-card">
+                        <div class="living-highlight-icon">🏢</div>
+                        <div class="living-highlight-label">ワンルーム</div>
+                        <div class="living-highlight-value">2万〜3.5万円</div>
+                    </div>
+                    <div class="living-highlight-card">
+                        <div class="living-highlight-icon">🚪</div>
+                        <div class="living-highlight-label">1K / 1DK</div>
+                        <div class="living-highlight-value">3万〜4.5万円</div>
+                    </div>
+                    <div class="living-highlight-card">
+                        <div class="living-highlight-icon">🛋️</div>
+                        <div class="living-highlight-label">2LDK</div>
+                        <div class="living-highlight-value">5万〜6万円</div>
+                    </div>
+                    <div class="living-highlight-card">
+                        <div class="living-highlight-icon">👨‍👩‍👧‍👦</div>
+                        <div class="living-highlight-label">3LDK</div>
+                        <div class="living-highlight-value">6万〜7万円</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- カテゴリフィルター -->
+            <div class="restaurant-filter" style="margin-bottom: 1.5rem;">
+                <button class="filter-btn active" data-category="all">すべて</button>
+                <button class="filter-btn" data-category="rent">🏢 賃貸</button>
+                <button class="filter-btn" data-category="sale">🏡 売買</button>
+            </div>
+
+            <!-- 件数表示 -->
+            <div class="restaurant-results-count">
+                <span id="results-count">12</span>件の物件が見つかりました
+            </div>
+
+            <!-- 物件一覧 -->
+            <div class="property-grid">
+
+                <!-- ========== 賃貸物件 ========== -->
+
+                <article class="property-card" data-category="rent">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.3) 0%, rgba(200, 168, 216, 0.3) 100%), url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--rent">賃貸</span>
+                        <span class="property-card-price">3.5万円/月</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">サンハイツ新飯塚</h3>
+                        <span class="property-card-type">1K / 25m²</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市新立岩（新飯塚駅 徒歩8分）</p>
+                            <p><span class="info-icon">🏗️</span>築12年 / 鉄骨造 / 3階建て</p>
+                            <p><span class="info-icon">💰</span>敷金1ヶ月 / 礼金なし</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">バス・トイレ別</span>
+                            <span class="property-feature-tag">エアコン付</span>
+                            <span class="property-feature-tag">駐車場あり</span>
+                            <span class="property-feature-tag">2階以上</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="rent">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.3) 0%, rgba(200, 168, 216, 0.3) 100%), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--rent">賃貸</span>
+                        <span class="property-card-price">2.8万円/月</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">コーポ柏の森</h3>
+                        <span class="property-card-type">1K / 22m²</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市柏の森（近畿大学 徒歩5分）</p>
+                            <p><span class="info-icon">🏗️</span>築18年 / 木造 / 2階建て</p>
+                            <p><span class="info-icon">💰</span>敷金なし / 礼金なし</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">学生向け</span>
+                            <span class="property-feature-tag">インターネット無料</span>
+                            <span class="property-feature-tag">オートロック</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="rent">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.3) 0%, rgba(200, 168, 216, 0.3) 100%), url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--rent">賃貸</span>
+                        <span class="property-card-price">5.5万円/月</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">グランメゾン飯塚</h3>
+                        <span class="property-card-type">2LDK / 58m²</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市立岩（新飯塚駅 徒歩12分）</p>
+                            <p><span class="info-icon">🏗️</span>築8年 / RC造 / 5階建て</p>
+                            <p><span class="info-icon">💰</span>敷金1ヶ月 / 礼金1ヶ月</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">ペット可</span>
+                            <span class="property-feature-tag">追い焚き</span>
+                            <span class="property-feature-tag">宅配ボックス</span>
+                            <span class="property-feature-tag">駐車場あり</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="rent">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.3) 0%, rgba(200, 168, 216, 0.3) 100%), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--rent">賃貸</span>
+                        <span class="property-card-price">6.8万円/月</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">リバーサイド穂波</h3>
+                        <span class="property-card-type">3LDK / 72m²</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市枝国（イオン穂波 徒歩10分）</p>
+                            <p><span class="info-icon">🏗️</span>築5年 / RC造 / 4階建て</p>
+                            <p><span class="info-icon">💰</span>敷金2ヶ月 / 礼金1ヶ月</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">ファミリー向け</span>
+                            <span class="property-feature-tag">システムキッチン</span>
+                            <span class="property-feature-tag">ウォークインクローゼット</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="rent">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.3) 0%, rgba(200, 168, 216, 0.3) 100%), url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--new">新着</span>
+                        <span class="property-card-price">4.2万円/月</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">メゾンブランシェ川津</h3>
+                        <span class="property-card-type">1LDK / 38m²</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市川津（九州工業大学 徒歩8分）</p>
+                            <p><span class="info-icon">🏗️</span>築10年 / 鉄骨造 / 3階建て</p>
+                            <p><span class="info-icon">💰</span>敷金なし / 礼金なし</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">新築同様リフォーム済</span>
+                            <span class="property-feature-tag">独立洗面台</span>
+                            <span class="property-feature-tag">浴室乾燥機</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="rent">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.3) 0%, rgba(200, 168, 216, 0.3) 100%), url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--rent">賃貸</span>
+                        <span class="property-card-price">7.5万円/月</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">戸建賃貸 幸袋の家</h3>
+                        <span class="property-card-type">4LDK / 95m² / 戸建て</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市幸袋（旧伊藤伝右衛門邸 徒歩10分）</p>
+                            <p><span class="info-icon">🏗️</span>築15年 / 木造2階建て</p>
+                            <p><span class="info-icon">💰</span>敷金2ヶ月 / 礼金1ヶ月</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">庭付き</span>
+                            <span class="property-feature-tag">駐車場2台</span>
+                            <span class="property-feature-tag">ペット相談可</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ========== 売買物件 ========== -->
+
+                <article class="property-card" data-category="sale">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3) 0%, rgba(244, 168, 150, 0.3) 100%), url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--sale">売買</span>
+                        <span class="property-card-price">1,980万円</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">新飯塚 新築戸建て</h3>
+                        <span class="property-card-type">4LDK / 98m² / 土地 150m²</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市新立岩（新飯塚駅 徒歩15分）</p>
+                            <p><span class="info-icon">🏗️</span>新築 / 木造2階建て</p>
+                            <p><span class="info-icon">🏫</span>飯塚小学校区 / 飯塚第一中学校区</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">新築</span>
+                            <span class="property-feature-tag">駐車場2台</span>
+                            <span class="property-feature-tag">太陽光発電</span>
+                            <span class="property-feature-tag">オール電化</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="sale">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3) 0%, rgba(244, 168, 150, 0.3) 100%), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--sale">売買</span>
+                        <span class="property-card-price">1,480万円</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">穂波エリア 中古戸建て</h3>
+                        <span class="property-card-type">3LDK / 85m² / 土地 180m²</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市秋松（ゆめタウン飯塚 車5分）</p>
+                            <p><span class="info-icon">🏗️</span>築12年 / 木造2階建て</p>
+                            <p><span class="info-icon">💰</span>リフォーム済み</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">リフォーム済</span>
+                            <span class="property-feature-tag">庭付き</span>
+                            <span class="property-feature-tag">駐車場3台</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="sale">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3) 0%, rgba(244, 168, 150, 0.3) 100%), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--new">新着</span>
+                        <span class="property-card-price">2,680万円</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">柏の森 注文住宅用地付き</h3>
+                        <span class="property-card-type">土地 220m²（建築条件付き）</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市柏の森（新飯塚駅 徒歩10分）</p>
+                            <p><span class="info-icon">🏗️</span>建築条件付き / 上下水道完備</p>
+                            <p><span class="info-icon">🏫</span>飯塚東小学校区</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">注文住宅</span>
+                            <span class="property-feature-tag">南向き</span>
+                            <span class="property-feature-tag">閑静な住宅地</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="sale">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3) 0%, rgba(244, 168, 150, 0.3) 100%), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--sale">売買</span>
+                        <span class="property-card-price">980万円</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">庄内 田園風景の平屋</h3>
+                        <span class="property-card-type">3DK / 68m² / 土地 250m²</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市綱分</p>
+                            <p><span class="info-icon">🏗️</span>築25年 / 木造平屋</p>
+                            <p><span class="info-icon">🌿</span>自然豊かな環境</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">平屋</span>
+                            <span class="property-feature-tag">広い庭</span>
+                            <span class="property-feature-tag">家庭菜園可</span>
+                            <span class="property-feature-tag">移住支援対象</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="sale">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3) 0%, rgba(244, 168, 150, 0.3) 100%), url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--sale">売買</span>
+                        <span class="property-card-price">1,280万円</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">飯塚駅前マンション</h3>
+                        <span class="property-card-type">3LDK / 75m² / マンション</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市菰田（飯塚駅 徒歩5分）</p>
+                            <p><span class="info-icon">🏗️</span>築20年 / RC造 / 7階建ての5階部分</p>
+                            <p><span class="info-icon">💰</span>管理費 12,000円/月</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">駅近</span>
+                            <span class="property-feature-tag">眺望良好</span>
+                            <span class="property-feature-tag">管理人常駐</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="property-card" data-category="sale">
+                    <div class="property-card-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3) 0%, rgba(244, 168, 150, 0.3) 100%), url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&auto=format&fit=crop');">
+                        <span class="property-card-badge property-card-badge--sale">売買</span>
+                        <span class="property-card-price">580万円</span>
+                    </div>
+                    <div class="property-card-content">
+                        <h3 class="property-card-title">土地 鯰田エリア</h3>
+                        <span class="property-card-type">土地 200m²（建築条件なし）</span>
+                        <div class="property-card-info">
+                            <p><span class="info-icon">📍</span>飯塚市鯰田（鯰田駅 徒歩12分）</p>
+                            <p><span class="info-icon">🏗️</span>更地 / 上下水道引込み済</p>
+                            <p><span class="info-icon">📐</span>坪単価 約9.6万円</p>
+                        </div>
+                        <div class="property-card-features">
+                            <span class="property-feature-tag">建築条件なし</span>
+                            <span class="property-feature-tag">整形地</span>
+                            <span class="property-feature-tag">前面道路6m</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- 不動産会社情報 -->
+            <div class="section-card" style="margin-top: 2rem;">
+                <h2 class="section-card-title">飯塚市の不動産会社</h2>
+                <p style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    地元密着型から大手チェーンまで、信頼できる不動産会社をご紹介します。
+                </p>
+
+                <div class="map-area-grid">
+                    <div class="map-area-card" style="border-top-color: var(--sky);">
+                        <h3>🏢 愛和不動産（センチュリー21）</h3>
+                        <p>飯塚市川津714。開業10年以上の実績。賃貸・売買ともに豊富な取扱い。</p>
+                        <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-22-7788 / 10:00〜18:00（水曜定休）</p>
+                    </div>
+
+                    <div class="map-area-card" style="border-top-color: var(--sky);">
+                        <h3>🏢 レントハウス不動産（アパマンショップ）</h3>
+                        <p>飯塚市枝国450-1。賃貸物件500件以上の取扱い。幸袋店もあり。</p>
+                        <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-21-3602</p>
+                    </div>
+
+                    <div class="map-area-card" style="border-top-color: var(--sky);">
+                        <h3>🏢 中本不動産</h3>
+                        <p>九州工業大学・近畿大学周辺の学生賃貸に強み。売買物件も対応。</p>
+                    </div>
+
+                    <div class="map-area-card" style="border-top-color: var(--sky);">
+                        <h3>🏢 ダイドー不動産</h3>
+                        <p>飯塚市天道114。賃貸・売買・空き家管理サービス。</p>
+                        <p style="font-size: 0.85rem; color: var(--text-light);">TEL: 0948-24-6666 / 9:00〜17:00（水・日・祝定休）</p>
+                    </div>
+
+                    <div class="map-area-card" style="border-top-color: var(--sky);">
+                        <h3>🏢 ファイン不動産</h3>
+                        <p>飯塚市新立岩7-14。筑豊地区一円の売買・テナント情報を多数保有。</p>
+                    </div>
+
+                    <div class="map-area-card" style="border-top-color: var(--sky);">
+                        <h3>🏢 エイブル飯塚店</h3>
+                        <p>新飯塚駅周辺。全国チェーンならではの豊富な賃貸情報。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- 共通ボトムナビ -->
+    <div id="site-bottom-nav"></div>
+
+    <!-- 共通フッター -->
+    <div id="site-footer"></div>
+
+    <script src="../js/main.js"></script>
+
+    <!-- フィルター機能 -->
+    <script>
+    (function() {
+        var categoryBtns = document.querySelectorAll('.filter-btn');
+        var cards = document.querySelectorAll('.property-card');
+        var resultsCount = document.getElementById('results-count');
+
+        categoryBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                categoryBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                var category = btn.getAttribute('data-category');
+                var count = 0;
+
+                cards.forEach(function(card) {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = '';
+                        count++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                resultsCount.textContent = count;
+            });
+        });
+    })();
+    </script>
+</body>
+</html>
