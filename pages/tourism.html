@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="飯塚市の観光スポット、見どころをご紹介">
-    <title>観光情報 | 飯塚市ポータルサイト</title>
+    <meta name="description" content="嘉穂地域（飯塚市・嘉麻市・桂川町）の観光スポット、見どころをご紹介">
+    <title>観光情報 | かほっと。嘉穂地域ポータルサイト</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/components.js"></script>
 </head>
@@ -17,22 +17,33 @@
         <div class="page-hero-content">
             <div class="page-hero-icon">🏛️</div>
             <h1 class="page-hero-title">観光情報</h1>
-            <p class="page-hero-subtitle">歴史と文化が息づく飯塚市の魅力をご紹介</p>
+            <p class="page-hero-subtitle">歴史と文化と自然が息づく嘉穂地域の魅力をご紹介</p>
         </div>
     </section>
 
     <main class="page-content">
         <div class="container">
+
+            <!-- エリアフィルター -->
+            <div class="area-filter" id="tourismFilter">
+                <button class="area-filter-btn active" data-area="all" onclick="filterTourism('all')">すべて</button>
+                <button class="area-filter-btn" data-area="iizuka" onclick="filterTourism('iizuka')">飯塚市</button>
+                <button class="area-filter-btn" data-area="kama" onclick="filterTourism('kama')">嘉麻市</button>
+                <button class="area-filter-btn" data-area="keisen" onclick="filterTourism('keisen')">桂川町</button>
+            </div>
+
             <!-- 主要観光スポット -->
             <div class="section-card">
                 <h2 class="section-card-title">主要観光スポット</h2>
 
                 <div class="spot-grid">
-                    <article class="spot-card">
+                    <!-- 飯塚市 -->
+                    <article class="spot-card" data-area="iizuka">
                         <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%), url('https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&auto=format&fit=crop');">
                             <span class="spot-card-icon">🏛️</span>
                         </div>
                         <div class="spot-card-content">
+                            <span class="area-badge area-badge--iizuka">飯塚市</span>
                             <h3 class="spot-card-title">旧伊藤伝右衛門邸</h3>
                             <p class="spot-card-info"><strong>所在地：</strong>飯塚市幸袋300番地</p>
                             <p class="spot-card-info"><strong>開館：</strong>9:30〜17:00（入館16:30まで）</p>
@@ -44,11 +55,12 @@
                         </div>
                     </article>
 
-                    <article class="spot-card">
+                    <article class="spot-card" data-area="iizuka">
                         <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(250, 112, 154, 0.3) 0%, rgba(254, 225, 64, 0.3) 100%), url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&auto=format&fit=crop');">
                             <span class="spot-card-icon">🎭</span>
                         </div>
                         <div class="spot-card-content">
+                            <span class="area-badge area-badge--iizuka">飯塚市</span>
                             <h3 class="spot-card-title">嘉穂劇場</h3>
                             <p class="spot-card-info"><strong>所在地：</strong>飯塚市飯塚5-23</p>
                             <p class="spot-card-info"><strong>営業時間：</strong>公演により異なる</p>
@@ -58,40 +70,12 @@
                         </div>
                     </article>
 
-                    <article class="spot-card">
-                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(79, 172, 254, 0.3) 0%, rgba(0, 242, 254, 0.3) 100%), url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop');">
-                            <span class="spot-card-icon">🏛️</span>
-                        </div>
-                        <div class="spot-card-content">
-                            <h3 class="spot-card-title">飯塚市歴史資料館</h3>
-                            <p class="spot-card-info"><strong>所在地：</strong>飯塚市柏の森959-1</p>
-                            <p class="spot-card-info"><strong>開館：</strong>9:30〜17:00（入館16:30まで）</p>
-                            <p class="spot-card-info"><strong>休館日：</strong>月曜日（祝日の場合は翌日）</p>
-                            <p class="spot-card-info"><strong>入館料：</strong>無料</p>
-                            <p class="spot-card-description">
-                                飯塚市の歴史と文化を紹介する資料館。特に筑豊炭田に関する展示が充実しており、炭鉱の歴史や当時の人々の暮らしを学ぶことができます。
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="spot-card">
-                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(255, 107, 107, 0.3) 0%, rgba(238, 90, 111, 0.3) 100%), url('https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&auto=format&fit=crop');">
-                            <span class="spot-card-icon">⛩️</span>
-                        </div>
-                        <div class="spot-card-content">
-                            <h3 class="spot-card-title">大分八幡宮</h3>
-                            <p class="spot-card-info"><strong>所在地：</strong>飯塚市大分1272</p>
-                            <p class="spot-card-description">
-                                飯塚市の総鎮守として信仰を集める神社。毎年秋に行われる放生会は、飯塚の三大祭りの一つとして知られ、多くの参拝客で賑わいます。
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="spot-card">
+                    <article class="spot-card" data-area="iizuka">
                         <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(168, 237, 234, 0.3) 0%, rgba(254, 214, 227, 0.3) 100%), url('https://images.unsplash.com/photo-1522383225653-ed111181a951?w=800&auto=format&fit=crop');">
                             <span class="spot-card-icon">🌸</span>
                         </div>
                         <div class="spot-card-content">
+                            <span class="area-badge area-badge--iizuka">飯塚市</span>
                             <h3 class="spot-card-title">勝盛公園</h3>
                             <p class="spot-card-info"><strong>所在地：</strong>飯塚市片島1丁目</p>
                             <p class="spot-card-description">
@@ -100,39 +84,125 @@
                         </div>
                     </article>
 
-                    <article class="spot-card">
+                    <article class="spot-card" data-area="iizuka">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(255, 107, 107, 0.3) 0%, rgba(238, 90, 111, 0.3) 100%), url('https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">⛩️</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <span class="area-badge area-badge--iizuka">飯塚市</span>
+                            <h3 class="spot-card-title">大分八幡宮</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>飯塚市大分1272</p>
+                            <p class="spot-card-description">
+                                飯塚市の総鎮守として信仰を集める神社。毎年秋に行われる放生会は、飯塚の三大祭りの一つとして知られ、多くの参拝客で賑わいます。
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 嘉麻市 -->
+                    <article class="spot-card" data-area="kama">
                         <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(78, 205, 196, 0.3) 0%, rgba(68, 160, 141, 0.3) 100%), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop');">
                             <span class="spot-card-icon">🏔️</span>
                         </div>
                         <div class="spot-card-content">
-                            <h3 class="spot-card-title">八木山</h3>
-                            <p class="spot-card-info"><strong>所在地：</strong>飯塚市八木山</p>
+                            <span class="area-badge area-badge--kama">嘉麻市</span>
+                            <h3 class="spot-card-title">古処山（こしょさん）</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>嘉麻市大隈</p>
+                            <p class="spot-card-info"><strong>標高：</strong>860m</p>
                             <p class="spot-card-description">
-                                標高745メートルの山で、ハイキングや登山に最適。山頂からは筑豊平野を一望でき、天気の良い日には福岡市街や玄界灘まで見渡せます。
+                                国の特別天然記念物に指定されたツゲの原始林が山頂付近に広がる名峰。馬見山・屏山と合わせて「嘉穂アルプス」と呼ばれ、登山愛好家に人気です。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="spot-card" data-area="kama">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(200, 168, 216, 0.3) 0%, rgba(232, 216, 240, 0.3) 100%), url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">🎨</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <span class="area-badge area-badge--kama">嘉麻市</span>
+                            <h3 class="spot-card-title">織田廣喜美術館</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>嘉麻市上臼井767</p>
+                            <p class="spot-card-info"><strong>開館：</strong>9:30〜17:30（入館17:00まで）</p>
+                            <p class="spot-card-info"><strong>休館日：</strong>月曜日（祝日の場合は翌日）</p>
+                            <p class="spot-card-info"><strong>入館料：</strong>大人310円、高校生以下無料</p>
+                            <p class="spot-card-description">
+                                碓井町出身の洋画家・織田廣喜の作品を収蔵・展示。パリの風景や女性像を描いた叙情的な作品が多数。建物自体も美しい建築です。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="spot-card" data-area="kama">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(79, 172, 254, 0.3) 0%, rgba(0, 242, 254, 0.3) 100%), url('https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">♨️</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <span class="area-badge area-badge--kama">嘉麻市</span>
+                            <h3 class="spot-card-title">カホアルペス温泉（なつきの湯）</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>嘉麻市鯰田</p>
+                            <p class="spot-card-description">
+                                登山やアウトドアの後に立ち寄れる日帰り温泉施設。嘉穂アルプスの名を冠した温泉で、疲れた体を癒すのに最適です。
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 桂川町 -->
+                    <article class="spot-card" data-area="keisen">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.3) 0%, rgba(100, 149, 237, 0.3) 100%), url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">🏺</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <span class="area-badge area-badge--keisen">桂川町</span>
+                            <h3 class="spot-card-title">王塚古墳</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>嘉穂郡桂川町寿命376</p>
+                            <p class="spot-card-info"><strong>公開日：</strong>春秋の年2回特別公開</p>
+                            <p class="spot-card-description">
+                                国の特別史跡に指定された装飾古墳。6世紀に造られた前方後円墳で、石室内の色鮮やかな装飾壁画は日本の古代美術を代表する貴重な文化財です。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="spot-card" data-area="keisen">
+                        <div class="spot-card-image" style="background-image: linear-gradient(135deg, rgba(135, 206, 235, 0.2) 0%, rgba(200, 168, 216, 0.2) 100%), url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=800&auto=format&fit=crop');">
+                            <span class="spot-card-icon">🏛️</span>
+                        </div>
+                        <div class="spot-card-content">
+                            <span class="area-badge area-badge--keisen">桂川町</span>
+                            <h3 class="spot-card-title">王塚装飾古墳館</h3>
+                            <p class="spot-card-info"><strong>所在地：</strong>嘉穂郡桂川町寿命376</p>
+                            <p class="spot-card-info"><strong>開館：</strong>9:00〜16:30</p>
+                            <p class="spot-card-info"><strong>休館日：</strong>月曜日（祝日の場合は翌日）</p>
+                            <p class="spot-card-info"><strong>入館料：</strong>大人330円、高校生以下無料</p>
+                            <p class="spot-card-description">
+                                王塚古墳の石室を実物大で再現した展示施設。壁画のレプリカや出土品を間近で見学でき、古代の歴史をわかりやすく学べます。
                             </p>
                         </div>
                     </article>
                 </div>
             </div>
 
-            <!-- 飯塚グルメ -->
+            <!-- 地域グルメ -->
             <div class="section-card">
-                <h2 class="section-card-title">飯塚グルメ</h2>
+                <h2 class="section-card-title">嘉穂地域のグルメ</h2>
 
                 <div class="gourmet-grid">
                     <div class="gourmet-card">
-                        <h3 class="gourmet-card-title">🍜 炭鉱ラーメン</h3>
+                        <h3 class="gourmet-card-title">🍜 筑豊ラーメン <span class="area-badge area-badge--regional">地域全体</span></h3>
                         <p class="gourmet-card-body">
-                            炭鉱で働く人々のために生まれた、ボリューム満点の醤油ラーメン。豚骨と鶏ガラをベースにしたスープに、たっぷりの野菜とチャーシューが特徴です。
-                            市内の複数の店舗で味わうことができます。
+                            炭鉱で働く人々のために生まれた、ボリューム満点のラーメン。飯塚市を中心に多くの名店が集まるラーメン激戦区です。
                         </p>
                     </div>
 
                     <div class="gourmet-card">
-                        <h3 class="gourmet-card-title">🍡 飯塚銘菓</h3>
+                        <h3 class="gourmet-card-title">🍡 飯塚銘菓 <span class="area-badge area-badge--iizuka">飯塚市</span></h3>
                         <p class="gourmet-card-body">
-                            千鳥饅頭で有名な千鳥屋をはじめ、老舗の和菓子店が多数あります。
-                            伊藤伝右衛門邸や白蓮をモチーフにした創作和菓子も人気です。
+                            長崎街道「シュガーロード」の歴史を受け継ぐ銘菓の宝庫。ひよ子饅頭やチロリアンは実は飯塚発祥です。
+                        </p>
+                    </div>
+
+                    <div class="gourmet-card">
+                        <h3 class="gourmet-card-title">🥬 嘉麻の恵み <span class="area-badge area-badge--kama">嘉麻市</span></h3>
+                        <p class="gourmet-card-body">
+                            古処山の湧水を使った蕎麦や、豊かな自然が育む新鮮な農産物。地元の直売所では旬の野菜や加工品が手に入ります。
                         </p>
                     </div>
                 </div>
@@ -146,10 +216,10 @@
                     <div class="access-card">
                         <h3 class="access-card-title">🚄 電車でお越しの方</h3>
                         <div class="access-card-body">
-                            <p><strong>JR九州 筑豊本線・後藤寺線</strong></p>
-                            <p>新飯塚駅、飯塚駅が最寄り駅です。</p>
-                            <p>・博多駅から新飯塚駅まで：約40分（快速利用）</p>
-                            <p>・小倉駅から新飯塚駅まで：約1時間30分</p>
+                            <p><strong>JR九州 福北ゆたか線（筑豊本線）</strong></p>
+                            <p>・博多駅→桂川駅：約30分</p>
+                            <p>・博多駅→新飯塚駅：約45分（快速利用）</p>
+                            <p>・嘉麻市へは新飯塚駅よりバスで約20分</p>
                         </div>
                     </div>
 
@@ -157,9 +227,9 @@
                         <h3 class="access-card-title">🚌 バスでお越しの方</h3>
                         <div class="access-card-body">
                             <p><strong>西鉄バス</strong></p>
-                            <p>福岡（天神）から飯塚まで高速バスが運行しています。</p>
+                            <p>福岡（天神）から飯塚まで高速バスが運行。</p>
                             <p>・所要時間：約50分</p>
-                            <p>・運行本数：1時間に1〜2本程度</p>
+                            <p>・飯塚バスターミナルから嘉麻市方面バスあり</p>
                         </div>
                     </div>
 
@@ -167,8 +237,8 @@
                         <h3 class="access-card-title">🚗 お車でお越しの方</h3>
                         <div class="access-card-body">
                             <p><strong>九州自動車道</strong></p>
-                            <p>・福岡方面から：「福岡IC」→国道201号経由で約40分</p>
-                            <p>・北九州方面から：「八幡IC」→国道200号経由で約40分</p>
+                            <p>・福岡方面：「福岡IC」→国道201号経由で約40分</p>
+                            <p>・北九州方面：「八幡IC」→国道200号経由で約40分</p>
                             <p>主要観光施設には駐車場が完備されています。</p>
                         </div>
                     </div>
@@ -184,5 +254,29 @@
     <div id="site-footer"></div>
 
     <script src="../js/main.js"></script>
+
+    <!-- エリアフィルター -->
+    <script>
+    function filterTourism(area) {
+        // ボタンの切替
+        var btns = document.querySelectorAll('#tourismFilter .area-filter-btn');
+        btns.forEach(function(btn) {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-area') === area) {
+                btn.classList.add('active');
+            }
+        });
+
+        // カードのフィルタリング
+        var cards = document.querySelectorAll('.spot-card[data-area]');
+        cards.forEach(function(card) {
+            if (area === 'all' || card.getAttribute('data-area') === area) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    </script>
 </body>
 </html>

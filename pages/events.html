@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="飯塚市で開催されるイベント情報">
-    <title>イベント情報 | 飯塚市ポータルサイト</title>
+    <meta name="description" content="嘉穂地域（飯塚市・嘉麻市・桂川町）で開催されるイベント情報">
+    <title>イベント情報 | かほっと。嘉穂地域ポータルサイト</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/components.js"></script>
 </head>
@@ -17,19 +17,29 @@
         <div class="page-hero-content">
             <div class="page-hero-icon">🎉</div>
             <h1 class="page-hero-title">イベント情報</h1>
-            <p class="page-hero-subtitle">飯塚市で開催される様々なイベントをご紹介</p>
+            <p class="page-hero-subtitle">飯塚市・嘉麻市・桂川町で開催される様々なイベントをご紹介</p>
         </div>
     </section>
 
     <main class="page-content">
         <div class="container">
+
+            <!-- エリアフィルター -->
+            <div class="area-filter" id="eventFilter">
+                <button class="area-filter-btn active" data-area="all" onclick="filterEvents('all')">すべて</button>
+                <button class="area-filter-btn" data-area="iizuka" onclick="filterEvents('iizuka')">飯塚市</button>
+                <button class="area-filter-btn" data-area="kama" onclick="filterEvents('kama')">嘉麻市</button>
+                <button class="area-filter-btn" data-area="keisen" onclick="filterEvents('keisen')">桂川町</button>
+            </div>
+
             <!-- 開催予定のイベント -->
             <div class="section-card">
                 <h2 class="section-card-title">開催予定のイベント</h2>
 
                 <div class="event-grid">
-                    <article class="event-card">
+                    <article class="event-card" data-area="iizuka">
                         <div class="event-card-header">
+                            <span class="area-badge area-badge--iizuka">飯塚市</span>
                             <div class="event-card-date">2025年12月23日（月）〜25日（水）</div>
                             <h3 class="event-card-title">🎄 飯塚ウィンターフェスティバル2025</h3>
                         </div>
@@ -39,13 +49,30 @@
                             <p class="event-card-info"><strong>入場料：</strong>無料</p>
                             <p class="event-card-description">
                                 飯塚の冬を彩る恒例イベント。地元特産品の販売、クリスマスコンサート、子ども向けワークショップなど、
-                                家族みんなで楽しめる企画が盛りだくさんです。温かい食べ物や飲み物の屋台も多数出店します。
+                                家族みんなで楽しめる企画が盛りだくさんです。
                             </p>
                         </div>
                     </article>
 
-                    <article class="event-card">
+                    <article class="event-card" data-area="kama">
                         <div class="event-card-header">
+                            <span class="area-badge area-badge--kama">嘉麻市</span>
+                            <div class="event-card-date">2025年12月24日（火）〜25日（水）</div>
+                            <h3 class="event-card-title">🌟 嘉麻イルミネーション2025</h3>
+                        </div>
+                        <div class="event-card-body">
+                            <p class="event-card-info"><strong>会場：</strong>嘉麻市役所前広場</p>
+                            <p class="event-card-info"><strong>時間：</strong>17:00〜21:00</p>
+                            <p class="event-card-info"><strong>入場料：</strong>無料</p>
+                            <p class="event-card-description">
+                                冬の夜を彩るイルミネーション。地元の子どもたちが手作りしたオーナメントや、温かい飲み物の提供もあります。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="event-card" data-area="iizuka">
+                        <div class="event-card-header">
+                            <span class="area-badge area-badge--iizuka">飯塚市</span>
                             <div class="event-card-date">2025年12月31日（水）</div>
                             <h3 class="event-card-title">🔔 大分八幡宮 年越し大祓・除夜祭</h3>
                         </div>
@@ -60,24 +87,24 @@
                         </div>
                     </article>
 
-                    <article class="event-card">
+                    <article class="event-card" data-area="iizuka">
                         <div class="event-card-header">
+                            <span class="area-badge area-badge--iizuka">飯塚市</span>
                             <div class="event-card-date">2026年1月11日（日）</div>
                             <h3 class="event-card-title">🎍 飯塚市成人式</h3>
                         </div>
                         <div class="event-card-body">
                             <p class="event-card-info"><strong>会場：</strong>イイヅカコスモスコモン</p>
                             <p class="event-card-info"><strong>時間：</strong>14:00〜15:30（受付13:00〜）</p>
-                            <p class="event-card-info"><strong>対象：</strong>2005年4月2日〜2006年4月1日生まれの方</p>
                             <p class="event-card-description">
                                 新成人の門出を祝う式典。恩師や旧友との再会の場としても親しまれています。
-                                記念撮影コーナーや懇親会も予定されています。
                             </p>
                         </div>
                     </article>
 
-                    <article class="event-card">
+                    <article class="event-card" data-area="iizuka">
                         <div class="event-card-header">
+                            <span class="area-badge area-badge--iizuka">飯塚市</span>
                             <div class="event-card-date">2026年2月8日（日）</div>
                             <h3 class="event-card-title">🏃 飯塚マラソン大会</h3>
                         </div>
@@ -88,14 +115,13 @@
                             <p class="event-card-info"><strong>種目：</strong>ハーフマラソン、10km、5km、3km</p>
                             <p class="event-card-description">
                                 筑豊地域最大級のマラソン大会。初心者からベテランランナーまで、幅広く参加できます。
-                                参加賞や完走メダル、地元特産品が当たる抽選会もあります。
-                                ※事前申込が必要です（締切：1月20日）
                             </p>
                         </div>
                     </article>
 
-                    <article class="event-card">
+                    <article class="event-card" data-area="iizuka">
                         <div class="event-card-header">
+                            <span class="area-badge area-badge--iizuka">飯塚市</span>
                             <div class="event-card-date">2026年3月1日（日）〜15日（日）</div>
                             <h3 class="event-card-title">🎎 旧伊藤伝右衛門邸 ひな祭り特別展示</h3>
                         </div>
@@ -104,14 +130,29 @@
                             <p class="event-card-info"><strong>時間：</strong>9:30〜17:00（最終入館16:30）</p>
                             <p class="event-card-info"><strong>入館料：</strong>大人310円、小中学生100円</p>
                             <p class="event-card-description">
-                                明治・大正時代の貴重なひな人形を展示。豪華絢爛な段飾りや御殿飾りなど、
-                                歴史ある雛人形の数々をご覧いただけます。期間中は抹茶サービスもあります（有料）。
+                                明治・大正時代の貴重なひな人形を展示。豪華絢爛な段飾りや御殿飾りなど、歴史ある雛人形の数々をご覧いただけます。
                             </p>
                         </div>
                     </article>
 
-                    <article class="event-card">
+                    <article class="event-card" data-area="keisen">
                         <div class="event-card-header">
+                            <span class="area-badge area-badge--keisen">桂川町</span>
+                            <div class="event-card-date">2026年3月中旬（予定）</div>
+                            <h3 class="event-card-title">🏺 王塚古墳まつり・春の特別公開</h3>
+                        </div>
+                        <div class="event-card-body">
+                            <p class="event-card-info"><strong>会場：</strong>王塚古墳・王塚装飾古墳館</p>
+                            <p class="event-card-info"><strong>入場料：</strong>古墳館 大人330円</p>
+                            <p class="event-card-description">
+                                年に2回の石室特別公開。古代の装飾壁画を実際に見学できる貴重な機会です。古墳館では特別展示やワークショップも開催されます。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="event-card" data-area="iizuka">
+                        <div class="event-card-header">
+                            <span class="area-badge area-badge--iizuka">飯塚市</span>
                             <div class="event-card-date">2026年3月22日（日）</div>
                             <h3 class="event-card-title">🌸 勝盛公園 桜まつり</h3>
                         </div>
@@ -120,9 +161,22 @@
                             <p class="event-card-info"><strong>時間：</strong>10:00〜16:00</p>
                             <p class="event-card-info"><strong>入場料：</strong>無料</p>
                             <p class="event-card-description">
-                                約1,000本の桜が咲き誇る勝盛公園で開催される春の風物詩。
-                                地元グルメの屋台、ステージイベント、フリーマーケットなど、様々な企画をご用意しています。
-                                夜間はライトアップも実施（18:00〜21:00）。
+                                約1,000本の桜が咲き誇る勝盛公園で開催される春の風物詩。夜間はライトアップも実施（18:00〜21:00）。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="event-card" data-area="kama">
+                        <div class="event-card-header">
+                            <span class="area-badge area-badge--kama">嘉麻市</span>
+                            <div class="event-card-date">2026年4月中旬（予定）</div>
+                            <h3 class="event-card-title">🌸 嘉麻市さくらウォーキング</h3>
+                        </div>
+                        <div class="event-card-body">
+                            <p class="event-card-info"><strong>会場：</strong>嘉麻市内各コース</p>
+                            <p class="event-card-info"><strong>参加費：</strong>500円（保険料含む）</p>
+                            <p class="event-card-description">
+                                桜の名所を巡るウォーキングイベント。5km・10kmのコースがあり、春の自然を楽しみながら健康づくりができます。
                             </p>
                         </div>
                     </article>
@@ -137,36 +191,40 @@
                     <div class="season-card">
                         <h3 class="season-card-title">🌸 春（3月〜5月）</h3>
                         <ul class="season-card-list">
-                            <li>3月：桜まつり（勝盛公園）</li>
-                            <li>4月：飯塚さくら祭り</li>
-                            <li>5月：飯塚山笠（GW期間）</li>
+                            <li>3月：桜まつり（飯塚市・勝盛公園）</li>
+                            <li>3月：王塚古墳 春の特別公開（桂川町）</li>
+                            <li>4月：嘉麻さくらウォーキング（嘉麻市）</li>
+                            <li>5月：飯塚山笠（飯塚市・GW期間）</li>
                         </ul>
                     </div>
 
                     <div class="season-card">
                         <h3 class="season-card-title">☀️ 夏（6月〜8月）</h3>
                         <ul class="season-card-list">
-                            <li>7月：飯塚納涼花火大会</li>
-                            <li>8月：飯塚夏祭り</li>
-                            <li>8月：筑豊ハイランド納涼祭</li>
+                            <li>7月：飯塚納涼花火大会（飯塚市）</li>
+                            <li>7月：嘉麻市花火大会（嘉麻市）</li>
+                            <li>8月：桂川町夏祭り（桂川町）</li>
+                            <li>8月：飯塚夏祭り（飯塚市）</li>
                         </ul>
                     </div>
 
                     <div class="season-card">
                         <h3 class="season-card-title">🍂 秋（9月〜11月）</h3>
                         <ul class="season-card-list">
-                            <li>9月：大分八幡宮放生会</li>
-                            <li>10月：飯塚コスモスまつり</li>
-                            <li>11月：飯塚市文化祭</li>
+                            <li>9月：大分八幡宮放生会（飯塚市）</li>
+                            <li>10月：王塚古墳 秋の特別公開（桂川町）</li>
+                            <li>10月：古処山もみじまつり（嘉麻市）</li>
+                            <li>11月：嘉麻市ふるさとまつり（嘉麻市）</li>
                         </ul>
                     </div>
 
                     <div class="season-card">
                         <h3 class="season-card-title">⛄ 冬（12月〜2月）</h3>
                         <ul class="season-card-list">
-                            <li>12月：飯塚ウィンターフェスティバル</li>
-                            <li>1月：成人式</li>
-                            <li>2月：飯塚マラソン大会</li>
+                            <li>12月：飯塚ウィンターフェスティバル（飯塚市）</li>
+                            <li>12月：嘉麻イルミネーション（嘉麻市）</li>
+                            <li>1月：各市町成人式</li>
+                            <li>2月：飯塚マラソン大会（飯塚市）</li>
                         </ul>
                     </div>
                 </div>
@@ -181,5 +239,27 @@
     <div id="site-footer"></div>
 
     <script src="../js/main.js"></script>
+
+    <!-- エリアフィルター -->
+    <script>
+    function filterEvents(area) {
+        var btns = document.querySelectorAll('#eventFilter .area-filter-btn');
+        btns.forEach(function(btn) {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-area') === area) {
+                btn.classList.add('active');
+            }
+        });
+
+        var cards = document.querySelectorAll('.event-card[data-area]');
+        cards.forEach(function(card) {
+            if (area === 'all' || card.getAttribute('data-area') === area) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    </script>
 </body>
 </html>
