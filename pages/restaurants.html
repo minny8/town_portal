@@ -88,9 +88,17 @@
                 </div>
             </div>
 
-            <!-- 件数表示 -->
-            <div class="restaurant-results-count">
-                <span id="results-count">18</span>件のお店が見つかりました
+            <!-- 件数表示 & ビュー切り替え -->
+            <div class="restaurant-results-count" style="display: flex; align-items: center; justify-content: space-between;">
+                <span><span id="results-count">18</span>件のお店が見つかりました</span>
+                <div class="view-toggle-bar" style="margin-bottom: 0;">
+                    <button class="view-toggle-btn active" id="viewGrid" aria-label="カード表示" title="カード表示">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+                    </button>
+                    <button class="view-toggle-btn" id="viewList" aria-label="リスト表示" title="リスト表示">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="1" y1="3" x2="15" y2="3"/><line x1="1" y1="8" x2="15" y2="8"/><line x1="1" y1="13" x2="15" y2="13"/></svg>
+                    </button>
+                </div>
             </div>
 
             <!-- 店舗一覧 -->
@@ -115,6 +123,7 @@
                             <p><span class="info-icon">💰</span>〜1,000円</p>
                             <p><span class="info-icon">🚫</span>不定休（Instagram要確認）</p>
                         </div>
+                        <a href="restaurant-detail.html" class="card-detail-link">詳しく見る →</a>
                     </div>
                 </article>
 
@@ -547,6 +556,28 @@
     <div id="site-footer"></div>
 
     <script src="../js/main.js"></script>
+
+    <!-- ビュー切り替え -->
+    <script>
+    (function() {
+        var gridBtn = document.getElementById('viewGrid');
+        var listBtn = document.getElementById('viewList');
+        var container = document.querySelector('.page-content .container');
+        if (!gridBtn || !listBtn) return;
+
+        gridBtn.addEventListener('click', function() {
+            container.classList.remove('list-view');
+            gridBtn.classList.add('active');
+            listBtn.classList.remove('active');
+        });
+
+        listBtn.addEventListener('click', function() {
+            container.classList.add('list-view');
+            listBtn.classList.add('active');
+            gridBtn.classList.remove('active');
+        });
+    })();
+    </script>
 
     <!-- 検索・フィルター機能 -->
     <script>

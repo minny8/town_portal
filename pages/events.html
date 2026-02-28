@@ -34,7 +34,17 @@
 
             <!-- 開催予定のイベント -->
             <div class="section-card">
-                <h2 class="section-card-title">開催予定のイベント</h2>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                    <h2 class="section-card-title" style="margin: 0; border: none; padding: 0;">開催予定のイベント</h2>
+                    <div class="view-toggle-bar" style="margin-bottom: 0;">
+                        <button class="view-toggle-btn active" id="eventViewGrid" aria-label="カード表示" title="カード表示">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+                        </button>
+                        <button class="view-toggle-btn" id="eventViewList" aria-label="リスト表示" title="リスト表示">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="1" y1="3" x2="15" y2="3"/><line x1="1" y1="8" x2="15" y2="8"/><line x1="1" y1="13" x2="15" y2="13"/></svg>
+                        </button>
+                    </div>
+                </div>
 
                 <div class="event-grid">
                     <article class="event-card" data-area="iizuka">
@@ -51,6 +61,7 @@
                                 飯塚の冬を彩る恒例イベント。地元特産品の販売、クリスマスコンサート、子ども向けワークショップなど、
                                 家族みんなで楽しめる企画が盛りだくさんです。
                             </p>
+                            <a href="event-detail.html" class="card-detail-link">詳しく見る →</a>
                         </div>
                     </article>
 
@@ -239,6 +250,28 @@
     <div id="site-footer"></div>
 
     <script src="../js/main.js"></script>
+
+    <!-- ビュー切り替え -->
+    <script>
+    (function() {
+        var gridBtn = document.getElementById('eventViewGrid');
+        var listBtn = document.getElementById('eventViewList');
+        var container = document.querySelector('.event-grid').parentElement;
+        if (!gridBtn || !listBtn) return;
+
+        gridBtn.addEventListener('click', function() {
+            container.classList.remove('list-view');
+            gridBtn.classList.add('active');
+            listBtn.classList.remove('active');
+        });
+
+        listBtn.addEventListener('click', function() {
+            container.classList.add('list-view');
+            listBtn.classList.add('active');
+            gridBtn.classList.remove('active');
+        });
+    })();
+    </script>
 
     <!-- エリアフィルター -->
     <script>

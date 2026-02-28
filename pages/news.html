@@ -23,85 +23,95 @@
 
     <main class="page-content">
         <div class="container">
-            <div class="section-card">
-                <h2 class="section-card-title">最新ニュース</h2>
 
-                <article class="content-card">
-                    <time class="content-card-date">2025.12.15</time>
-                    <h3 class="content-card-title">年末年始の市役所業務について</h3>
-                    <div class="content-card-body">
-                        <p>年末年始の市役所の業務スケジュールをお知らせします。</p>
-                        <p><strong>休業期間：</strong>2025年12月29日（月）〜2026年1月3日（土）</p>
-                        <p>年末年始期間中は、市役所および各出張所の窓口業務を休業させていただきます。ご不便をおかけしますが、ご理解とご協力をお願いいたします。緊急時の連絡先については市役所HPをご確認ください。</p>
-                    </div>
-                </article>
+            <!-- 件数表示 & ビュー切り替え -->
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+                <h2 class="section-card-title" style="margin: 0; border: none; padding: 0;">最新ニュース</h2>
+                <div class="view-toggle-bar" style="margin-bottom: 0;">
+                    <button class="view-toggle-btn active" id="newsViewGrid" aria-label="カード表示" title="カード表示">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
+                    </button>
+                    <button class="view-toggle-btn" id="newsViewList" aria-label="リスト表示" title="リスト表示">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="1" y1="3" x2="15" y2="3"/><line x1="1" y1="8" x2="15" y2="8"/><line x1="1" y1="13" x2="15" y2="13"/></svg>
+                    </button>
+                </div>
+            </div>
 
-                <article class="content-card">
-                    <time class="content-card-date">2025.12.10</time>
-                    <h3 class="content-card-title">飯塚国際会館で冬のイベント開催</h3>
-                    <div class="content-card-body">
-                        <p>12月23日より飯塚国際会館にて冬のイベントを開催します。</p>
-                        <p><strong>開催期間：</strong>2025年12月23日（月）〜12月25日（水）</p>
-                        <p>飯塚国際会館にて「飯塚ウィンターフェスティバル2025」を開催します。地元の物産展、クリスマスコンサート、子ども向けワークショップなど、家族で楽しめる企画が盛りだくさんです。入場無料ですので、ぜひお越しください。</p>
-                    </div>
-                </article>
+            <!-- ニュースカードグリッド -->
+            <div class="news-grid" id="newsGrid">
 
-                <article class="content-card">
-                    <time class="content-card-date">2025.12.05</time>
-                    <h3 class="content-card-title">伊藤伝右衛門邸の特別公開について</h3>
-                    <div class="content-card-body">
-                        <p>通常非公開の部屋を期間限定で特別公開します。</p>
-                        <p><strong>公開期間：</strong>2025年12月20日（金）〜2026年1月31日（金）</p>
-                        <p>国の重要文化財である伊藤伝右衛門邸において、普段は公開していない2階の部屋を特別公開します。炭鉱王として知られる伊藤伝右衛門の生活の一端をご覧いただけます。事前予約優先となりますので、お早めにお申し込みください。</p>
+                <a href="news-detail.html" class="news-card-visual">
+                    <div class="news-card-visual-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3), rgba(244, 168, 150, 0.3)), url('https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=600&auto=format&fit=crop');"></div>
+                    <div class="news-card-visual-content">
+                        <time class="news-card-visual-date">2025.12.15</time>
+                        <h3 class="news-card-visual-title">年末年始の市役所業務について</h3>
+                        <p class="news-card-visual-excerpt">年末年始の市役所の業務スケジュールをお知らせします。休業期間は2025年12月29日〜2026年1月3日。緊急時の連絡先については市役所HPをご確認ください。</p>
                     </div>
-                </article>
+                </a>
 
-                <article class="content-card">
-                    <time class="content-card-date">2025.12.01</time>
-                    <h3 class="content-card-title">飯塚市公式LINEアカウント開設のお知らせ</h3>
-                    <div class="content-card-body">
-                        <p>飯塚市の公式LINEアカウントを開設しました。</p>
-                        <p>市からの重要なお知らせやイベント情報、防災情報などをLINEで受け取ることができます。プッシュ通知機能により、緊急時の情報もいち早くお届けします。ぜひ友だち登録をお願いします。</p>
+                <a href="news-detail.html" class="news-card-visual">
+                    <div class="news-card-visual-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3), rgba(244, 168, 150, 0.3)), url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&auto=format&fit=crop');"></div>
+                    <div class="news-card-visual-content">
+                        <time class="news-card-visual-date">2025.12.10</time>
+                        <h3 class="news-card-visual-title">飯塚国際会館で冬のイベント開催</h3>
+                        <p class="news-card-visual-excerpt">12月23日より飯塚国際会館にて「飯塚ウィンターフェスティバル2025」を開催。地元の物産展、クリスマスコンサート、子ども向けワークショップなど家族で楽しめる企画が盛りだくさんです。</p>
                     </div>
-                </article>
+                </a>
 
-                <article class="content-card">
-                    <time class="content-card-date">2025.11.25</time>
-                    <h3 class="content-card-title">飯塚市子育て支援センター「のびのび広場」リニューアルオープン</h3>
-                    <div class="content-card-body">
-                        <p>子育て支援センターが装いも新たにリニューアルオープンしました。</p>
-                        <p><strong>オープン日：</strong>2025年12月1日（日）</p>
-                        <p>子育て中のご家族が気軽に集える場所として、飯塚市子育て支援センター「のびのび広場」をリニューアルオープンしました。授乳室、キッズスペース、相談コーナーなどを新設。子育て相談も随時受け付けています。</p>
+                <a href="news-detail.html" class="news-card-visual">
+                    <div class="news-card-visual-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3), rgba(244, 168, 150, 0.3)), url('https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=600&auto=format&fit=crop');"></div>
+                    <div class="news-card-visual-content">
+                        <time class="news-card-visual-date">2025.12.05</time>
+                        <h3 class="news-card-visual-title">伊藤伝右衛門邸の特別公開について</h3>
+                        <p class="news-card-visual-excerpt">通常非公開の部屋を期間限定で特別公開。国の重要文化財である伊藤伝右衛門邸において、炭鉱王の生活の一端をご覧いただけます。事前予約優先。</p>
                     </div>
-                </article>
+                </a>
 
-                <article class="content-card">
-                    <time class="content-card-date">2025.11.20</time>
-                    <h3 class="content-card-title">インフルエンザ予防接種の助成について</h3>
-                    <div class="content-card-body">
-                        <p>65歳以上の方と生後6ヶ月から中学3年生までのお子さまを対象に、インフルエンザ予防接種の費用を一部助成します。</p>
-                        <p><strong>助成期間：</strong>2025年10月1日〜2026年1月31日</p>
-                        <p>実施医療機関で接種を受ける際、自己負担額が軽減されます。詳しくは市役所健康課までお問い合わせください。</p>
+                <a href="news-detail.html" class="news-card-visual">
+                    <div class="news-card-visual-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3), rgba(244, 168, 150, 0.3)), url('https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=600&auto=format&fit=crop');"></div>
+                    <div class="news-card-visual-content">
+                        <time class="news-card-visual-date">2025.12.01</time>
+                        <h3 class="news-card-visual-title">飯塚市公式LINEアカウント開設のお知らせ</h3>
+                        <p class="news-card-visual-excerpt">市からの重要なお知らせやイベント情報、防災情報などをLINEで受け取ることができます。プッシュ通知機能により、緊急時の情報もいち早くお届けします。</p>
                     </div>
-                </article>
+                </a>
 
-                <article class="content-card">
-                    <time class="content-card-date">2025.11.15</time>
-                    <h3 class="content-card-title">飯塚市文化祭開催のご報告</h3>
-                    <div class="content-card-body">
-                        <p>11月3日から10日にかけて開催された第50回飯塚市文化祭が盛況のうちに終了しました。</p>
-                        <p>今年は記念すべき第50回を迎え、過去最多の約8,000人の方にご来場いただきました。書道展、絵画展、生け花展、音楽祭など、市民の皆さまの素晴らしい作品や演奏を披露していただき、文化の秋にふさわしい催しとなりました。ご来場、ご出展いただいた皆さま、誠にありがとうございました。</p>
+                <a href="news-detail.html" class="news-card-visual">
+                    <div class="news-card-visual-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3), rgba(244, 168, 150, 0.3)), url('https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&auto=format&fit=crop');"></div>
+                    <div class="news-card-visual-content">
+                        <time class="news-card-visual-date">2025.11.25</time>
+                        <h3 class="news-card-visual-title">飯塚市子育て支援センター「のびのび広場」リニューアルオープン</h3>
+                        <p class="news-card-visual-excerpt">子育て中のご家族が気軽に集える場所として、リニューアルオープン。授乳室、キッズスペース、相談コーナーなどを新設。子育て相談も随時受け付けています。</p>
                     </div>
-                </article>
+                </a>
 
-                <article class="content-card">
-                    <time class="content-card-date">2025.11.10</time>
-                    <h3 class="content-card-title">飯塚市ふるさと納税返礼品に新商品追加</h3>
-                    <div class="content-card-body">
-                        <p>飯塚市のふるさと納税返礼品に新たな商品が加わりました。</p>
-                        <p>地元の老舗和菓子店「千鳥屋」の詰め合わせセット、飯塚産いちご「あまおう」の予約受付、九州工業大学とコラボした科学実験キットなど、魅力的な返礼品を追加しました。飯塚市を応援していただける方は、ぜひふるさと納税をご検討ください。</p>
+                <a href="news-detail.html" class="news-card-visual">
+                    <div class="news-card-visual-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3), rgba(244, 168, 150, 0.3)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&auto=format&fit=crop');"></div>
+                    <div class="news-card-visual-content">
+                        <time class="news-card-visual-date">2025.11.20</time>
+                        <h3 class="news-card-visual-title">インフルエンザ予防接種の助成について</h3>
+                        <p class="news-card-visual-excerpt">65歳以上の方と生後6ヶ月から中学3年生までのお子さまを対象に、インフルエンザ予防接種の費用を一部助成します。助成期間は2025年10月1日〜2026年1月31日。</p>
                     </div>
-                </article>
+                </a>
+
+                <a href="news-detail.html" class="news-card-visual">
+                    <div class="news-card-visual-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3), rgba(244, 168, 150, 0.3)), url('https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&auto=format&fit=crop');"></div>
+                    <div class="news-card-visual-content">
+                        <time class="news-card-visual-date">2025.11.15</time>
+                        <h3 class="news-card-visual-title">飯塚市文化祭開催のご報告</h3>
+                        <p class="news-card-visual-excerpt">第50回飯塚市文化祭が盛況のうちに終了。過去最多の約8,000人の方にご来場いただきました。書道展、絵画展、生け花展、音楽祭など素晴らしい催しとなりました。</p>
+                    </div>
+                </a>
+
+                <a href="news-detail.html" class="news-card-visual">
+                    <div class="news-card-visual-image" style="background-image: linear-gradient(135deg, rgba(232, 168, 56, 0.3), rgba(244, 168, 150, 0.3)), url('https://images.unsplash.com/photo-1513151233558-d860c5398176?w=600&auto=format&fit=crop');"></div>
+                    <div class="news-card-visual-content">
+                        <time class="news-card-visual-date">2025.11.10</time>
+                        <h3 class="news-card-visual-title">飯塚市ふるさと納税返礼品に新商品追加</h3>
+                        <p class="news-card-visual-excerpt">千鳥屋の詰め合わせセット、飯塚産いちご「あまおう」の予約受付、九州工業大学コラボの科学実験キットなど魅力的な返礼品を追加しました。</p>
+                    </div>
+                </a>
+
             </div>
         </div>
     </main>
@@ -113,5 +123,54 @@
     <div id="site-footer"></div>
 
     <script src="../js/main.js"></script>
+
+    <!-- ビュー切り替え -->
+    <script>
+    (function() {
+        var gridBtn = document.getElementById('newsViewGrid');
+        var listBtn = document.getElementById('newsViewList');
+        var newsGrid = document.getElementById('newsGrid');
+        if (!gridBtn || !listBtn || !newsGrid) return;
+
+        gridBtn.addEventListener('click', function() {
+            newsGrid.style.gridTemplateColumns = '';
+            newsGrid.querySelectorAll('.news-card-visual').forEach(function(card) {
+                card.style.display = '';
+            });
+            newsGrid.querySelectorAll('.news-card-visual-image').forEach(function(img) {
+                img.style.display = '';
+                img.style.height = '';
+                img.style.width = '';
+            });
+            newsGrid.querySelectorAll('.news-card-visual').forEach(function(card) {
+                card.style.flexDirection = '';
+            });
+            newsGrid.querySelectorAll('.news-card-visual-excerpt').forEach(function(el) {
+                el.style.webkitLineClamp = '';
+            });
+            gridBtn.classList.add('active');
+            listBtn.classList.remove('active');
+        });
+
+        listBtn.addEventListener('click', function() {
+            newsGrid.style.gridTemplateColumns = '1fr';
+            newsGrid.querySelectorAll('.news-card-visual').forEach(function(card) {
+                card.style.display = 'flex';
+                card.style.flexDirection = 'row';
+            });
+            newsGrid.querySelectorAll('.news-card-visual-image').forEach(function(img) {
+                img.style.height = '100%';
+                img.style.width = '160px';
+                img.style.minHeight = '120px';
+                img.style.flexShrink = '0';
+            });
+            newsGrid.querySelectorAll('.news-card-visual-excerpt').forEach(function(el) {
+                el.style.webkitLineClamp = '2';
+            });
+            listBtn.classList.add('active');
+            gridBtn.classList.remove('active');
+        });
+    })();
+    </script>
 </body>
 </html>
